@@ -1,0 +1,398 @@
+ophide Sop lfl::main::group_wrangle::1.0
+ophide Sop lfl::main::vel_wrap::1.0
+ophide Sop popwrangle
+
+// This file allows you to exclude or hide OPs or change their labels.
+// The complete list of table names are Object, Sop, Particle, Pop,
+// Chopnet, Chop, Driver, Shop, Cop2, CopNet, Vop, and VopNet.
+//
+// Examples:
+//
+// The following line excludes the geo and light objects. Operators that
+// are excluded do not exist as far as Houdini is concerned. They cannot be
+// created by any means, and cause errors when loading a hip file with that
+// operator type:
+// opexclude Object geo light
+//
+// The following line renames the Merge Sop to "Combine Inputs". This affects
+// only the English description of the operator that appears in toolbars, not
+// the internal name of the operator:
+// oprename Sop merge "Combine Inputs"
+//
+// The following line aliases an object called "thing" to be a geo object.
+// This is an alias of the internal operator name, and affects the opadd
+// command and loading existing hip files. So loading a hip file with an
+// operator type "thing" will create a "geo" object in its place:
+// opalias Object geo thing
+//
+// The following line hides the generic shadow SHOP from the toolbars,
+// but this SHOP can still be created using the opadd command, or loading
+// in a hip file with this SHOP:
+// ophide Shop gen_shadow
+
+// In order to change the initial name of the op to something
+// other than the internal name, the opfirstname command can
+// be used.
+
+opfirstname Driver ifd mantra
+opfirstname Driver alf tractor
+opfirstname Sop texture uvtexture
+opfirstname Sop xform xform
+opfirstname Sop softxform softxform
+opfirstname Sop xformaxis transformaxis
+opfirstname Sop xformpieces xformpieces
+opfirstname Sop xformbyattrib xformbyattrib
+opfirstname Vop parameter parm
+opfirstname Vop rampparm ramp
+opfirstname Vop constant const
+
+opalias Cop2 file still
+opalias Sop edit superedit
+opalias Sop object_merge proto_objectgroupmerge
+opalias Sop dopimport doptransform
+opalias Shop properties subnet
+opalias Sop vopsoptype vop_sop
+opalias Pop voppoptype vop_pop
+opalias Chop vopchoptype vop_chop
+opalias Cop2 vopcop2gentype vop_cop2gen
+opalias Cop2 vopcop2filtertype vop_cop2filter
+opalias Sop mountain v_mountain
+opalias Sop ripple v_ripple
+opalias Sop pointmap v_pointmap
+opalias Sop waveform v_waveform
+opalias Sop grainsource grainsfromvolume
+opalias Shop material subnet
+opalias Shop fur_density_map furdensitymap
+opalias Shop fur_style furstyle
+opalias Driver baketexture ifdunwrap
+
+// The clothsolver became the finiteelementsolver in 13.0
+opalias Dop finiteelementsolver clothsolver
+
+// The Vorticle Stretch was renamed in the 9.0 alpha.  This line
+// can be removed in 10.0
+opalias Dop gasvelocitystretch gasvorticlestretch
+
+// The temperaturetoviscosity was renamed in the 15.0 alpha.  This line
+// can be removed in 16.0
+opalias Dop gastemperatureupdate temperaturetoviscosity
+
+opalias Dop wireelasticity wireforcemodel
+opalias Dop pyrosolver::2.0 pyrosolver_build 
+opalias Dop smokesolver::2.0 smokesolver_build 
+opalias Dop gasupres::2.0 gasupres_build 
+opalias Dop flipsolver::2.0 flipsolver_build 
+opalias Dop geometryvop gasgeometryvop
+opalias Dop popsolver::2.0 popintegrator
+opalias Dop popwrangle popwrangler
+opalias Dop popcollisionbehavior popcollisionbehaviour
+
+opalias Dop impactanalysis ImpactAnalysis
+
+// NOTE: The following operators are deprecated and will no longer be supported 
+// in future versions of Houdini.  Please do not remove the following lines.  
+
+ophide Sop network		// Experimental SOP.
+// Internal operator for the Foreach CHOP.
+ophide Chop for			
+
+opdeprecate -r "channelcopy" 11.0 Cop2 swap
+opdeprecate -r "Use Voronoi tools instead" 11.0 Sop shatter
+opdeprecate -r "flipsolver" 11.0 Dop sandsolver sandobject sandconfigureobject
+opdeprecate -r "renderparmsvolatile" 12.0 Dop renderparms
+opdeprecate -r "filemerge" 12.0 Sop loadslices
+opdeprecate -r "No longer supported by Mantra" 12.0 Sop bakevex
+opdeprecate -r "Vop/physicalsss" 12.0 Sop sssscatter
+
+opdeprecate -r "material" 14.0 Sop shop
+opdeprecate -r "attribvop" 14.0 Sop vopsop
+opdeprecate -r "attribwrangle" 14.0 Sop pointwrangle
+opdeprecate -r "Pasted surfaces are no longer supported" 14.0 Sop paste unpaste
+opdeprecate -r "Tristrip primitives are no longer supported" 15.0 Sop tristrip
+
+ophide Sop attribfind		// It's not ready for the 14.0 stub.  Remove this line when it's working.
+
+ophide Sop wavevelocity		// Internal helper used by finalize waves
+
+opdeprecate -r "pyrosolver::2.0" 12.0 Dop pyrosolver
+opdeprecate -r "smokesolver::2.0" 12.0 Dop smokesolver
+
+opdeprecate -r "smokeobject" 12.0 Dop gasupresobject 
+opdeprecate -r "sourcevolume" 12.0 Dop sourceapply 
+
+opdeprecate -r "solidobject" 13.0 Dop squishyobject 
+
+opdeprecate -r "popkill" 14.0 Dop particlefluidsink
+
+// The vectordeform SOP is not yet production ready so is hidden by
+// default.  Reveal at your own risk.
+ophide Sop vectordeform		// Experimental SOP.
+
+// The draw hair sop requires some more work so is hidden by default.
+ophide Sop drawhair		// Experimental SOP.
+
+// Position Composite is more a proof of concept that is misleading and
+// of little use in its current incarnation.
+ophide Dop positioncomposite	// Not useful in its current incarnation
+
+// Hide the VOP OP Type operators. These operator types are best created
+// by first creating a VOP OP, then converting it to a VOP OP Type.
+ophide Sop vopsoptype
+ophide Pop voppoptype
+ophide Chop vopchoptype
+ophide Cop2 vopcop2gentype
+ophide Cop2 vopcop2filtertype
+ophide Cop2 skycube
+ophide Cop2 skycubedaylight
+
+ophide Shop scalarvolumenoise	// A helper function used internally
+
+ophide Vop ttwswitchimpl	// Helper for ttwswitch
+ophide Vop typeconvertimpl	// Helper for typeconvert
+
+#if 1
+ophide Shop g_brick
+ophide Shop g_checker
+ophide Shop g_cmarble
+ophide Shop g_granite
+ophide Shop g_marble
+ophide Shop g_splatter
+ophide Shop g_spots
+ophide Shop g_stripes
+ophide Shop g_wood
+ophide Shop gen_background
+ophide Shop gen_class
+ophide Shop gen_contour
+ophide Shop gen_contourcontrast
+ophide Shop gen_contourstore
+ophide Shop gen_coshader
+ophide Shop gen_cvex
+ophide Shop gen_displace
+ophide Shop gen_emitter
+ophide Shop gen_fog
+ophide Shop gen_geometry
+ophide Shop gen_image3d
+ophide Shop gen_interior
+ophide Shop gen_lens
+ophide Shop gen_light
+ophide Shop gen_lightfilter
+ophide Shop gen_output
+ophide Shop gen_photon
+ophide Shop gen_photonvolume
+ophide Shop gen_shadow
+ophide Shop gen_surface
+ophide Shop gen_surfaceshadow
+ophide Shop gen_bsdfshader
+ophide Shop gen_generic
+ophide Shop gen_integrator
+ophide Shop rsl_vopsurfacetype
+ophide Shop rsl_vopdisplacetype
+ophide Shop rsl_voplighttype
+ophide Shop rsl_vopvolumetype
+ophide Shop v_aluminum
+ophide Shop v_arealight
+ophide Shop v_attenlight
+ophide Shop v_attenspot
+ophide Shop v_blurshadow
+ophide Shop v_burlap
+ophide Shop v_cartoon
+ophide Shop v_clay
+ophide Shop v_corrugated
+ophide Shop v_distant
+ophide Shop v_dlayer
+ophide Shop v_dmap
+ophide Shop v_fogtexture
+ophide Shop v_glass
+ophide Shop v_hair
+ophide Shop v_krinkle
+ophide Shop v_layered
+ophide Shop v_metal
+ophide Shop v_oglmaterial
+ophide Shop v_ph_matte
+ophide Shop v_ph_plastic
+ophide Shop v_polka
+ophide Shop v_pointlight
+ophide Shop v_prefilter
+ophide Shop v_riverbed
+ophide Shop v_softtoon
+ophide Shop v_supermat
+ophide Shop v_volumefire
+ophide Shop v_volumematte
+ophide Shop v_window
+ophide Shop vopcvextype
+ophide Shop vopdisplacetype
+ophide Shop vopfogtype
+ophide Shop vopimage3dtype
+ophide Shop voplighttype
+ophide Shop vopphoton
+ophide Shop vopphotontype
+ophide Shop vopsurfacetype
+ophide Shop vopshadowtype
+#endif
+
+// Currently internal coshaders used by mantra
+ophide Shop physicalsss_multi
+ophide Shop physicalsss_single
+ophide Shop v_pcwriter
+ophide Shop v_sampler_geometry
+ophide Shop v_sampler_pclight
+ophide Shop v_tracer_geometry
+ophide Shop v_tracer_pclight
+
+// Legacy shaders, use PxrLMGlass, PxrLMDiffuse, PxrLMSubsurface,
+// PxrStdAreaLight.
+ophide Vop pxrglass
+ophide Vop pxrdiffuse
+ophide Vop pxrskin
+ophide Vop pxrarealight
+ophide Vop pxrgrid
+
+
+opdeprecate -r "The photon context is no longer supported" 10.0 VopNet photon vopphotontype
+
+//
+// Obsolete VOPs which are still needed for backward compatibility
+opalias Vop pxrfractalize pxrfractialize    // Corrected spelling
+opalias Vop fit shift			    // Renamed for clarity
+opdeprecate -r "glass" 11.0 Vop translucent
+opdeprecate -r "transform" 11.0 Vop spacechg objspacechg dirspacechg uvspacechg
+opfirstname Vop decal_a decal 
+opdeprecate -r "decal_a" 11.0 Vop decal
+opdeprecate -r "The photon context is no longer supported" 11.0 Vop ph_switch
+opdeprecate -r "This VOP is broken" 11.0 Vop eggshell
+opdeprecate -r "Use Export VOP with vector Ce" 11.0 Vop floattobsdf vectobsdf
+opdeprecate -r "mix" 11.0 Vop lerpbsdf
+opdeprecate -r "physicalsss" 12.0 Vop singleSSS multiSSS simpleSSS
+opdeprecate 15.0 Vop haircolor
+opdeprecate -r "hairmodel" 12.5 Vop hair hairdiff hairspec
+opdeprecate -r "texture" 13.0 Vop ptexture
+opdeprecate -r "primuv" 13.0 Vop primattrib
+opdeprecate -r "I3D is no longer supported" 14.0 Vop intersect3d integrate3d integrate3dclip
+
+// All VOPs from the Tab Submenu "Materials"
+opdeprecate 15.0 Vop banana
+opdeprecate 15.0 Vop bricks
+opdeprecate 15.0 Vop cardboard
+opdeprecate 15.0 Vop chromenv
+opdeprecate 15.0 Vop cloudenv
+opdeprecate 15.0 Vop clouds
+opdeprecate 15.0 Vop concrete
+opdeprecate 15.0 Vop fire
+opdeprecate 15.0 Vop glass
+opdeprecate 15.0 Vop glow
+opdeprecate 15.0 Vop halo
+opdeprecate 15.0 Vop marble
+opdeprecate 15.0 Vop mold
+opdeprecate 15.0 Vop mosaic
+opdeprecate 15.0 Vop oglass
+opdeprecate 15.0 Vop reflective
+opdeprecate 15.0 Vop rust
+opdeprecate 15.0 Vop shinymetal
+opdeprecate 15.0 Vop skin
+opdeprecate 15.0 Vop smoke
+opdeprecate 15.0 Vop stone
+opdeprecate 15.0 Vop stonewall
+opdeprecate 15.0 Vop stucco
+opdeprecate 15.0 Vop thinfilm
+opdeprecate 15.0 Vop twotone
+opdeprecate 15.0 Vop watersurf
+opdeprecate 15.0 Vop wireframe
+opdeprecate 15.0 Vop wood
+opdeprecate 15.0 Vop woodplank
+
+// Created new Volume Shader VOP to replace this and match the naming scheme of
+// other shaders. Don't deprecate just yet.
+opunhide Vop volumemodel
+
+// Created hairshader to match new naming scheme. This removes lighting
+// computation from the shader and adds a layer output.
+ophide Vop hairmodel
+
+// Hide some of the more obscure pattern generation VOPs.
+ophide Vop dampennoise
+ophide Vop foamy
+ophide Vop fuzzy
+ophide Vop woven
+
+#if 0
+// In the long run, we want to deprecate the subnet if, while and for
+// operators.  For now, to prevent cascading warnings in older .hip
+// files, we just hide them in favour of the new block operators.
+opdeprecate -r "block_begin_if" 15.0 Vop if
+opdeprecate -r "block_end_while" 15.0 Vop while	
+opdeprecate -r "block_begin_for" 15.0 Vop for	
+#else
+opunhide Vop if
+opunhide Vop while	
+opunhide Vop for	
+#endif
+
+// Use the file-based methods
+opdeprecate -r "neighbourfile" 15.0 Vop neighbour
+opdeprecate -r "neighbourcountfile" 15.0 Vop neighbourcount
+opdeprecate -r "volumesamplefile" 15.0 Vop volumesample
+opdeprecate -r "volumegradientfile" 15.0 Vop volumegradient
+opdeprecate -r "volumeindexfile" 15.0 Vop volumeindex
+opdeprecate -r "volumeresfile" 15.0 Vop volumeres
+opdeprecate -r "volumeindextoposfile" 15.0 Vop volumeindextopos
+opdeprecate -r "volumepostoindexfile" 15.0 Vop volumepostoindex
+
+// These should never have been in the build
+ophide Object debris
+ophide Object whitecaps
+
+// POPs are gone
+opdeprecate -r "Use DOP POPs instead" 13.0 Object popnet
+opdeprecate -r "Use DOP POPs instead" 13.0 Cop2 popnet
+opdeprecate -r "Use DOP POPs instead" 13.0 Chop popnet
+opdeprecate -r "Use DOP POPs instead" 13.0 Driver popnet
+opdeprecate -r "Use DOP POPs instead" 13.0 Shop popnet
+opdeprecate -r "Use DOP POPs instead" 13.0 Dop popshapematch popnet
+
+// Replaced by the Constraint Network and Constraint Network Relationship DOPs.
+opdeprecate -r "constraintnetwork" 13.0 Dop gluenetworkconstraint
+opdeprecate -r "constraintnetworkrelationship" 13.0 Dop gluenetworkrelationship
+opdeprecate -r "constraintnetwork" 14.0 Dop springnetworkconstraint
+opdeprecate -r "constraintnetworkrelationship" 14.0 Dop springnetworkrelationship
+opdeprecate -r "connectadjacentpieces" 13.0 Sop gluepieces
+opdeprecate -r "Use RBD Fractured Object and a glue constraint network" 14.0 Dop rbdglueobject
+opdeprecate -r "gasresizefluiddynamic" 15.0 Dop gasresizefluid
+
+// Uses old POPs, now can use dop import
+opdeprecate -r "dopimport" 14.0 Sop pop
+
+// Hide the old polyextrude and bridge SOPs
+opdeprecate -r "polybridge" 15.0 Sop bridge
+opdeprecate -r "polyextrude::2.0" 15.0 Sop polyextrude
+
+
+// Obsolete CVEX shaders
+opdeprecate 11.0 Shop fur_density_map
+opdeprecate 11.0 Shop fur_style
+opdeprecate -r "This experimental SHOP has been removed" 15.0 Shop vslnet
+
+// Hide CVEX BSDFs. They're exposed throught various VOPs and aren't so useful
+// on their own.
+ophide Shop diffuse_eval
+ophide Shop diffuse_sample
+ophide Shop fresneldiffuse_eval
+ophide Shop fresneldiffuse_sample
+ophide Shop ggx_eval
+ophide Shop ggx_sample
+ophide Shop hair_eval
+ophide Shop hair_sample
+ophide Shop henyeygreenstein_eval
+ophide Shop henyeygreenstein_sample
+ophide Shop phong_eval
+ophide Shop phong_sample
+ophide Shop principleddiffuse_eval
+ophide Shop principleddiffuse_sample
+ophide Shop specular_eval
+ophide Shop specular_sample
+
+// i3d is mostly deprecated
+opdeprecate -r "I3D is no longer supported" 14.0 Driver geo2i3d
+opdeprecate -r "I3D is no longer supported" 15.0 Driver image3d
+
+// Specify legacy input maps
+#include "OPlegacyinputs"
