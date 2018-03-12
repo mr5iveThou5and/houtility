@@ -1,0 +1,34 @@
+// Magic: 790368b7
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Mar 11 20:49:49 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+orderu.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ orderu.label = PARM_LABEL("U Order", "orderu") WIDTH(1.5);
+ PARM(integer, 1, "orderu", none, none) RANGE(2,11)
+	LOCK_RANGE LABELREF(orderu.label) HSTRETCH;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    orderu.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

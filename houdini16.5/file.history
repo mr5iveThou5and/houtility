@@ -1,6 +1,5 @@
 HIP
 {
-/media/john/wd_2tb_hdd/houdini_prjects/wine_glass_shatter/scenes/glass_lookdev.v4.hip
 /tmp/houdini_temp/crash.single_glass_shatter.v32.john_4113.hip
 /tmp/houdini_temp/crash.glass_lookdev.v4.john_11333.hip
 /media/john/wd_2tb_hdd/houdini_prjects/wine_glass_shatter/scenes/glass_lookdev.v5.hip
@@ -12,6 +11,7 @@ HIP
 /home/john/Downloads/fill_with_spheres__bullet_collision_spheres.v10.hip
 /tmp/houdini_temp/crash.single_glass_shatter.v36.john_21147.hip
 /media/john/wd_2tb_hdd/houdini_prjects/wine_glass_shatter/scenes/single_glass_shatter.v38.hip
+/home/john/Downloads/crash.organic_voronoi_art_frame_007.NURBS_close_without_seam_artifact.jkunz_34685.hipnc
 }
 PIC
 {
