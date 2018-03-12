@@ -1,0 +1,76 @@
+// Magic: b1bd20bd
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Mar  4 11:20:36 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+    PARM(float, 4, "input", none, COLOR, "R,G,B,A") 
+	LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+gain.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    gain.label = PARM_LABEL("Gain", "gain") WIDTH(1.5);
+    PARM(float, 4, "gain", none, COLOR, "R,G,B,A") 
+	LABELREF(gain.label) HSTRETCH;
+
+    gain.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(gain.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+applyToAlpha.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("applyToAlpha", "Apply To Alpha") toggle VALUE(applyToAlpha.val);
+
+    { HSTRETCH }
+
+    applyToAlpha.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(applyToAlpha.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+math_op.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    input.gad; 
+    gain.gad; 
+    applyToAlpha.gad; 
+    math_op.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

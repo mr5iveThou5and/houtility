@@ -1,0 +1,617 @@
+// Magic: 1a09dd0e
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Jan 21 15:18:51 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+density_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    density_name.label = PARM_LABEL("Channel", "density_name") WIDTH(1.5);
+    PARM_FIELD(string, "density_name") VALUE(density_name.val) 
+	LABELREF(density_name.label) HSTRETCH;
+
+    density_name.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density_name.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+scatter_coeff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scatter_coeff.label = PARM_LABEL("Scatter Coefficient", "scatter_coeff") WIDTH(1.5);
+ PARM(float, 1, "scatter_coeff", none, none) RANGE(0,10)
+	 LABELREF(scatter_coeff.label) HSTRETCH;
+
+    scatter_coeff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scatter_coeff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+scatter_tint.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    scatter_tint.label = PARM_LABEL("Tint", "scatter_tint") WIDTH(1.5);
+    PARM(float, 3, "scatter_tint", none, COLOR, "R,G,B") 
+	LABELREF(scatter_tint.label) HSTRETCH;
+
+    scatter_tint.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scatter_tint.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+scatter_ramp.si_rampedit = COLOR_RAMP VALUE(scatter_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+scatter_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+
+    ROW
+    {
+	LOOK(plain) JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	scatter_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(scatter_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+scatter_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(scatter_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(scatter_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    scatter_ramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls")
+	VALUE(scatter_ramp.toggle.val)
+	SENDSKEY("h.pane.parms.toggle_ramp_parms")
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+scatter_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    scatter_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	scatter_ramp.buttons.gad VSTRETCH;
+
+	scatter_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+scatter_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Scatter Remap Ramp", "scatter_ramp");
+
+	{ HSTRETCH }
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) LOOK(lightline) HSTRETCH
+
+	scatter_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(scatter_ramp.hideparms.val) HSTRETCH
+	    scatter_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+absorption_coeff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ absorption_coeff.label = PARM_LABEL("Absorption Coefficient", "absorption_coeff") WIDTH(1.5);
+ PARM(float, 1, "absorption_coeff", none, none) RANGE(0,10)
+	 LABELREF(absorption_coeff.label) HSTRETCH;
+
+    absorption_coeff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(absorption_coeff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+absorption_ramp.si_rampedit = FLOAT_RAMP VALUE(absorption_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+absorption_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+
+    ROW
+    {
+	LOOK(plain) JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	absorption_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(absorption_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+absorption_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(absorption_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(absorption_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    ROW
+    {
+	    absorption_ramp.toggleparms.gad
+	      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+		HELP("Hide Controls")
+		VALUE(absorption_ramp.toggle.val)
+		SENDSKEY("h.pane.parms.toggle_ramp_parms")
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+
+	    absorption_ramp.togglerampsize.gad
+	      = ACTION_ICONBUTTON "BUTTONS_restore_mini"
+		HELP("Maximize ramp")
+		VALUE(absorption_ramp.togglerampsize.val)
+		SENDSKEY("h.pane.parms.toggle_ramp_size")
+		LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+    }
+}
+
+absorption_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    absorption_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	absorption_ramp.buttons.gad VSTRETCH;
+
+	absorption_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+absorption_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Absorption Remap Ramp", "absorption_ramp");
+
+	{ HSTRETCH }
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) LOOK(darkline) HSTRETCH
+
+	absorption_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(absorption_ramp.hideparms.val) HSTRETCH
+	    absorption_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+emission_name.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    emission_name.label = PARM_LABEL("Channel", "emission_name") WIDTH(1.5);
+    PARM_FIELD(string, "emission_name") VALUE(emission_name.val) 
+	LABELREF(emission_name.label) HSTRETCH;
+
+    emission_name.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_name.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_tint.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    emission_tint.label = PARM_LABEL("Tint", "emission_tint") WIDTH(1.5);
+    PARM(float, 3, "emission_tint", none, COLOR, "R,G,B") 
+	LABELREF(emission_tint.label) HSTRETCH;
+
+    emission_tint.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_tint.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission_scale.label = PARM_LABEL("Scale", "emission_scale") WIDTH(1.5);
+ PARM(float, 1, "emission_scale", none, none) RANGE(0,10)
+	 LABELREF(emission_scale.label) HSTRETCH;
+
+    emission_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_ramp.si_rampedit = COLOR_RAMP VALUE(emission_ramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+emission_ramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+
+    ROW
+    {
+	LOOK(plain) JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	emission_ramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(emission_ramp.pointno.val) HSTRETCH;
+    }
+}
+
+emission_ramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(emission_ramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(emission_ramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    emission_ramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls")
+	VALUE(emission_ramp.toggle.val)
+	SENDSKEY("h.pane.parms.toggle_ramp_parms")
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+emission_ramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    emission_ramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	emission_ramp.buttons.gad VSTRETCH;
+
+	emission_ramp.si_rampedit HSTRETCH;
+    }
+}
+
+emission_ramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("Emission Remap Ramp", "emission_ramp");
+
+	{ HSTRETCH }
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) LOOK(lightline) HSTRETCH
+
+	emission_ramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(emission_ramp.hideparms.val) HSTRETCH
+	    emission_ramp.multiramp;
+	    {}
+	}
+    }
+}
+
+shadow_density_scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ shadow_density_scale.label = PARM_LABEL("Shadow Density Scale", "shadow_density_scale") WIDTH(1.5);
+ PARM(float, 1, "shadow_density_scale", none, none) RANGE(0,1)
+	 LABELREF(shadow_density_scale.label) HSTRETCH;
+
+    shadow_density_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(shadow_density_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+density_old_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ density_old_min.label = PARM_LABEL("Old Min", "density_old_min") WIDTH(1.5);
+ PARM(float, 1, "density_old_min", none, none) RANGE(0,10)
+	 LABELREF(density_old_min.label) HSTRETCH;
+
+    density_old_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density_old_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+density_old_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ density_old_max.label = PARM_LABEL("Old Max", "density_old_max") WIDTH(1.5);
+ PARM(float, 1, "density_old_max", none, none) RANGE(0,10)
+	 LABELREF(density_old_max.label) HSTRETCH;
+
+    density_old_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density_old_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+density_new_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ density_new_min.label = PARM_LABEL("New Min", "density_new_min") WIDTH(1.5);
+ PARM(float, 1, "density_new_min", none, none) RANGE(0,10)
+	 LABELREF(density_new_min.label) HSTRETCH;
+
+    density_new_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density_new_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+density_new_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ density_new_max.label = PARM_LABEL("New Max", "density_new_max") WIDTH(1.5);
+ PARM(float, 1, "density_new_max", none, none) RANGE(0,10)
+	 LABELREF(density_new_max.label) HSTRETCH;
+
+    density_new_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(density_new_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_old_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission_old_min.label = PARM_LABEL("Old Min", "emission_old_min") WIDTH(1.5);
+ PARM(float, 1, "emission_old_min", none, none) RANGE(0,10)
+	 LABELREF(emission_old_min.label) HSTRETCH;
+
+    emission_old_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_old_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_old_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission_old_max.label = PARM_LABEL("Old Max", "emission_old_max") WIDTH(1.5);
+ PARM(float, 1, "emission_old_max", none, none) RANGE(0,10)
+	 LABELREF(emission_old_max.label) HSTRETCH;
+
+    emission_old_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_old_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_new_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission_new_min.label = PARM_LABEL("New Min", "emission_new_min") WIDTH(1.5);
+ PARM(float, 1, "emission_new_min", none, none) RANGE(0,10)
+	 LABELREF(emission_new_min.label) HSTRETCH;
+
+    emission_new_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_new_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+emission_new_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ emission_new_max.label = PARM_LABEL("New Max", "emission_new_max") WIDTH(1.5);
+ PARM(float, 1, "emission_new_max", none, none) RANGE(0,10)
+	 LABELREF(emission_new_max.label) HSTRETCH;
+
+    emission_new_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(emission_new_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Emission_Remap_Range_4.gad = 
+GROUP simple "Emission Remap Range"
+{ 
+    VALUE(Emission_Remap_Range_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    emission_old_min.gad;		
+	    emission_old_max.gad;		
+	    emission_new_min.gad;		
+	    emission_new_max.gad;		
+} 
+
+Density_Remap_Range_3.gad = 
+GROUP simple "Density Remap Range"
+{ 
+    VALUE(Density_Remap_Range_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    density_old_min.gad;		
+	    density_old_max.gad;		
+	    density_new_min.gad;		
+	    density_new_max.gad;		
+} 
+
+Emission_2.gad = 
+GROUP simple "Emission"
+{ 
+    VALUE(Emission_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    emission_name.gad;		
+	    emission_tint.gad;		
+	    emission_scale.gad;		
+	    emission_ramp.gad;		
+} 
+
+Absorption_1.gad = 
+GROUP simple "Absorption"
+{ 
+    VALUE(Absorption_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    absorption_coeff.gad;		
+	    absorption_ramp.gad;		
+} 
+
+Scatter_0.gad = 
+GROUP simple "Scatter"
+{ 
+    VALUE(Scatter_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    density_name.gad;		
+	    scatter_coeff.gad;		
+	    scatter_tint.gad;		
+	    scatter_ramp.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Basic"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Scatter_0.gad;		
+	    Absorption_1.gad;		
+	    Emission_2.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Advanced"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    shadow_density_scale.gad;		
+	    Density_Remap_Range_3.gad;		
+	    Emission_Remap_Range_4.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

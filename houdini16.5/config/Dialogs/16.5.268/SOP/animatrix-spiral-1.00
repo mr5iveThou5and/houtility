@@ -1,0 +1,214 @@
+// Magic: e3e4be20
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Mar  3 20:13:03 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Primitive Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+}
+
+count.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ count.label = PARM_LABEL("Number Of Points", "count") WIDTH(1.5);
+ PARM(integer, 1, "count", none, none) RANGE(4,1000)
+	LOCK_RANGE_MIN LABELREF(count.label) HSTRETCH;
+
+}
+
+n.gad = ROW
+{
+   HSTRETCH
+
+   n.label = PARM_LABEL("Normal", "n") WIDTH(1.5);
+   PARM(float, 3, "n", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(n.label)
+	HSTRETCH;
+
+}
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Center", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+
+   r.label = PARM_LABEL("Radius", "r") WIDTH(1.5);
+   PARM(float, 2, "r", none, none, "X,Y")
+	RANGE(0,10)  LABELREF(r.label)
+	HSTRETCH;
+
+}
+
+falloff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ falloff.label = PARM_LABEL("Radius Falloff", "falloff") WIDTH(1.5);
+ PARM(float, 1, "falloff", none, none) RANGE(0.001,1)
+	LOCK_RANGE LABELREF(falloff.label) HSTRETCH;
+
+}
+
+roundness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ roundness.label = PARM_LABEL("Roundness", "roundness") WIDTH(1.5);
+ PARM(float, 1, "roundness", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(roundness.label) HSTRETCH;
+
+}
+
+height.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ height.label = PARM_LABEL("Height", "height") WIDTH(1.5);
+ PARM(float, 1, "height", none, none) RANGE(0,10)
+	 LABELREF(height.label) HSTRETCH;
+
+}
+
+bias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bias.label = PARM_LABEL("Bias", "bias") WIDTH(1.5);
+ PARM(float, 1, "bias", none, none) RANGE(-1,1)
+	LOCK_RANGE LABELREF(bias.label) HSTRETCH;
+
+}
+
+angle.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ angle.label = PARM_LABEL("Angle", "angle") WIDTH(1.5);
+ PARM(float, 1, "angle", none, none) RANGE(0,360)
+	 LABELREF(angle.label) HSTRETCH;
+
+}
+
+turns.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ turns.label = PARM_LABEL("Turns", "turns") WIDTH(1.5);
+ PARM(float, 1, "turns", none, none) RANGE(0,10)
+	 LABELREF(turns.label) HSTRETCH;
+
+}
+
+order.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ order.label = PARM_LABEL("Order", "order") WIDTH(1.5);
+ PARM(integer, 1, "order", none, none) RANGE(2,11)
+	LOCK_RANGE LABELREF(order.label) HSTRETCH;
+
+}
+
+s.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+ PARM(float, 1, "s", none, none) RANGE(0,10)
+	 LABELREF(s.label) HSTRETCH;
+
+}
+
+dir.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Direction", "dir") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dir.menu;
+
+    { HSTRETCH }
+
+}
+
+spherical.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("spherical", "Spherical") toggle VALUE(spherical.val);
+
+    { HSTRETCH }
+
+}
+
+guide.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("guide", "Show Guide") toggle VALUE(guide.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    type.gad; 
+    count.gad; 
+    n.gad; 
+    t.gad; 
+    r.gad; 
+    falloff.gad; 
+    roundness.gad; 
+    height.gad; 
+    bias.gad; 
+    angle.gad; 
+    turns.gad; 
+    order.gad; 
+    s.gad; 
+    dir.gad; 
+    spherical.gad; 
+    guide.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

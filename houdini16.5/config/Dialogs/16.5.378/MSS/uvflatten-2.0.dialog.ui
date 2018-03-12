@@ -1,0 +1,75 @@
+// Magic: d4052cef
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 12:35:28 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+repack.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("repack", "Repack")
+	push VALUE(repack.val);
+
+}
+
+selmodescp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "selmodescp") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    selmodescp.buttonstrip;
+
+    { HSTRETCH }
+
+}
+
+selmodeabf.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "selmodeabf") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    selmodeabf.buttonstrip;
+
+    { HSTRETCH }
+
+}
+
+pinmarkersize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pinmarkersize.label = PARM_LABEL("Pin Marker Size", "pinmarkersize") WIDTH(1.5);
+ PARM(integer, 1, "pinmarkersize", none, none) RANGE(3,12)
+	LOCK_RANGE_MIN LABELREF(pinmarkersize.label) HSTRETCH;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    repack.gad; 
+    selmodescp.gad; 
+    selmodeabf.gad; 
+    pinmarkersize.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

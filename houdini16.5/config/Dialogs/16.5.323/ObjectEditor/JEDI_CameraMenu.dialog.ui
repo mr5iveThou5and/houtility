@@ -1,0 +1,118 @@
+// Magic: ad7a1230
+// Automatically generated PSI dialog (PSI version 16.5.323)
+// Sat Jan 20 11:29:00 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+camera.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Target Camera", "camera") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    camera.menu;
+
+    { HSTRETCH }
+
+}
+
+save.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("save", "Save View to Camera")
+	push VALUE(save.val);
+
+}
+
+keyframes.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keyframes", "Add Keyframes") toggle VALUE(keyframes.val);
+
+    { HSTRETCH }
+
+}
+
+channels.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("channels", "Add Channels") toggle VALUE(channels.val);
+
+    { HSTRETCH }
+
+}
+
+psource.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Source of Pivot", "psource") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    psource.menu;
+
+    { HSTRETCH }
+
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+
+   p.label = PARM_LABEL("Pivot Point", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(p.label)
+	HSTRETCH;
+
+}
+
+pobject.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Pivot Object", "pobject") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    pobject.menu;
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    camera.gad; 
+    save.gad; 
+    keyframes.gad; 
+    channels.gad; 
+    psource.gad; 
+    p.gad; 
+    pobject.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

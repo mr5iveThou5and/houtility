@@ -1,0 +1,107 @@
+// Magic: 535c5014
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Feb 10 16:31:34 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Handle Mode", "type") ;
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    {  }
+
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Handle Mode", "xformtype") ;
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    {  }
+
+}
+
+stealthpick.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stealthpick", "Use Surface Regions Controllers") toggle VALUE(stealthpick.val);
+
+    {  }
+
+}
+
+motionpath.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("motionpath", "Motion Path") toggle VALUE(motionpath.val);
+
+    {  }
+
+}
+
+keeppos.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    {  }
+
+}
+
+childcomp.gad = ROW
+{
+    
+
+    {  }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("childcomp", "Child Compensation") toggle VALUE(childcomp.val);
+
+    {  }
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":12 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":13 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":14 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":15 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH  JUSTIFY(left, center)
+    type.gad; 
+    xformtype.gad; 
+    stealthpick.gad; 
+    motionpath.gad; 
+    keeppos.gad; 
+    childcomp.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val) HSTRETCH
+
+    dialog_norm.gad;
+}

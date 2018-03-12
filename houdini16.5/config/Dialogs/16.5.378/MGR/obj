@@ -1,0 +1,27 @@
+// Magic: 3c21d345
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Sat Feb 17 10:22:13 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

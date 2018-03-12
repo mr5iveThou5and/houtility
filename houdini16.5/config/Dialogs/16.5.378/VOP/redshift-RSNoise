@@ -1,0 +1,437 @@
+// Magic: abe2070
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 12:18:36 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+color1.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color1.label = PARM_LABEL("Color 1", "color1") WIDTH(1.5);
+    PARM(float, 4, "color1", none, COLOR, "R,G,B,A") 
+	LABELREF(color1.label) HSTRETCH;
+
+    color1.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color1.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+color2.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color2.label = PARM_LABEL("Color 2", "color2") WIDTH(1.5);
+    PARM(float, 4, "color2", none, COLOR, "R,G,B,A") 
+	LABELREF(color2.label) HSTRETCH;
+
+    color2.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color2.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+color_invert.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("color_invert", "Invert") toggle VALUE(color_invert.val);
+
+    { HSTRETCH }
+
+    color_invert.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color_invert.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+range_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ range_min.label = PARM_LABEL("Min", "range_min") WIDTH(1.5);
+ PARM(float, 1, "range_min", none, none) RANGE(-2,2)
+	 LABELREF(range_min.label) HSTRETCH;
+
+    range_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(range_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+range_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ range_max.label = PARM_LABEL("Max", "range_max") WIDTH(1.5);
+ PARM(float, 1, "range_max", none, none) RANGE(0,1)
+	 LABELREF(range_max.label) HSTRETCH;
+
+    range_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(range_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+range_bias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ range_bias.label = PARM_LABEL("Bias", "range_bias") WIDTH(1.5);
+ PARM(float, 1, "range_bias", none, none) RANGE(0,1)
+	 LABELREF(range_bias.label) HSTRETCH;
+
+    range_bias.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(range_bias.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+noise_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Noise Type", "noise_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    noise_type.menu;
+
+    { HSTRETCH }
+
+    noise_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(noise_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+noise_complexity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ noise_complexity.label = PARM_LABEL("Complexity", "noise_complexity") WIDTH(1.5);
+ PARM(integer, 1, "noise_complexity", none, none) RANGE(0,32)
+	 LABELREF(noise_complexity.label) HSTRETCH;
+
+    noise_complexity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(noise_complexity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+noise_gain.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ noise_gain.label = PARM_LABEL("Amplitude Gain", "noise_gain") WIDTH(1.5);
+ PARM(float, 1, "noise_gain", none, none) RANGE(-10,10)
+	 LABELREF(noise_gain.label) HSTRETCH;
+
+    noise_gain.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(noise_gain.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+noise_scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ noise_scale.label = PARM_LABEL("Frequency Scale", "noise_scale") WIDTH(1.5);
+ PARM(float, 1, "noise_scale", none, none) RANGE(0,10)
+	 LABELREF(noise_scale.label) HSTRETCH;
+
+    noise_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(noise_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+distort.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ distort.label = PARM_LABEL("Distortion", "distort") WIDTH(1.5);
+ PARM(float, 1, "distort", none, none) RANGE(0,10)
+	 LABELREF(distort.label) HSTRETCH;
+
+    distort.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(distort.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+distort_scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ distort_scale.label = PARM_LABEL("Distortion Scale", "distort_scale") WIDTH(1.5);
+ PARM(float, 1, "distort_scale", none, none) RANGE(0,10)
+	 LABELREF(distort_scale.label) HSTRETCH;
+
+    distort_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(distort_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+time_source.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Source", "time_source") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    time_source.menu;
+
+    { HSTRETCH }
+
+    time_source.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(time_source.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+time_constant.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ time_constant.label = PARM_LABEL("Constant Scale", "time_constant") WIDTH(1.5);
+ PARM(float, 1, "time_constant", none, none) RANGE(0,100)
+	 LABELREF(time_constant.label) HSTRETCH;
+
+    time_constant.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(time_constant.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+time.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ time.label = PARM_LABEL("User Time", "time") WIDTH(1.5);
+ PARM(float, 1, "time", none, none) RANGE(0,2)
+	 LABELREF(time.label) HSTRETCH;
+
+    time.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(time.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+coord_source.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Source", "coord_source") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    coord_source.menu;
+
+    { HSTRETCH }
+
+    coord_source.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_source.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+coord_attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    coord_attribute.label = PARM_LABEL("Vertex Attribute Name", "coord_attribute") WIDTH(1.5);
+    PARM_FIELD(string, "coord_attribute") VALUE(coord_attribute.val) 
+	LABELREF(coord_attribute.label) HSTRETCH;
+
+    coord_attribute.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_attribute.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+coord_scale_global.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ coord_scale_global.label = PARM_LABEL("Overall Scale", "coord_scale_global") WIDTH(1.5);
+ PARM(float, 1, "coord_scale_global", none, none) RANGE(0,20)
+	 LABELREF(coord_scale_global.label) HSTRETCH;
+
+    coord_scale_global.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_scale_global.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+coord_scale.gad = ROW
+{
+   HSTRETCH
+
+   coord_scale.label = PARM_LABEL("Scale", "coord_scale") WIDTH(1.5);
+   PARM(float, 3, "coord_scale", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(coord_scale.label)
+	HSTRETCH;
+
+    coord_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+coord_offset.gad = ROW
+{
+   HSTRETCH
+
+   coord_offset.label = PARM_LABEL("Offset", "coord_offset") WIDTH(1.5);
+   PARM(float, 3, "coord_offset", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(coord_offset.label)
+	HSTRETCH;
+
+    coord_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(coord_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+General_5.gad = 
+GROUP simple "General"
+{ 
+    VALUE(General_5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    coord_source.gad;		
+	    coord_attribute.gad;		
+	    coord_scale_global.gad;		
+	    coord_scale.gad;		
+	    coord_offset.gad;		
+} 
+
+Time_4.gad = 
+GROUP simple "Time"
+{ 
+    VALUE(Time_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    time_source.gad;		
+	    time_constant.gad;		
+	    time.gad;		
+} 
+
+Fractal/Turbulence_3.gad = 
+GROUP simple "Fractal/Turbulence"
+{ 
+    VALUE(Fractal/Turbulence_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    noise_complexity.gad;		
+	    noise_gain.gad;		
+	    noise_scale.gad;		
+	    distort.gad;		
+	    distort_scale.gad;		
+	    Time_4.gad;		
+} 
+
+General_2.gad = 
+GROUP simple "General"
+{ 
+    VALUE(General_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    noise_type.gad;		
+	    Fractal/Turbulence_3.gad;		
+} 
+
+Remap_1.gad = 
+GROUP simple "Remap"
+{ 
+    VALUE(Remap_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    range_min.gad;		
+	    range_max.gad;		
+	    range_bias.gad;		
+} 
+
+General_0.gad = 
+GROUP simple "General"
+{ 
+    VALUE(General_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    color1.gad;		
+	    color2.gad;		
+	    color_invert.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Color"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    General_0.gad;		
+	    Remap_1.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Noise"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    General_2.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Coordinates"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    General_5.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

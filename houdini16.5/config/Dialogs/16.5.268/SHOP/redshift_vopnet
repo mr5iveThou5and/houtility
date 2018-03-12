@@ -1,0 +1,132 @@
+// Magic: b68ac76d
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Jan 21 15:18:37 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+RS_matprop_ID.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_matprop_ID.label = PARM_LABEL("Material ID", "RS_matprop_ID") WIDTH(1.5);
+ PARM(integer, 1, "RS_matprop_ID", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(RS_matprop_ID.label) HSTRETCH;
+
+}
+
+ogl_diff.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ogl_diff.label = PARM_LABEL("OGL Diffuse", "ogl_diff") WIDTH(1.5);
+    PARM(float, 3, "ogl_diff", none, COLOR, "R,G,B") 
+	LABELREF(ogl_diff.label) HSTRETCH;
+
+}
+
+ogl_emit.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ogl_emit.label = PARM_LABEL("OGL Emission", "ogl_emit") WIDTH(1.5);
+    PARM(float, 3, "ogl_emit", none, COLOR, "R,G,B") 
+	LABELREF(ogl_emit.label) HSTRETCH;
+
+}
+
+ogl_spec.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ogl_spec.label = PARM_LABEL("OGL Specular", "ogl_spec") WIDTH(1.5);
+    PARM(float, 3, "ogl_spec", none, COLOR, "R,G,B") 
+	LABELREF(ogl_spec.label) HSTRETCH;
+
+}
+
+ogl_rough.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ogl_rough.label = PARM_LABEL("OGL Roughness", "ogl_rough") WIDTH(1.5);
+ PARM(float, 1, "ogl_rough", none, none) RANGE(0,1)
+	 LABELREF(ogl_rough.label) HSTRETCH;
+
+}
+
+ogl_alpha.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ogl_alpha.label = PARM_LABEL("OGL Alpha", "ogl_alpha") WIDTH(1.5);
+ PARM(float, 1, "ogl_alpha", none, none) RANGE(0,1)
+	 LABELREF(ogl_alpha.label) HSTRETCH;
+
+}
+
+ogl_light.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ogl_light", "OGL Use Lighting") toggle VALUE(ogl_light.val);
+
+    { HSTRETCH }
+
+}
+
+Redshift_SHOP_parmSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(Redshift_SHOP_parmSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_matprop_ID.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "OpenGL"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    ogl_diff.gad;		
+	    ogl_emit.gad;		
+	    ogl_spec.gad;		
+	    ogl_rough.gad;		
+	    ogl_alpha.gad;		
+	    ogl_light.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    Redshift_SHOP_parmSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

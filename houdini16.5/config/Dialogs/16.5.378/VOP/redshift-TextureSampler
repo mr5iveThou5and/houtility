@@ -1,0 +1,479 @@
+// Magic: 9f7f1385
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 15 21:14:47 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+tex0.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ tex0.label = PARM_LABEL("Filename", "tex0") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "tex0") LABELREF(tex0.label)
+	VALUE(tex0.val) HSTRETCH;
+
+    tex0.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(tex0.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    tex0.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tex0.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tex0_gammaoverride.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tex0_gammaoverride", "Enable") toggle VALUE(tex0_gammaoverride.val);
+
+    { HSTRETCH }
+
+    tex0_gammaoverride.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tex0_gammaoverride.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tex0_srgb.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tex0_srgb", "sRGB") toggle VALUE(tex0_srgb.val);
+
+    { HSTRETCH }
+
+    tex0_srgb.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tex0_srgb.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tex0_gamma.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ tex0_gamma.label = PARM_LABEL("Gamma", "tex0_gamma") WIDTH(1.5);
+ PARM(float, 1, "tex0_gamma", none, none) RANGE(0,16)
+	 LABELREF(tex0_gamma.label) HSTRETCH;
+
+    tex0_gamma.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tex0_gamma.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tspace_id.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    tspace_id.label = PARM_LABEL("UV Channel", "tspace_id") WIDTH(1.5);
+    PARM_FIELD(string, "tspace_id") VALUE(tspace_id.val) 
+	LABELREF(tspace_id.label) HSTRETCH;
+
+    tspace_id.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tspace_id.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+mirrorU.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirrorU", "Mirror U") toggle VALUE(mirrorU.val);
+
+    { HSTRETCH }
+
+    mirrorU.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mirrorU.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+mirrorV.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mirrorV", "Mirror V") toggle VALUE(mirrorV.val);
+
+    { HSTRETCH }
+
+    mirrorV.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mirrorV.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+wrapU.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wrapU", "Wrap U") toggle VALUE(wrapU.val);
+
+    { HSTRETCH }
+
+    wrapU.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrapU.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+wrapV.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wrapV", "Wrap V") toggle VALUE(wrapV.val);
+
+    { HSTRETCH }
+
+    wrapV.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrapV.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+scale.gad = ROW
+{
+   HSTRETCH
+
+   scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+   PARM(float, 2, "scale", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(scale.label)
+	HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+offset.gad = ROW
+{
+   HSTRETCH
+
+   offset.label = PARM_LABEL("Offset", "offset") WIDTH(1.5);
+   PARM(float, 2, "offset", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(offset.label)
+	HSTRETCH;
+
+    offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+rotate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ rotate.label = PARM_LABEL("Rotate", "rotate") WIDTH(1.5);
+ PARM(float, 1, "rotate", none, none) RANGE(0,360)
+	 LABELREF(rotate.label) HSTRETCH;
+
+    rotate.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(rotate.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+color_multiplier.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color_multiplier.label = PARM_LABEL("Color Multiplier", "color_multiplier") WIDTH(1.5);
+    PARM(float, 3, "color_multiplier", none, COLOR, "R,G,B") 
+	LABELREF(color_multiplier.label) HSTRETCH;
+
+    color_multiplier.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color_multiplier.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+color_offset.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color_offset.label = PARM_LABEL("Color Offset", "color_offset") WIDTH(1.5);
+    PARM(float, 3, "color_offset", none, COLOR, "R,G,B") 
+	LABELREF(color_offset.label) HSTRETCH;
+
+    color_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alpha_multiplier.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ alpha_multiplier.label = PARM_LABEL("Alpha Multiplier", "alpha_multiplier") WIDTH(1.5);
+ PARM(float, 1, "alpha_multiplier", none, none) RANGE(0,1)
+	 LABELREF(alpha_multiplier.label) HSTRETCH;
+
+    alpha_multiplier.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha_multiplier.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alpha_offset.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ alpha_offset.label = PARM_LABEL("Alpha Offset", "alpha_offset") WIDTH(1.5);
+ PARM(float, 1, "alpha_offset", none, none) RANGE(0,1)
+	 LABELREF(alpha_offset.label) HSTRETCH;
+
+    alpha_offset.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha_offset.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alpha_is_luminance.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alpha_is_luminance", "Alpha Is Luminance") toggle VALUE(alpha_is_luminance.val);
+
+    { HSTRETCH }
+
+    alpha_is_luminance.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha_is_luminance.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+invalid_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    invalid_color.label = PARM_LABEL("Default/Invalid Color", "invalid_color") WIDTH(1.5);
+    PARM(float, 4, "invalid_color", none, COLOR, "R,G,B,A") 
+	LABELREF(invalid_color.label) HSTRETCH;
+
+    invalid_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(invalid_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+filter_enable_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Filter Enable", "filter_enable_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    filter_enable_type.menu;
+
+    { HSTRETCH }
+
+    filter_enable_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(filter_enable_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+filter_bicubic.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("filter_bicubic", "Bicubic Filtering") toggle VALUE(filter_bicubic.val);
+
+    { HSTRETCH }
+
+    filter_bicubic.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(filter_bicubic.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+prefer_sharp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("prefer_sharp", "Prefer Sharp Filtering") toggle VALUE(prefer_sharp.val);
+
+    { HSTRETCH }
+
+    prefer_sharp.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(prefer_sharp.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+mip_bias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ mip_bias.label = PARM_LABEL("Mip Bias", "mip_bias") WIDTH(1.5);
+ PARM(float, 1, "mip_bias", none, none) RANGE(-32,32)
+	 LABELREF(mip_bias.label) HSTRETCH;
+
+    mip_bias.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(mip_bias.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Remap_3.gad = 
+GROUP simple "Remap"
+{ 
+    VALUE(Remap_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    scale.gad;		
+	    offset.gad;		
+	    rotate.gad;		
+} 
+
+UV_2.gad = 
+GROUP simple "UV"
+{ 
+    VALUE(UV_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tspace_id.gad;		
+	    mirrorU.gad;		
+	    mirrorV.gad;		
+	    wrapU.gad;		
+	    wrapV.gad;		
+	    Remap_3.gad;		
+} 
+
+Gamma_Override_1.gad = 
+GROUP simple "Gamma Override"
+{ 
+    VALUE(Gamma_Override_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tex0_gammaoverride.gad;		
+	    tex0_srgb.gad;		
+	    tex0_gamma.gad;		
+} 
+
+Image_0.gad = 
+GROUP simple "Image"
+{ 
+    VALUE(Image_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tex0.gad;		
+	    Gamma_Override_1.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "General"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Image_0.gad;		
+	    UV_2.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Adjust"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    color_multiplier.gad;		
+	    color_offset.gad;		
+	    alpha_multiplier.gad;		
+	    alpha_offset.gad;		
+	    alpha_is_luminance.gad;		
+	    invalid_color.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Advanced"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    filter_enable_type.gad;		
+	    filter_bicubic.gad;		
+	    prefer_sharp.gad;		
+	    mip_bias.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

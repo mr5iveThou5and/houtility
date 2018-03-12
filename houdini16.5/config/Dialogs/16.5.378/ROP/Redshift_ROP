@@ -1,0 +1,4590 @@
+// Magic: af56c019
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 15 21:23:40 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+RS_IPR.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+RS_IPR.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("RS_IPR", "Open IPR")
+	push VALUE(RS_IPR.val);
+
+}
+
+RS_IPRRV.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("RS_IPRRV", "Open RenderView")
+	push VALUE(RS_IPRRV.val);
+
+}
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("execute", "Render to Disk")
+	push VALUE(execute.val);
+
+}
+
+renderpreview.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("renderpreview", "Render to MPlay")
+	push VALUE(renderpreview.val);
+
+}
+
+renderdialog.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(0) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("renderdialog", "Controls...")
+	push VALUE(renderdialog.val);
+
+}
+}	// Template join.bot
+
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    { HSTRETCH }
+
+}
+
+f.gad = ROW
+{
+   HSTRETCH
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(f.label)
+	HSTRETCH;
+
+}
+
+take.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Render With Take", "take") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    take.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_separator_rrs2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_rrs2.sval := 0;
+
+RS_rrs2.gad = 
+{
+    LAYOUT(vertical) SPACING(1p) HSTRETCH VMARGIN(0.05, 0)
+
+    SWITCHER tight
+    {
+	VALUE(RS_rrs2.sval) HSTRETCH
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+	    LABEL "Redshift Settings" HSTRETCH;
+
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+        {
+            LAYOUT(horizontal) HSTRETCH
+
+            LABEL "Redshift Settings":1.5 JUSTIFY(right, center);
+
+            LABEL VALUE(RS_rrs2.val[0]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[1]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[2]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[3]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[4]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[5]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[6]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[7]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[8]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[9]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[10]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[11]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[12]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[13]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[14]) JUSTIFY(center,center) HSTRETCH;
+            LABEL VALUE(RS_rrs2.val[15]) JUSTIFY(center,center) HSTRETCH;
+        }
+
+    }
+}
+
+RS_renderCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_renderCamera.label = PARM_LABEL("Render Camera", "RS_renderCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_renderCamera") VALUE(RS_renderCamera.val) 
+	LABELREF(RS_renderCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_renderCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_renderCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_separator_renderCamera.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_overrideCameraRes.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_overrideCameraRes", "Override Camera Resolution") toggle VALUE(RS_overrideCameraRes.val);
+
+    { HSTRETCH }
+
+}
+
+RS_overrideResScale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Resolution Scale", "RS_overrideResScale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_overrideResScale.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_overrideRes.gad = ROW
+{
+   HSTRETCH
+
+   RS_overrideRes.label = PARM_LABEL("Resolution", "RS_overrideRes") WIDTH(1.5);
+   PARM(integer, 2, "RS_overrideRes", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_overrideRes.label)
+	HSTRETCH;
+
+}
+
+RS_separator_overrideRes.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_matOverride_enable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_matOverride_enable", "Override Scene Materials") toggle VALUE(RS_matOverride_enable.val);
+
+    { HSTRETCH }
+
+}
+
+RS_matOverride_mat.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_matOverride_mat.label = PARM_LABEL("Override Material", "RS_matOverride_mat") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_matOverride_mat") VALUE(RS_matOverride_mat.val) 
+	LABELREF(RS_matOverride_mat.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_matOverride_mat.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_matOverride_mat.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_matOverride_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_matOverride_exclude.label = PARM_LABEL("Exclude Objects", "RS_matOverride_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_matOverride_exclude") LABELREF(RS_matOverride_exclude.label) 
+	VALUE(RS_matOverride_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_matOverride_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_separator_overrideMaterials.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_updateMeshDeform.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_updateMeshDeform", "Sequence Rendering Full Scene Reload") toggle VALUE(RS_updateMeshDeform.val);
+
+    { HSTRETCH }
+
+}
+
+RS_updateMeshNoReload.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_updateMeshNoReload", "Sequence Rendering Update Mesh Geometry") toggle VALUE(RS_updateMeshNoReload.val);
+
+    { HSTRETCH }
+
+}
+
+RS_updateMeshNoReload_list.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_updateMeshNoReload_list.label = PARM_LABEL("Update Objects", "RS_updateMeshNoReload_list") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_updateMeshNoReload_list") LABELREF(RS_updateMeshNoReload_list.label) 
+	VALUE(RS_updateMeshNoReload_list.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_updateMeshNoReload_list.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_separator_updateMeshDeform.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_globalEnvironment.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_globalEnvironment.label = PARM_LABEL("Global Environment", "RS_globalEnvironment") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_globalEnvironment") VALUE(RS_globalEnvironment.val) 
+	LABELREF(RS_globalEnvironment.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_globalEnvironment.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_globalEnvironment.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_apply_stylesheets.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    RS_apply_stylesheets.label = PARM_LABEL("Apply Style Sheets", "RS_apply_stylesheets") WIDTH(1.5);
+    PARM_FIELD(string, "RS_apply_stylesheets") VALUE(RS_apply_stylesheets.val) 
+	LABELREF(RS_apply_stylesheets.label) HSTRETCH;
+
+}
+
+RS_initSimulations.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_initSimulations", "Initialize Simulation OPs") toggle VALUE(RS_initSimulations.val);
+
+    { HSTRETCH }
+
+}
+
+RS_multihreadLoader.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_multihreadLoader", "Multi-thread OBJ Nodes Extraction") toggle VALUE(RS_multihreadLoader.val);
+
+    { HSTRETCH }
+
+}
+
+RS_multihreadPacked.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_multihreadPacked", "Multi-thread Packed Geo Extraction") toggle VALUE(RS_multihreadPacked.val);
+
+    { HSTRETCH }
+
+}
+
+RS_nonBlockingRendering.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_nonBlockingRendering", "Non-blocking Current Frame Rendering") toggle VALUE(RS_nonBlockingRendering.val);
+
+    { HSTRETCH }
+
+}
+
+RS_addDefaultLight.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_addDefaultLight", "Default Headlight Creation") toggle VALUE(RS_addDefaultLight.val);
+
+    { HSTRETCH }
+
+}
+
+RS_reportErrorsToROP.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_reportErrorsToROP", "Report Errors/Warnings to the ROP Node") toggle VALUE(RS_reportErrorsToROP.val);
+
+    { HSTRETCH }
+
+}
+
+RS_arbitraryUVMapNames.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_arbitraryUVMapNames", "Extract Any UVW Type Attribute With Arbitrary Name As UV Map Attribute") toggle VALUE(RS_arbitraryUVMapNames.val);
+
+    { HSTRETCH }
+
+}
+
+RS_useAlembicProcedural.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_useAlembicProcedural", "(EXPERIMENTAL) Use Alembic Procedural") toggle VALUE(RS_useAlembicProcedural.val);
+
+    { HSTRETCH }
+
+}
+
+RS_renderToMPlay.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_renderToMPlay", "Render to MPlay") toggle VALUE(RS_renderToMPlay.val);
+
+    { HSTRETCH }
+
+}
+
+RS_renderAOVsToMPlay.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_renderAOVsToMPlay", "Render AOVs to MPlay") toggle VALUE(RS_renderAOVsToMPlay.val);
+
+    { HSTRETCH }
+
+}
+
+RS_overwriteMPlayImage.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_overwriteMPlayImage", "Overwrite MPlay Image") toggle VALUE(RS_overwriteMPlayImage.val);
+
+    { HSTRETCH }
+
+}
+
+RS_MPlay_disabledNonGUI.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_MPlay_disabledNonGUI", "Disable MPlay in the non-GUI tools") toggle VALUE(RS_MPlay_disabledNonGUI.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_overwriteMPlayImage.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_outputEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputEnable", "Enable Image File Output") toggle VALUE(RS_outputEnable.val);
+
+    { HSTRETCH }
+
+}
+
+RS_outputFileNamePrefix.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ RS_outputFileNamePrefix.label = PARM_LABEL("Common File Prefix", "RS_outputFileNamePrefix") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_outputFileNamePrefix") LABELREF(RS_outputFileNamePrefix.label)
+	VALUE(RS_outputFileNamePrefix.val) HSTRETCH;
+
+    RS_outputFileNamePrefix.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_outputFileNamePrefix.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_outputBeautyAOVSuffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    RS_outputBeautyAOVSuffix.label = PARM_LABEL("Beauty AOV File Suffix", "RS_outputBeautyAOVSuffix") WIDTH(1.5);
+    PARM_FIELD(string, "RS_outputBeautyAOVSuffix") VALUE(RS_outputBeautyAOVSuffix.val) 
+	LABELREF(RS_outputBeautyAOVSuffix.label) HSTRETCH;
+
+}
+
+RS_outputSkipRendered.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputSkipRendered", "Skip Rendered Frames") toggle VALUE(RS_outputSkipRendered.val);
+
+    { HSTRETCH }
+
+}
+
+RS_outputCreateDirs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_outputCreateDirs", "Create Intermediate Directories") toggle VALUE(RS_outputCreateDirs.val);
+
+    { HSTRETCH }
+
+}
+
+RS_outputFileFormat.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("File Format", "RS_outputFileFormat") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputFileFormat.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_outputBits.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Bits per Channel", "RS_outputBits") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputBits.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_outputTiffCompression.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("TIFF Compression", "RS_outputTiffCompression") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputTiffCompression.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_outputExrCompression.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("EXR Compression", "RS_outputExrCompression") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputExrCompression.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_outputDwaCompression.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_outputDwaCompression.label = PARM_LABEL("DWA Compression", "RS_outputDwaCompression") WIDTH(1.5);
+ PARM(float, 1, "RS_outputDwaCompression", none, none) RANGE(0,400)
+	LOCK_RANGE LABELREF(RS_outputDwaCompression.label) HSTRETCH;
+
+}
+
+RS_outputJpgCompression.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_outputJpgCompression.label = PARM_LABEL("JPG Compression", "RS_outputJpgCompression") WIDTH(1.5);
+ PARM(integer, 1, "RS_outputJpgCompression", none, none) RANGE(10,100)
+	LOCK_RANGE LABELREF(RS_outputJpgCompression.label) HSTRETCH;
+
+}
+
+RS_outputStorageFormat.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Storage Format", "RS_outputStorageFormat") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputStorageFormat.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_outputMultilayerMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Multi-Layered EXR", "RS_outputMultilayerMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_outputMultilayerMode.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_aovMultilayerBeauty.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovMultilayerBeauty", "Beauty Channel Included in the Multi-Layered EXR") toggle VALUE(RS_aovMultilayerBeauty.val);
+
+    { HSTRETCH }
+
+}
+
+RS_aovAutocrop.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovAutocrop", "Autocrop") toggle VALUE(RS_aovAutocrop.val);
+
+    { HSTRETCH }
+
+}
+
+RS_aovMultipart.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovMultipart", "Multipart EXR") toggle VALUE(RS_aovMultipart.val);
+
+    { HSTRETCH }
+
+}
+
+RS_aov.parm =
+{
+    LAYOUT(horizontal) SPACING(0.02) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("AOV", "RS_aov") WIDTH(1.5);
+    { WIDTH(0.08) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center)  VALUE(RS_aov.val)
+
+        RS_aov.field = PARM_FIELD (integer, "RS_aov")
+				VALUE(RS_aov.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(RS_aov.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(RS_aov.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(RS_aov.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+RS_aov.multilist = 
+{
+    LAYOUT(vertical) STRETCH MARGIN(0.05)
+}
+
+RS_aov.gad =
+{
+    LAYOUT(vertical) STRETCH SPACING(0.02)
+
+    RS_aov.parm;
+    RS_aov.multilist;
+}
+
+RS_aovDeepEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_aovDeepEnabled", "Enable Deep Output") toggle VALUE(RS_aovDeepEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+AOVDeepMergeMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Deep Merge Mode", "AOVDeepMergeMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    AOVDeepMergeMode.menu;
+
+    { HSTRETCH }
+
+}
+
+AOVDeepMergeZThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ AOVDeepMergeZThreshold.label = PARM_LABEL("Deep Merge Z Threshol", "AOVDeepMergeZThreshold") WIDTH(1.5);
+ PARM(float, 1, "AOVDeepMergeZThreshold", none, none) RANGE(0,100000)
+	 LABELREF(AOVDeepMergeZThreshold.label) HSTRETCH;
+
+}
+
+AOVMaxOverbrightEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOVMaxOverbrightEnable", "Enable Clamping") toggle VALUE(AOVMaxOverbrightEnable.val);
+
+    { HSTRETCH }
+
+}
+
+AOVMaxOverbright.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ AOVMaxOverbright.label = PARM_LABEL("Clamping Max Value", "AOVMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "AOVMaxOverbright", none, none) RANGE(1,1000)
+	 LABELREF(AOVMaxOverbright.label) HSTRETCH;
+
+}
+
+AOVDisableImportanceOptimizations.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOVDisableImportanceOptimizations", "Disable Importance-based Optimization") toggle VALUE(AOVDisableImportanceOptimizations.val);
+
+    { HSTRETCH }
+
+}
+
+GammaCorrectColorInputs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("GammaCorrectColorInputs", "Automatically Correct Color Inputs") toggle VALUE(GammaCorrectColorInputs.val);
+
+    { HSTRETCH }
+
+}
+
+GammaCorrectColorAttributes.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Auto Correct Attributes", "GammaCorrectColorAttributes") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    GammaCorrectColorAttributes.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_separator_GammaCorrectColorAttributes.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_gammaPreview.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_gammaPreview.label = PARM_LABEL("MPlay Display Gamma", "RS_gammaPreview") WIDTH(1.5);
+ PARM(float, 1, "RS_gammaPreview", none, none) RANGE(1,2.2000000000000002)
+	 LABELREF(RS_gammaPreview.label) HSTRETCH;
+
+}
+
+RS_gammaFileMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Output Gamma Mode", "RS_gammaFileMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_gammaFileMode.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_gammaFile.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_gammaFile.label = PARM_LABEL("Output Gamma", "RS_gammaFile") WIDTH(1.5);
+ PARM(float, 1, "RS_gammaFile", none, none) RANGE(1,2.2000000000000002)
+	 LABELREF(RS_gammaFile.label) HSTRETCH;
+
+}
+
+RS_gammaSamplingMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Sampling Gamma Mode", "RS_gammaSamplingMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_gammaSamplingMode.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_gammaSampling.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_gammaSampling.label = PARM_LABEL("Sampling Gamma", "RS_gammaSampling") WIDTH(1.5);
+ PARM(float, 1, "RS_gammaSampling", none, none) RANGE(1,2.2000000000000002)
+	 LABELREF(RS_gammaSampling.label) HSTRETCH;
+
+}
+
+ProgressiveRenderingEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ProgressiveRenderingEnabled", "Enabled") toggle VALUE(ProgressiveRenderingEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+ProgressiveRenderingNumPasses.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ProgressiveRenderingNumPasses.label = PARM_LABEL("Passes", "ProgressiveRenderingNumPasses") WIDTH(1.5);
+ PARM(integer, 1, "ProgressiveRenderingNumPasses", none, none) RANGE(1,65536)
+	 LABELREF(ProgressiveRenderingNumPasses.label) HSTRETCH;
+
+}
+
+UnifiedMinSamples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ UnifiedMinSamples.label = PARM_LABEL("Min Samples", "UnifiedMinSamples") WIDTH(1.5);
+ PARM(integer, 1, "UnifiedMinSamples", none, none) RANGE(1,8192)
+	 LABELREF(UnifiedMinSamples.label) HSTRETCH;
+
+}
+
+UnifiedMaxSamples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ UnifiedMaxSamples.label = PARM_LABEL("Max Samples", "UnifiedMaxSamples") WIDTH(1.5);
+ PARM(integer, 1, "UnifiedMaxSamples", none, none) RANGE(1,8192)
+	 LABELREF(UnifiedMaxSamples.label) HSTRETCH;
+
+}
+
+UnifiedAdaptiveErrorThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ UnifiedAdaptiveErrorThreshold.label = PARM_LABEL("Adaptive Error Threshold", "UnifiedAdaptiveErrorThreshold") WIDTH(1.5);
+ PARM(float, 1, "UnifiedAdaptiveErrorThreshold", none, none) RANGE(0,1)
+	 LABELREF(UnifiedAdaptiveErrorThreshold.label) HSTRETCH;
+
+}
+
+UnifiedDebugDrawSamples.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedDebugDrawSamples", "Show Samples") toggle VALUE(UnifiedDebugDrawSamples.val);
+
+    { HSTRETCH }
+
+}
+
+UnifiedDisableDivision.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedDisableDivision", "Don't Automatically Reduce Samples of Other Effects") toggle VALUE(UnifiedDisableDivision.val);
+
+    { HSTRETCH }
+
+}
+
+UnifiedRandomizePattern.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("UnifiedRandomizePattern", "Randomize Pattern on Each Frame") toggle VALUE(UnifiedRandomizePattern.val);
+
+    { HSTRETCH }
+
+}
+
+RS_UnifiedRandomizePattern_randomFrameID.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_UnifiedRandomizePattern_randomFrameID", "Random Pattern FrameID") toggle VALUE(RS_UnifiedRandomizePattern_randomFrameID.val);
+
+    { HSTRETCH }
+
+}
+
+UnifiedFilterType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Filter Type", "UnifiedFilterType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    UnifiedFilterType.menu;
+
+    { HSTRETCH }
+
+}
+
+UnifiedFilterSize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ UnifiedFilterSize.label = PARM_LABEL("Filter Size", "UnifiedFilterSize") WIDTH(1.5);
+ PARM(float, 1, "UnifiedFilterSize", none, none) RANGE(9.9999997473787516e-05,6)
+	 LABELREF(UnifiedFilterSize.label) HSTRETCH;
+
+}
+
+GlossyRayMaxOverbright.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ GlossyRayMaxOverbright.label = PARM_LABEL("Max Subsample Intensity", "GlossyRayMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "GlossyRayMaxOverbright", none, none) RANGE(1,1000)
+	 LABELREF(GlossyRayMaxOverbright.label) HSTRETCH;
+
+}
+
+UnifiedMaxOverbright.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ UnifiedMaxOverbright.label = PARM_LABEL("Max Secondary Ray Intensity", "UnifiedMaxOverbright") WIDTH(1.5);
+ PARM(float, 1, "UnifiedMaxOverbright", none, none) RANGE(1,1000)
+	 LABELREF(UnifiedMaxOverbright.label) HSTRETCH;
+
+}
+
+ReflectSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectSamplesEnabled", "Override Samples") toggle VALUE(ReflectSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+ReflectSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectSamplesMode", "Scale Samples") toggle VALUE(ReflectSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+ReflectSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ReflectSamplesCount.label = PARM_LABEL("Samples", "ReflectSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "ReflectSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(ReflectSamplesCount.label) HSTRETCH;
+
+}
+
+ReflectSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ReflectSamplesScale.label = PARM_LABEL("Samples Scale", "ReflectSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "ReflectSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(ReflectSamplesScale.label) HSTRETCH;
+
+}
+
+RefractSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractSamplesEnabled", "Override Samples") toggle VALUE(RefractSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+RefractSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractSamplesMode", "Scale Samples") toggle VALUE(RefractSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+RefractSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RefractSamplesCount.label = PARM_LABEL("Samples", "RefractSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "RefractSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(RefractSamplesCount.label) HSTRETCH;
+
+}
+
+RefractSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RefractSamplesScale.label = PARM_LABEL("Samples Scale", "RefractSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "RefractSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(RefractSamplesScale.label) HSTRETCH;
+
+}
+
+AOSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOSamplesEnabled", "Override Samples") toggle VALUE(AOSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+AOSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AOSamplesMode", "Scale Samples") toggle VALUE(AOSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+AOSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ AOSamplesCount.label = PARM_LABEL("Samples", "AOSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "AOSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(AOSamplesCount.label) HSTRETCH;
+
+}
+
+AOSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ AOSamplesScale.label = PARM_LABEL("Samples Scale", "AOSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "AOSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(AOSamplesScale.label) HSTRETCH;
+
+}
+
+LightSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("LightSamplesEnabled", "Override Samples") toggle VALUE(LightSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+LightSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("LightSamplesMode", "Scale Samples") toggle VALUE(LightSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+LightSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ LightSamplesCount.label = PARM_LABEL("Samples", "LightSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "LightSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(LightSamplesCount.label) HSTRETCH;
+
+}
+
+LightSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ LightSamplesScale.label = PARM_LABEL("Samples Scale", "LightSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "LightSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(LightSamplesScale.label) HSTRETCH;
+
+}
+
+VolumeSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolumeSamplesEnabled", "Override Samples") toggle VALUE(VolumeSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+VolumeSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolumeSamplesMode", "Scale Samples") toggle VALUE(VolumeSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+VolumeSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolumeSamplesCount.label = PARM_LABEL("Samples", "VolumeSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "VolumeSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(VolumeSamplesCount.label) HSTRETCH;
+
+}
+
+VolumeSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolumeSamplesScale.label = PARM_LABEL("Samples Scale", "VolumeSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "VolumeSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(VolumeSamplesScale.label) HSTRETCH;
+
+}
+
+SingleScatteringSamplesEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SingleScatteringSamplesEnabled", "Override Samples") toggle VALUE(SingleScatteringSamplesEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+SingleScatteringSamplesMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SingleScatteringSamplesMode", "Scale Samples") toggle VALUE(SingleScatteringSamplesMode.val);
+
+    { HSTRETCH }
+
+}
+
+SingleScatteringSamplesCount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ SingleScatteringSamplesCount.label = PARM_LABEL("Samples", "SingleScatteringSamplesCount") WIDTH(1.5);
+ PARM(integer, 1, "SingleScatteringSamplesCount", none, none) RANGE(0,65535)
+	 LABELREF(SingleScatteringSamplesCount.label) HSTRETCH;
+
+}
+
+SingleScatteringSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ SingleScatteringSamplesScale.label = PARM_LABEL("Samples Scale", "SingleScatteringSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "SingleScatteringSamplesScale", none, none) RANGE(0,65535)
+	 LABELREF(SingleScatteringSamplesScale.label) HSTRETCH;
+
+}
+
+PhotometricUnitsToMeterScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotometricUnitsToMeterScale.label = PARM_LABEL("Photometric Units to Meters Scale", "PhotometricUnitsToMeterScale") WIDTH(1.5);
+ PARM(float, 1, "PhotometricUnitsToMeterScale", none, none) RANGE(0,10)
+	 LABELREF(PhotometricUnitsToMeterScale.label) HSTRETCH;
+
+}
+
+PhotometricCandelaMetersSquaredFactor.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotometricCandelaMetersSquaredFactor.label = PARM_LABEL("Photometric cd/m^2 Factor", "PhotometricCandelaMetersSquaredFactor") WIDTH(1.5);
+ PARM(float, 1, "PhotometricCandelaMetersSquaredFactor", none, none) RANGE(0,10)
+	 LABELREF(PhotometricCandelaMetersSquaredFactor.label) HSTRETCH;
+
+}
+
+RS_separator_PhotometricCandelaMetersSquaredFactor.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+Do8BitQuantizationAndDithering.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("Do8BitQuantizationAndDithering", "Quantize to 8-bit and Dither") toggle VALUE(Do8BitQuantizationAndDithering.val);
+
+    { HSTRETCH }
+
+}
+
+MotionBlurEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MotionBlurEnabled", "Enable Motion Blur") toggle VALUE(MotionBlurEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+MotionBlurDeformationEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MotionBlurDeformationEnabled", "Enable Deformation Blur") toggle VALUE(MotionBlurDeformationEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+RS_mbPoints.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_mbPoints", "Enable Point Level Blur") toggle VALUE(RS_mbPoints.val);
+
+    { HSTRETCH }
+
+}
+
+MotionBlurNumTransformationSteps.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MotionBlurNumTransformationSteps.label = PARM_LABEL("Transformation Steps", "MotionBlurNumTransformationSteps") WIDTH(1.5);
+ PARM(integer, 1, "MotionBlurNumTransformationSteps", none, none) RANGE(2,31)
+	LOCK_RANGE LABELREF(MotionBlurNumTransformationSteps.label) HSTRETCH;
+
+}
+
+RS_separator_MotionBlurNumTransformationSteps.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+MotionBlurFrameDuration.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MotionBlurFrameDuration.label = PARM_LABEL("Frame Duration", "MotionBlurFrameDuration") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurFrameDuration", none, none) RANGE(0,10)
+	 LABELREF(MotionBlurFrameDuration.label) HSTRETCH;
+
+}
+
+MotionBlurShutterStart.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MotionBlurShutterStart.label = PARM_LABEL("Shutter Start", "MotionBlurShutterStart") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterStart", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterStart.label) HSTRETCH;
+
+}
+
+MotionBlurShutterEnd.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MotionBlurShutterEnd.label = PARM_LABEL("Shutter End", "MotionBlurShutterEnd") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterEnd", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterEnd.label) HSTRETCH;
+
+}
+
+MotionBlurShutterEfficiencyForTrapezoidal.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MotionBlurShutterEfficiencyForTrapezoidal.label = PARM_LABEL("Shutter Efficiency", "MotionBlurShutterEfficiencyForTrapezoidal") WIDTH(1.5);
+ PARM(float, 1, "MotionBlurShutterEfficiencyForTrapezoidal", none, none) RANGE(0,1)
+	 LABELREF(MotionBlurShutterEfficiencyForTrapezoidal.label) HSTRETCH;
+
+}
+
+MotionBlurShutterPosition.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Shutter Center", "MotionBlurShutterPosition") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    MotionBlurShutterPosition.menu;
+
+    { HSTRETCH }
+
+}
+
+MaxTraceDepthReflection.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxTraceDepthReflection.label = PARM_LABEL("Reflection", "MaxTraceDepthReflection") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthReflection", none, none) RANGE(0,16)
+	 LABELREF(MaxTraceDepthReflection.label) HSTRETCH;
+
+}
+
+MaxTraceDepthRefraction.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxTraceDepthRefraction.label = PARM_LABEL("Refraction", "MaxTraceDepthRefraction") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthRefraction", none, none) RANGE(0,16)
+	 LABELREF(MaxTraceDepthRefraction.label) HSTRETCH;
+
+}
+
+MaxTraceDepthCombined.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxTraceDepthCombined.label = PARM_LABEL("Combined", "MaxTraceDepthCombined") WIDTH(1.5);
+ PARM(integer, 1, "MaxTraceDepthCombined", none, none) RANGE(0,16)
+	 LABELREF(MaxTraceDepthCombined.label) HSTRETCH;
+
+}
+
+MPWHairEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MPWHairEnabled", "Enable") toggle VALUE(MPWHairEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+MPWHairAutoThreshold.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("MPWHairAutoThreshold", "Automatic Threshold") toggle VALUE(MPWHairAutoThreshold.val);
+
+    { HSTRETCH }
+
+}
+
+MPWHairThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MPWHairThreshold.label = PARM_LABEL("Threshold", "MPWHairThreshold") WIDTH(1.5);
+ PARM(float, 1, "MPWHairThreshold", none, none) RANGE(0,2)
+	 LABELREF(MPWHairThreshold.label) HSTRETCH;
+
+}
+
+MPWHairTraceDepth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MPWHairTraceDepth.label = PARM_LABEL("Trace Depth", "MPWHairTraceDepth") WIDTH(1.5);
+ PARM(integer, 1, "MPWHairTraceDepth", none, none) RANGE(0,16)
+	 LABELREF(MPWHairTraceDepth.label) HSTRETCH;
+
+}
+
+DiffuseSamplingCutOffThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ DiffuseSamplingCutOffThreshold.label = PARM_LABEL("Diffuse", "DiffuseSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DiffuseSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DiffuseSamplingCutOffThreshold.label) HSTRETCH;
+
+}
+
+ReflectionSamplingCutOffThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ReflectionSamplingCutOffThreshold.label = PARM_LABEL("Reflection", "ReflectionSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "ReflectionSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(ReflectionSamplingCutOffThreshold.label) HSTRETCH;
+
+}
+
+RefractionSamplingCutOffThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RefractionSamplingCutOffThreshold.label = PARM_LABEL("Refraction", "RefractionSamplingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "RefractionSamplingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(RefractionSamplingCutOffThreshold.label) HSTRETCH;
+
+}
+
+DirectLightingShadowCutOffThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ DirectLightingShadowCutOffThreshold.label = PARM_LABEL("Shadow", "DirectLightingShadowCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DirectLightingShadowCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DirectLightingShadowCutOffThreshold.label) HSTRETCH;
+
+}
+
+DirectLightingCutOffThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ DirectLightingCutOffThreshold.label = PARM_LABEL("Direct Lighting", "DirectLightingCutOffThreshold") WIDTH(1.5);
+ PARM(float, 1, "DirectLightingCutOffThreshold", none, none) RANGE(0,1)
+	 LABELREF(DirectLightingCutOffThreshold.label) HSTRETCH;
+
+}
+
+RussianRouletteImportanceThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RussianRouletteImportanceThreshold.label = PARM_LABEL("Importance Threshold", "RussianRouletteImportanceThreshold") WIDTH(1.5);
+ PARM(float, 1, "RussianRouletteImportanceThreshold", none, none) RANGE(0,1)
+	 LABELREF(RussianRouletteImportanceThreshold.label) HSTRETCH;
+
+}
+
+RussianRouletteFalloff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RussianRouletteFalloff.label = PARM_LABEL("Falloff", "RussianRouletteFalloff") WIDTH(1.5);
+ PARM(float, 1, "RussianRouletteFalloff", none, none) RANGE(0,1)
+	 LABELREF(RussianRouletteFalloff.label) HSTRETCH;
+
+}
+
+TextureSamplingTechnique.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Primary Rays", "TextureSamplingTechnique") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    TextureSamplingTechnique.menu;
+
+    { HSTRETCH }
+
+}
+
+CopyToTextureCache.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("CopyToTextureCache", "Copy Pre-Converted Textures to Cache Folder") toggle VALUE(CopyToTextureCache.val);
+
+    { HSTRETCH }
+
+}
+
+ReflectionsEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ReflectionsEnable", "Enable Reflections") toggle VALUE(ReflectionsEnable.val);
+
+    { HSTRETCH }
+
+}
+
+RefractionsEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RefractionsEnable", "Enable Refractions") toggle VALUE(RefractionsEnable.val);
+
+    { HSTRETCH }
+
+}
+
+SubsurfaceScatteringEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("SubsurfaceScatteringEnable", "Enable Subsurface Scattering") toggle VALUE(SubsurfaceScatteringEnable.val);
+
+    { HSTRETCH }
+
+}
+
+TessellationDisplacementEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("TessellationDisplacementEnable", "Enable Tessellation And Displacement") toggle VALUE(TessellationDisplacementEnable.val);
+
+    { HSTRETCH }
+
+}
+
+EmissionEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EmissionEnable", "Enable Emission") toggle VALUE(EmissionEnable.val);
+
+    { HSTRETCH }
+
+}
+
+EnableMaterialsMaxCombinedOverrides.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableMaterialsMaxCombinedOverrides", "Enable Material's Max Combined Overrides") toggle VALUE(EnableMaterialsMaxCombinedOverrides.val);
+
+    { HSTRETCH }
+
+}
+
+PrimaryGIEngine.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Primary GI Engine", "PrimaryGIEngine") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    PrimaryGIEngine.menu;
+
+    { HSTRETCH }
+
+}
+
+SecondaryGIEngine.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Secondary GI Engine", "SecondaryGIEngine") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SecondaryGIEngine.menu;
+
+    { HSTRETCH }
+
+}
+
+NumGIBounces.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ NumGIBounces.label = PARM_LABEL("Num GI Bounces", "NumGIBounces") WIDTH(1.5);
+ PARM(integer, 1, "NumGIBounces", none, none) RANGE(0,15)
+	 LABELREF(NumGIBounces.label) HSTRETCH;
+
+}
+
+ConserveGIReflectionEnergy.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ConserveGIReflectionEnergy", "Conserve Reflections Energy") toggle VALUE(ConserveGIReflectionEnergy.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_ConserveGIReflectionEnergy.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+BruteForceGINumRays.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ BruteForceGINumRays.label = PARM_LABEL("Brute Force GI Rays", "BruteForceGINumRays") WIDTH(1.5);
+ PARM(integer, 1, "BruteForceGINumRays", none, none) RANGE(1,16384)
+	 LABELREF(BruteForceGINumRays.label) HSTRETCH;
+
+}
+
+IrradiancePointCloudMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "IrradiancePointCloudMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradiancePointCloudMode.menu;
+
+    { HSTRETCH }
+
+}
+
+IrradiancePointCloudFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ IrradiancePointCloudFilename.label = PARM_LABEL("Filename", "IrradiancePointCloudFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "IrradiancePointCloudFilename") LABELREF(IrradiancePointCloudFilename.label)
+	VALUE(IrradiancePointCloudFilename.val) HSTRETCH;
+
+    IrradiancePointCloudFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(IrradiancePointCloudFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+IrradiancePointCloudFramesToBlend.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradiancePointCloudFramesToBlend.label = PARM_LABEL("Frames to Blend", "IrradiancePointCloudFramesToBlend") WIDTH(1.5);
+ PARM(integer, 1, "IrradiancePointCloudFramesToBlend", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(IrradiancePointCloudFramesToBlend.label) HSTRETCH;
+
+}
+
+ShowIrradiancePointCloudCalculation.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ShowIrradiancePointCloudCalculation", "Show Calculation") toggle VALUE(ShowIrradiancePointCloudCalculation.val);
+
+    { HSTRETCH }
+
+}
+
+IrradiancePointCloudScreenRadius2.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Screen Radius", "IrradiancePointCloudScreenRadius2") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradiancePointCloudScreenRadius2.menu;
+
+    { HSTRETCH }
+
+}
+
+IrradiancePointCloudNumSamplesPerPixel.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradiancePointCloudNumSamplesPerPixel.label = PARM_LABEL("Samples per Pixel", "IrradiancePointCloudNumSamplesPerPixel") WIDTH(1.5);
+ PARM(integer, 1, "IrradiancePointCloudNumSamplesPerPixel", none, none) RANGE(1,32768)
+	 LABELREF(IrradiancePointCloudNumSamplesPerPixel.label) HSTRETCH;
+
+}
+
+IrradiancePointCloudFilterSize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradiancePointCloudFilterSize.label = PARM_LABEL("Filter Size", "IrradiancePointCloudFilterSize") WIDTH(1.5);
+ PARM(float, 1, "IrradiancePointCloudFilterSize", none, none) RANGE(2,8)
+	 LABELREF(IrradiancePointCloudFilterSize.label) HSTRETCH;
+
+}
+
+IrradiancePointCloudRetraceThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradiancePointCloudRetraceThreshold.label = PARM_LABEL("Retrace Threshold", "IrradiancePointCloudRetraceThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradiancePointCloudRetraceThreshold", none, none) RANGE(0,16)
+	 LABELREF(IrradiancePointCloudRetraceThreshold.label) HSTRETCH;
+
+}
+
+IrradianceCacheMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "IrradianceCacheMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    IrradianceCacheMode.menu;
+
+    { HSTRETCH }
+
+}
+
+IrradianceCacheFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ IrradianceCacheFilename.label = PARM_LABEL("Filename", "IrradianceCacheFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "IrradianceCacheFilename") LABELREF(IrradianceCacheFilename.label)
+	VALUE(IrradianceCacheFilename.val) HSTRETCH;
+
+    IrradianceCacheFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(IrradianceCacheFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+IrradianceCacheFlythroughMode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheFlythroughMode", "Flythrough Mode") toggle VALUE(IrradianceCacheFlythroughMode.val);
+
+    { HSTRETCH }
+
+}
+
+IrradianceCacheFramesToBlend.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheFramesToBlend.label = PARM_LABEL("Frames to Blend", "IrradianceCacheFramesToBlend") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheFramesToBlend", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(IrradianceCacheFramesToBlend.label) HSTRETCH;
+
+}
+
+ShowIrradianceCacheCalculation.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ShowIrradianceCacheCalculation", "Show Calculation") toggle VALUE(ShowIrradianceCacheCalculation.val);
+
+    { HSTRETCH }
+
+}
+
+IrradianceCacheUseSeparatePointsForSecondaryRays.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheUseSeparatePointsForSecondaryRays", "Use Separate Points for Secondary Rays") toggle VALUE(IrradianceCacheUseSeparatePointsForSecondaryRays.val);
+
+    { HSTRETCH }
+
+}
+
+IrradianceCacheDebugDrawPoints.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("IrradianceCacheDebugDrawPoints", "Visualize Points") toggle VALUE(IrradianceCacheDebugDrawPoints.val);
+
+    { HSTRETCH }
+
+}
+
+IrradianceCacheMinRate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheMinRate.label = PARM_LABEL("Min Rate", "IrradianceCacheMinRate") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheMinRate", none, none) RANGE(2147483647,2147483647)
+	 LABELREF(IrradianceCacheMinRate.label) HSTRETCH;
+
+}
+
+IrradianceCacheMaxRate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheMaxRate.label = PARM_LABEL("Max Rate", "IrradianceCacheMaxRate") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheMaxRate", none, none) RANGE(2147483647,2147483647)
+	 LABELREF(IrradianceCacheMaxRate.label) HSTRETCH;
+
+}
+
+IrradianceCacheColorThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheColorThreshold.label = PARM_LABEL("Color Threshold", "IrradianceCacheColorThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheColorThreshold", none, none) RANGE(0.0010000000474974513,2)
+	 LABELREF(IrradianceCacheColorThreshold.label) HSTRETCH;
+
+}
+
+IrradianceCacheDistanceThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheDistanceThreshold.label = PARM_LABEL("Distance Threshold", "IrradianceCacheDistanceThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheDistanceThreshold", none, none) RANGE(0.10000000149011612,1)
+	 LABELREF(IrradianceCacheDistanceThreshold.label) HSTRETCH;
+
+}
+
+IrradianceCacheNormalThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheNormalThreshold.label = PARM_LABEL("Normal Threshold", "IrradianceCacheNormalThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheNormalThreshold", none, none) RANGE(2,16)
+	 LABELREF(IrradianceCacheNormalThreshold.label) HSTRETCH;
+
+}
+
+IrradianceCacheMinDetail.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheMinDetail.label = PARM_LABEL("Min Detail", "IrradianceCacheMinDetail") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheMinDetail", none, none) RANGE(0,8)
+	 LABELREF(IrradianceCacheMinDetail.label) HSTRETCH;
+
+}
+
+IrradianceCacheRadiusFactor.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheRadiusFactor.label = PARM_LABEL("Radius Factor", "IrradianceCacheRadiusFactor") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheRadiusFactor", none, none) RANGE(1,8)
+	 LABELREF(IrradianceCacheRadiusFactor.label) HSTRETCH;
+
+}
+
+IrradianceCacheNumRays.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheNumRays.label = PARM_LABEL("Num Rays", "IrradianceCacheNumRays") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheNumRays", none, none) RANGE(16,16384)
+	 LABELREF(IrradianceCacheNumRays.label) HSTRETCH;
+
+}
+
+IrradianceCacheAdaptiveAmount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheAdaptiveAmount.label = PARM_LABEL("Adaptive Amount", "IrradianceCacheAdaptiveAmount") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheAdaptiveAmount", none, none) RANGE(0,1)
+	 LABELREF(IrradianceCacheAdaptiveAmount.label) HSTRETCH;
+
+}
+
+IrradianceCacheAdaptiveErrorThreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheAdaptiveErrorThreshold.label = PARM_LABEL("Adaptive Error Threshold", "IrradianceCacheAdaptiveErrorThreshold") WIDTH(1.5);
+ PARM(float, 1, "IrradianceCacheAdaptiveErrorThreshold", none, none) RANGE(0,1)
+	 LABELREF(IrradianceCacheAdaptiveErrorThreshold.label) HSTRETCH;
+
+}
+
+IrradianceCacheNumSmoothingPasses.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ IrradianceCacheNumSmoothingPasses.label = PARM_LABEL("Num Smoothing Passes", "IrradianceCacheNumSmoothingPasses") WIDTH(1.5);
+ PARM(integer, 1, "IrradianceCacheNumSmoothingPasses", none, none) RANGE(0,16)
+	 LABELREF(IrradianceCacheNumSmoothingPasses.label) HSTRETCH;
+
+}
+
+PhotonGIEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("PhotonGIEnable", "Enable GI") toggle VALUE(PhotonGIEnable.val);
+
+    { HSTRETCH }
+
+}
+
+PhotonCausticsEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("PhotonCausticsEnable", "Enable Caustics") toggle VALUE(PhotonCausticsEnable.val);
+
+    { HSTRETCH }
+
+}
+
+PhotonMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "PhotonMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    PhotonMode.menu;
+
+    { HSTRETCH }
+
+}
+
+PhotonFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ PhotonFilename.label = PARM_LABEL("Filename", "PhotonFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "PhotonFilename") LABELREF(PhotonFilename.label)
+	VALUE(PhotonFilename.val) HSTRETCH;
+
+    PhotonFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(PhotonFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+PhotonMaxTraceDepthReflection.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonMaxTraceDepthReflection.label = PARM_LABEL("Reflection Tracing Depth", "PhotonMaxTraceDepthReflection") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthReflection", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthReflection.label) HSTRETCH;
+
+}
+
+PhotonMaxTraceDepthRefraction.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonMaxTraceDepthRefraction.label = PARM_LABEL("Refraction Tracing Depth", "PhotonMaxTraceDepthRefraction") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthRefraction", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthRefraction.label) HSTRETCH;
+
+}
+
+PhotonMaxTraceDepthCombined.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonMaxTraceDepthCombined.label = PARM_LABEL("Combined Tracing Depth", "PhotonMaxTraceDepthCombined") WIDTH(1.5);
+ PARM(integer, 1, "PhotonMaxTraceDepthCombined", none, none) RANGE(0,10)
+	 LABELREF(PhotonMaxTraceDepthCombined.label) HSTRETCH;
+
+}
+
+PhotonGIMaxNumToGather.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonGIMaxNumToGather.label = PARM_LABEL("Max Num GI Photons", "PhotonGIMaxNumToGather") WIDTH(1.5);
+ PARM(integer, 1, "PhotonGIMaxNumToGather", none, none) RANGE(0,4294967295)
+	 LABELREF(PhotonGIMaxNumToGather.label) HSTRETCH;
+
+}
+
+PhotonGISearchRadius.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonGISearchRadius.label = PARM_LABEL("GI Search Radius", "PhotonGISearchRadius") WIDTH(1.5);
+ PARM(float, 1, "PhotonGISearchRadius", none, none) RANGE(0,10)
+	 LABELREF(PhotonGISearchRadius.label) HSTRETCH;
+
+}
+
+PhotonCausticsMaxNumToGather.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonCausticsMaxNumToGather.label = PARM_LABEL("Max Num Caustics Photons", "PhotonCausticsMaxNumToGather") WIDTH(1.5);
+ PARM(integer, 1, "PhotonCausticsMaxNumToGather", none, none) RANGE(0,4294967295)
+	 LABELREF(PhotonCausticsMaxNumToGather.label) HSTRETCH;
+
+}
+
+PhotonCausticsSearchRadius.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PhotonCausticsSearchRadius.label = PARM_LABEL("Caustics Search Radius", "PhotonCausticsSearchRadius") WIDTH(1.5);
+ PARM(float, 1, "PhotonCausticsSearchRadius", none, none) RANGE(0,10)
+	 LABELREF(PhotonCausticsSearchRadius.label) HSTRETCH;
+
+}
+
+PhotonUsePerPhotonIrradiance.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("PhotonUsePerPhotonIrradiance", "Fast Irradiance") toggle VALUE(PhotonUsePerPhotonIrradiance.val);
+
+    { HSTRETCH }
+
+}
+
+SubsurfaceScatteringMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "SubsurfaceScatteringMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringMode.menu;
+
+    { HSTRETCH }
+
+}
+
+SubsurfaceScatteringFilename.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ SubsurfaceScatteringFilename.label = PARM_LABEL("Cache Filename", "SubsurfaceScatteringFilename") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "SubsurfaceScatteringFilename") LABELREF(SubsurfaceScatteringFilename.label)
+	VALUE(SubsurfaceScatteringFilename.val) HSTRETCH;
+
+    SubsurfaceScatteringFilename.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(SubsurfaceScatteringFilename.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+SubsurfaceScatteringRate.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Rate", "SubsurfaceScatteringRate") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringRate.menu;
+
+    { HSTRETCH }
+
+}
+
+SubsurfaceScatteringInterpolationQuality.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Interpolation Quality", "SubsurfaceScatteringInterpolationQuality") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    SubsurfaceScatteringInterpolationQuality.menu;
+
+    { HSTRETCH }
+
+}
+
+SubsurfaceScatteringNumGIRays.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ SubsurfaceScatteringNumGIRays.label = PARM_LABEL("Num GI Rays", "SubsurfaceScatteringNumGIRays") WIDTH(1.5);
+ PARM(integer, 1, "SubsurfaceScatteringNumGIRays", none, none) RANGE(1,4096)
+	 LABELREF(SubsurfaceScatteringNumGIRays.label) HSTRETCH;
+
+}
+
+VolLightingEnabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingEnabled", "Enable") toggle VALUE(VolLightingEnabled.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_VolLightingEnabled.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+VolLightingTint.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    VolLightingTint.label = PARM_LABEL("Tint", "VolLightingTint") WIDTH(1.5);
+    PARM(float, 3, "VolLightingTint", none, COLOR, "R,G,B") 
+	LABELREF(VolLightingTint.label) HSTRETCH;
+
+}
+
+VolLightingScatteringCoefficient.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingScatteringCoefficient.label = PARM_LABEL("Scattering", "VolLightingScatteringCoefficient") WIDTH(1.5);
+ PARM(float, 1, "VolLightingScatteringCoefficient", none, none) RANGE(0,10)
+	 LABELREF(VolLightingScatteringCoefficient.label) HSTRETCH;
+
+}
+
+VolLightingExtinctionCoefficient.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingExtinctionCoefficient.label = PARM_LABEL("Attenuation", "VolLightingExtinctionCoefficient") WIDTH(1.5);
+ PARM(float, 1, "VolLightingExtinctionCoefficient", none, none) RANGE(0,10)
+	 LABELREF(VolLightingExtinctionCoefficient.label) HSTRETCH;
+
+}
+
+VolLightingPhase.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingPhase.label = PARM_LABEL("Phase", "VolLightingPhase") WIDTH(1.5);
+ PARM(float, 1, "VolLightingPhase", none, none) RANGE(-1,1)
+	 LABELREF(VolLightingPhase.label) HSTRETCH;
+
+}
+
+RS_separator_VolLightingPhase.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+VolLightingFogAmbient.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    VolLightingFogAmbient.label = PARM_LABEL("Fog Emission", "VolLightingFogAmbient") WIDTH(1.5);
+    PARM(float, 3, "VolLightingFogAmbient", none, COLOR, "R,G,B") 
+	LABELREF(VolLightingFogAmbient.label) HSTRETCH;
+
+}
+
+VolLightingApplyExposureCompensation.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingApplyExposureCompensation", "Apply Camera Exposure Compensation") toggle VALUE(VolLightingApplyExposureCompensation.val);
+
+    { HSTRETCH }
+
+}
+
+VolLightingFogHeight.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingFogHeight.label = PARM_LABEL("Fog Height", "VolLightingFogHeight") WIDTH(1.5);
+ PARM(float, 1, "VolLightingFogHeight", none, none) RANGE(0,10)
+	 LABELREF(VolLightingFogHeight.label) HSTRETCH;
+
+}
+
+VolLightingFogHorizonBlur.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingFogHorizonBlur.label = PARM_LABEL("Fog Horizontal Blur", "VolLightingFogHorizonBlur") WIDTH(1.5);
+ PARM(float, 1, "VolLightingFogHorizonBlur", none, none) RANGE(0,10)
+	 LABELREF(VolLightingFogHorizonBlur.label) HSTRETCH;
+
+}
+
+VolLightingFogOrigin.gad = ROW
+{
+   HSTRETCH
+
+   VolLightingFogOrigin.label = PARM_LABEL("Fog Ground Point", "VolLightingFogOrigin") WIDTH(1.5);
+   PARM(float, 3, "VolLightingFogOrigin", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(VolLightingFogOrigin.label)
+	HSTRETCH;
+
+}
+
+VolLightingFogNormal.gad = ROW
+{
+   HSTRETCH
+
+   VolLightingFogNormal.label = PARM_LABEL("Fog Ground Normal", "VolLightingFogNormal") WIDTH(1.5);
+   PARM(float, 3, "VolLightingFogNormal", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(VolLightingFogNormal.label)
+	HSTRETCH;
+
+}
+
+RS_separator_VolLightingFogNormal.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+VolLightingRayContributionEnvironment.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingRayContributionEnvironment.label = PARM_LABEL("Environment Scale", "VolLightingRayContributionEnvironment") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionEnvironment", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionEnvironment.label) HSTRETCH;
+
+}
+
+VolLightingRayContributionCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingRayContributionCamera.label = PARM_LABEL("Camera Scale", "VolLightingRayContributionCamera") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionCamera", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionCamera.label) HSTRETCH;
+
+}
+
+VolLightingRayContributionReflection.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingRayContributionReflection.label = PARM_LABEL("Reflection Scale", "VolLightingRayContributionReflection") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionReflection", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionReflection.label) HSTRETCH;
+
+}
+
+VolLightingRayContributionGI.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ VolLightingRayContributionGI.label = PARM_LABEL("GI Scale", "VolLightingRayContributionGI") WIDTH(1.5);
+ PARM(float, 1, "VolLightingRayContributionGI", none, none) RANGE(0,1)
+	 LABELREF(VolLightingRayContributionGI.label) HSTRETCH;
+
+}
+
+RS_separator_VolLightingRayContributionGI.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+VolLightingReplaceAlphaOnEnvironment.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("VolLightingReplaceAlphaOnEnvironment", "Environment Alpha Replace") toggle VALUE(VolLightingReplaceAlphaOnEnvironment.val);
+
+    { HSTRETCH }
+
+}
+
+AbortOnLicenseFail.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AbortOnLicenseFail", "Abort Rendering on License Failiure") toggle VALUE(AbortOnLicenseFail.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_AbortOnLicenseFail.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_matOverrideEnable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_matOverrideEnable", "Enable Material Override") toggle VALUE(RS_matOverrideEnable.val);
+
+    { HSTRETCH }
+
+}
+
+RS_matOverrideColor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    RS_matOverrideColor.label = PARM_LABEL("Color", "RS_matOverrideColor") WIDTH(1.5);
+    PARM(float, 3, "RS_matOverrideColor", none, COLOR, "R,G,B") 
+	LABELREF(RS_matOverrideColor.label) HSTRETCH;
+
+}
+
+RS_separator_matOverrideColor.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+DoCompleteRTHConstruction.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DoCompleteRTHConstruction", "Accelleration Structure Complete Construction Before Rendering") toggle VALUE(DoCompleteRTHConstruction.val);
+
+    { HSTRETCH }
+
+}
+
+RTHMaxNumLeafPrimitives.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RTHMaxNumLeafPrimitives.label = PARM_LABEL("Max Leaf Primitives", "RTHMaxNumLeafPrimitives") WIDTH(1.5);
+ PARM(integer, 1, "RTHMaxNumLeafPrimitives", none, none) RANGE(2,32)
+	 LABELREF(RTHMaxNumLeafPrimitives.label) HSTRETCH;
+
+}
+
+RS_separator_RTHMaxNumLeafPrimitives.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+HairTessellationMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Hair Tessellation Mode", "HairTessellationMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    HairTessellationMode.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_separator_HairTessellationMode.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RenderInCameraSpace.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RenderInCameraSpace", "Render in Camera Space") toggle VALUE(RenderInCameraSpace.val);
+
+    { HSTRETCH }
+
+}
+
+FreezeTessellation.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("FreezeTessellation", "Freeze Tessellation") toggle VALUE(FreezeTessellation.val);
+
+    { HSTRETCH }
+
+}
+
+DisableBumpSmoothingOnLightingSilhouettes.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DisableBumpSmoothingOnLightingSilhouettes", "Disable Bump Smoothing On Lighting Silhouettes") toggle VALUE(DisableBumpSmoothingOnLightingSilhouettes.val);
+
+    { HSTRETCH }
+
+}
+
+RenderTwoPassesForDenoising.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RenderTwoPassesForDenoising", "Render Two Passes For Denoising") toggle VALUE(RenderTwoPassesForDenoising.val);
+
+    { HSTRETCH }
+
+}
+
+DisableShadowRayBiasing.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("DisableShadowRayBiasing", "Disable Shadow Ray Biasing") toggle VALUE(DisableShadowRayBiasing.val);
+
+    { HSTRETCH }
+
+}
+
+EnableSecondaryRayClampingOnFirstBounce.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableSecondaryRayClampingOnFirstBounce", "Enable Secondary Ray Clamping On First Bounce") toggle VALUE(EnableSecondaryRayClampingOnFirstBounce.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_FrameIndependentPatternRandomization.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+EnableLegacyVolumeGridEmission.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyVolumeGridEmission", "Enable Legacy Volume Grid Emission") toggle VALUE(EnableLegacyVolumeGridEmission.val);
+
+    { HSTRETCH }
+
+}
+
+EnableLegacyCutOffsRules.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyCutOffsRules", "Enable Legacy Cut-Offs Rules") toggle VALUE(EnableLegacyCutOffsRules.val);
+
+    { HSTRETCH }
+
+}
+
+EnableLegacyNonInverseSquareLightDecay.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableLegacyNonInverseSquareLightDecay", "Enable Legacy Non-Inverse-Square Light Decay") toggle VALUE(EnableLegacyNonInverseSquareLightDecay.val);
+
+    { HSTRETCH }
+
+}
+
+RS_separator_EnableLegacyNonInverseSquareLightDecaySep.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+BlockRenderingOrder.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Bucket Order", "BlockRenderingOrder") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    BlockRenderingOrder.menu;
+
+    { HSTRETCH }
+
+}
+
+BlockSize.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Bucket Size", "BlockSize") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    BlockSize.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_separator_BlockSize.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+EnableDebugCapture.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableDebugCapture", "Enable Debug Capture") toggle VALUE(EnableDebugCapture.val);
+
+    { HSTRETCH }
+
+}
+
+EnableDebugCaptureShaderIntegrityCheck.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("EnableDebugCaptureShaderIntegrityCheck", "Enable Shader Integrity Check (VERY SLOW)") toggle VALUE(EnableDebugCaptureShaderIntegrityCheck.val);
+
+    { HSTRETCH }
+
+}
+
+AutomaticMemoryManagement.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("AutomaticMemoryManagement", "Enable Automatic Memory Management") toggle VALUE(AutomaticMemoryManagement.val);
+
+    { HSTRETCH }
+
+}
+
+PercentageOfGPUMemoryToUse.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PercentageOfGPUMemoryToUse.label = PARM_LABEL("Percentage of GPU Memory to Use", "PercentageOfGPUMemoryToUse") WIDTH(1.5);
+ PARM(integer, 1, "PercentageOfGPUMemoryToUse", none, none) RANGE(10,100)
+	 LABELREF(PercentageOfGPUMemoryToUse.label) HSTRETCH;
+
+}
+
+MaxNumGPUMBForIrradiancePointCloudHierarchy.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxNumGPUMBForIrradiancePointCloudHierarchy.label = PARM_LABEL("Irradiance Point Cloud Working Tree Reserved Memory (MB)", "MaxNumGPUMBForIrradiancePointCloudHierarchy") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForIrradiancePointCloudHierarchy", none, none) RANGE(16,1024)
+	 LABELREF(MaxNumGPUMBForIrradiancePointCloudHierarchy.label) HSTRETCH;
+
+}
+
+MaxNumGPUMBForForICPHierarchy.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxNumGPUMBForForICPHierarchy.label = PARM_LABEL("Irradiace Cache Working Tree Reserved Memory (MB)", "MaxNumGPUMBForForICPHierarchy") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForForICPHierarchy", none, none) RANGE(16,1024)
+	 LABELREF(MaxNumGPUMBForForICPHierarchy.label) HSTRETCH;
+
+}
+
+PercentageOfFreeMemoryUsedForTextureCache.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ PercentageOfFreeMemoryUsedForTextureCache.label = PARM_LABEL("Percentage of Free Memory Used for Texture Cache", "PercentageOfFreeMemoryUsedForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "PercentageOfFreeMemoryUsedForTextureCache", none, none) RANGE(10,90)
+	 LABELREF(PercentageOfFreeMemoryUsedForTextureCache.label) HSTRETCH;
+
+}
+
+MaxNumGPUMBForTextureCache.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxNumGPUMBForTextureCache.label = PARM_LABEL("Max GPU Texture Cache Size (MB)", "MaxNumGPUMBForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumGPUMBForTextureCache", none, none) RANGE(64,4096)
+	 LABELREF(MaxNumGPUMBForTextureCache.label) HSTRETCH;
+
+}
+
+MaxNumCPUMBForTextureCache.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ MaxNumCPUMBForTextureCache.label = PARM_LABEL("Max CPU Texture Cache Size (MB)", "MaxNumCPUMBForTextureCache") WIDTH(1.5);
+ PARM(integer, 1, "MaxNumCPUMBForTextureCache", none, none) RANGE(1024,16384)
+	 LABELREF(MaxNumCPUMBForTextureCache.label) HSTRETCH;
+
+}
+
+NumGPUMBToReserveForRays.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ NumGPUMBToReserveForRays.label = PARM_LABEL("Ray Reserved Memory (MB)", "NumGPUMBToReserveForRays") WIDTH(1.5);
+ PARM(integer, 1, "NumGPUMBToReserveForRays", none, none) RANGE(0,4096)
+	 LABELREF(NumGPUMBToReserveForRays.label) HSTRETCH;
+
+}
+
+RS_archive_enable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_enable", "Export .rs Proxy File") toggle VALUE(RS_archive_enable.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_sopPath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_archive_sopPath.label = PARM_LABEL("SOP Path", "RS_archive_sopPath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_archive_sopPath") VALUE(RS_archive_sopPath.val) 
+	LABELREF(RS_archive_sopPath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_archive_sopPath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_archive_sopPath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_archive_file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ RS_archive_file.label = PARM_LABEL("Filename", "RS_archive_file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "RS_archive_file") LABELREF(RS_archive_file.label)
+	VALUE(RS_archive_file.val) HSTRETCH;
+
+    RS_archive_file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(RS_archive_file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_archive_createDirs.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_createDirs", "Create Intermediate Directories") toggle VALUE(RS_archive_createDirs.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_selected.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_selected", "Export Only Selected Objects") toggle VALUE(RS_archive_selected.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_removeAtt.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_removeAtt", "Discard the Not Used Attributes") toggle VALUE(RS_archive_removeAtt.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_exportConn.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_exportConn", "Export Connectivity Data") toggle VALUE(RS_archive_exportConn.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_compress.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_compress", "Compress File") toggle VALUE(RS_archive_compress.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_skipFiles.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_skipFiles", "Skip Existing Files") toggle VALUE(RS_archive_skipFiles.val);
+
+    { HSTRETCH }
+
+}
+
+RS_archive_noXform.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_archive_noXform", "Ignore OBJ Level Transformations") toggle VALUE(RS_archive_noXform.val);
+
+    { HSTRETCH }
+
+}
+
+RS_rendermap_enable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_rendermap_enable", "Bake Render Map") toggle VALUE(RS_rendermap_enable.val);
+
+    { HSTRETCH }
+
+}
+
+RS_rendermap_objects.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_rendermap_objects.label = PARM_LABEL("Render Map Objects", "RS_rendermap_objects") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_rendermap_objects") LABELREF(RS_rendermap_objects.label) 
+	VALUE(RS_rendermap_objects.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_rendermap_objects.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_rendermap_uvmap.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    RS_rendermap_uvmap.label = PARM_LABEL("UV Map", "RS_rendermap_uvmap") WIDTH(1.5);
+    PARM_FIELD(string, "RS_rendermap_uvmap") VALUE(RS_rendermap_uvmap.val) 
+	LABELREF(RS_rendermap_uvmap.label) HSTRETCH;
+
+}
+
+RS_rendermap_res.gad = ROW
+{
+   HSTRETCH
+
+   RS_rendermap_res.label = PARM_LABEL("Output Resolution", "RS_rendermap_res") WIDTH(1.5);
+   PARM(integer, 2, "RS_rendermap_res", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_rendermap_res.label)
+	HSTRETCH;
+
+}
+
+RS_rendermap_ropname.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_rendermap_ropname", "Add ROP Name As Prefix") toggle VALUE(RS_rendermap_ropname.val);
+
+    { HSTRETCH }
+
+}
+
+RS_rendermap_tilingMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("UV Tiling Mode", "RS_rendermap_tilingMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_rendermap_tilingMode.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_rendermap_tilingU.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_rendermap_tilingU.label = PARM_LABEL("U Tiles", "RS_rendermap_tilingU") WIDTH(1.5);
+ PARM(integer, 1, "RS_rendermap_tilingU", none, none) RANGE(0,10)
+	 LABELREF(RS_rendermap_tilingU.label) HSTRETCH;
+
+}
+
+RS_rendermap_tilingV.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_rendermap_tilingV.label = PARM_LABEL("V Tiles", "RS_rendermap_tilingV") WIDTH(1.5);
+ PARM(integer, 1, "RS_rendermap_tilingV", none, none) RANGE(0,10)
+	 LABELREF(RS_rendermap_tilingV.label) HSTRETCH;
+
+}
+
+RS_objects_candidate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_objects_candidate.label = PARM_LABEL("Candidate Objects", "RS_objects_candidate") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_candidate") LABELREF(RS_objects_candidate.label) 
+	VALUE(RS_objects_candidate.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_candidate.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_objects_force.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_objects_force.label = PARM_LABEL("Force Objects", "RS_objects_force") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_force") LABELREF(RS_objects_force.label) 
+	VALUE(RS_objects_force.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_force.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_objects_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_objects_exclude.label = PARM_LABEL("Exclude Objects", "RS_objects_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_exclude") LABELREF(RS_objects_exclude.label) 
+	VALUE(RS_objects_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_objects_forcePhantom.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_objects_forcePhantom.label = PARM_LABEL("Forced Phantom", "RS_objects_forcePhantom") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_forcePhantom") LABELREF(RS_objects_forcePhantom.label) 
+	VALUE(RS_objects_forcePhantom.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forcePhantom.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_objects_forceMatte.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_objects_forceMatte.label = PARM_LABEL("Forced Matte", "RS_objects_forceMatte") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_objects_forceMatte") LABELREF(RS_objects_forceMatte.label) 
+	VALUE(RS_objects_forceMatte.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceMatte.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_objects_forceMatteRef.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_objects_forceMatteRef.label = PARM_LABEL("Matte Parms From", "RS_objects_forceMatteRef") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_objects_forceMatteRef") VALUE(RS_objects_forceMatteRef.val) 
+	LABELREF(RS_objects_forceMatteRef.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_objects_forceMatteRef.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_objects_forceMatteRef.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_separator_objectCandidates.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_lights_candidate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_lights_candidate.label = PARM_LABEL("Candidate Lights", "RS_lights_candidate") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_candidate") LABELREF(RS_lights_candidate.label) 
+	VALUE(RS_lights_candidate.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_candidate.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_lights_force.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_lights_force.label = PARM_LABEL("Force Lights", "RS_lights_force") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_force") LABELREF(RS_lights_force.label) 
+	VALUE(RS_lights_force.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_force.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+RS_lights_exclude.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_lights_exclude.label = PARM_LABEL("Exclude Lights", "RS_lights_exclude") WIDTH(1.5);
+ PARM_FIELD (pathstring, "RS_lights_exclude") LABELREF(RS_lights_exclude.label) 
+	VALUE(RS_lights_exclude.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_lights_exclude.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+tprerender.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tprerender.gad = PARM_BUTTON("tprerender", "") toggle VALUE(tprerender.val);
+prerender.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+prerender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ prerender.label = PARM_LABEL("Pre-Render Script", "prerender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "prerender") LABELREF(prerender.label)
+	VALUE(prerender.val) HSTRETCH;
+
+    prerender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(prerender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+}	
+
+lprerender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    lprerender.menu;
+
+    {  }
+
+}
+}	
+tpreframe.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tpreframe.gad = PARM_BUTTON("tpreframe", "") toggle VALUE(tpreframe.val);
+preframe.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+preframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ preframe.label = PARM_LABEL("Pre-Frame Script", "preframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "preframe") LABELREF(preframe.label)
+	VALUE(preframe.val) HSTRETCH;
+
+    preframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(preframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+}	
+
+lpreframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    lpreframe.menu;
+
+    {  }
+
+}
+}	
+tpostframe.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tpostframe.gad = PARM_BUTTON("tpostframe", "") toggle VALUE(tpostframe.val);
+postframe.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postframe.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ postframe.label = PARM_LABEL("Post-Frame Script", "postframe") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postframe") LABELREF(postframe.label)
+	VALUE(postframe.val) HSTRETCH;
+
+    postframe.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postframe.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+}	
+
+lpostframe.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    lpostframe.menu;
+
+    {  }
+
+}
+}	
+tpostrender.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tpostrender.gad = PARM_BUTTON("tpostrender", "") toggle VALUE(tpostrender.val);
+postrender.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+postrender.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ postrender.label = PARM_LABEL("Post-Render Script", "postrender") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "postrender") LABELREF(postrender.label)
+	VALUE(postrender.val) HSTRETCH;
+
+    postrender.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(postrender.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+}	
+
+lpostrender.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    lpostrender.menu;
+
+    {  }
+
+}
+}	
+
+RS_iprRenderCamera_enabled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRenderCamera_enabled", "Custom IPR Render Camera") toggle VALUE(RS_iprRenderCamera_enabled.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprRenderCamera.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ RS_iprRenderCamera.label = PARM_LABEL("IPR Render Camera", "RS_iprRenderCamera") WIDTH(1.5);
+ PARM_FIELD(pathstring, "RS_iprRenderCamera") VALUE(RS_iprRenderCamera.val) 
+	LABELREF(RS_iprRenderCamera.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(RS_iprRenderCamera.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(RS_iprRenderCamera.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+RS_separator_iprRenderCamera.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_iprOverrideCameraRes.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprOverrideCameraRes", "Override IPR Camera Resolution") toggle VALUE(RS_iprOverrideCameraRes.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprOverrideResScale.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("IPR Resolution Scale", "RS_iprOverrideResScale") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    RS_iprOverrideResScale.menu;
+
+    { HSTRETCH }
+
+}
+
+RS_iprOverrideRes.gad = ROW
+{
+   HSTRETCH
+
+   RS_iprOverrideRes.label = PARM_LABEL("IPR Resolution", "RS_iprOverrideRes") WIDTH(1.5);
+   PARM(integer, 2, "RS_iprOverrideRes", none, none, "#1,#2")
+	RANGE(0,10)  LABELREF(RS_iprOverrideRes.label)
+	HSTRETCH;
+
+}
+
+RS_separator_iprOverrideRes.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+RS_iprProgressive.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprProgressive", "IPR Progressive Rendering") toggle VALUE(RS_iprProgressive.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprUndersampling.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_iprUndersampling.label = PARM_LABEL("IPR Undersampling", "RS_iprUndersampling") WIDTH(1.5);
+ PARM(integer, 1, "RS_iprUndersampling", none, none) RANGE(0,3)
+	LOCK_RANGE LABELREF(RS_iprUndersampling.label) HSTRETCH;
+
+}
+
+RS_iprRenderAOVsToMPlay.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprRenderAOVsToMPlay", "Render AOVs to IPR MPlay") toggle VALUE(RS_iprRenderAOVsToMPlay.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprUpdateMeshDeform.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUpdateMeshDeform", "IPR Live Update Mesh Deformations / Proxy Sequences") toggle VALUE(RS_iprUpdateMeshDeform.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprUseTakes.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprUseTakes", "IPR Use the ROP Take") toggle VALUE(RS_iprUseTakes.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprAutoReloadScene.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprAutoReloadScene", "IPR Auto Reload Scene After Add OBJ Nodes") toggle VALUE(RS_iprAutoReloadScene.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprAutoUpdateSOPMesh.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprAutoUpdateSOPMesh", "IPR Auto Reload Object After Modify SOP Nodes") toggle VALUE(RS_iprAutoUpdateSOPMesh.val);
+
+    { HSTRETCH }
+
+}
+
+RS_iprMuteLog.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("RS_iprMuteLog", "IPR Mute Log File") toggle VALUE(RS_iprMuteLog.val);
+
+    { HSTRETCH }
+
+}
+redshidt_plugin_version.gad = NULL { }
+
+RS_giSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_giSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    PrimaryGIEngine.gad;		
+	    SecondaryGIEngine.gad;		
+	    NumGIBounces.gad;		
+	    ConserveGIReflectionEnergy.gad;		
+	    RS_separator_ConserveGIReflectionEnergy.gad;		
+	    BruteForceGINumRays.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Irradiance Point Cloud"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    IrradiancePointCloudMode.gad;		
+	    IrradiancePointCloudFilename.gad;		
+	    IrradiancePointCloudFramesToBlend.gad;		
+	    ShowIrradiancePointCloudCalculation.gad;		
+	    IrradiancePointCloudScreenRadius2.gad;		
+	    IrradiancePointCloudNumSamplesPerPixel.gad;		
+	    IrradiancePointCloudFilterSize.gad;		
+	    IrradiancePointCloudRetraceThreshold.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Irradiance Caching"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    IrradianceCacheMode.gad;		
+	    IrradianceCacheFilename.gad;		
+	    IrradianceCacheFlythroughMode.gad;		
+	    IrradianceCacheFramesToBlend.gad;		
+	    ShowIrradianceCacheCalculation.gad;		
+	    IrradianceCacheUseSeparatePointsForSecondaryRays.gad;		
+	    IrradianceCacheDebugDrawPoints.gad;		
+	    IrradianceCacheMinRate.gad;		
+	    IrradianceCacheMaxRate.gad;		
+	    IrradianceCacheColorThreshold.gad;		
+	    IrradianceCacheDistanceThreshold.gad;		
+	    IrradianceCacheNormalThreshold.gad;		
+	    IrradianceCacheMinDetail.gad;		
+	    IrradianceCacheRadiusFactor.gad;		
+	    IrradianceCacheNumRays.gad;		
+	    IrradianceCacheAdaptiveAmount.gad;		
+	    IrradianceCacheAdaptiveErrorThreshold.gad;		
+	    IrradianceCacheNumSmoothingPasses.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Photon Mapping"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    PhotonGIEnable.gad;		
+	    PhotonCausticsEnable.gad;		
+	    PhotonMode.gad;		
+	    PhotonFilename.gad;		
+	    PhotonMaxTraceDepthReflection.gad;		
+	    PhotonMaxTraceDepthRefraction.gad;		
+	    PhotonMaxTraceDepthCombined.gad;		
+	    PhotonGIMaxNumToGather.gad;		
+	    PhotonGISearchRadius.gad;		
+	    PhotonCausticsMaxNumToGather.gad;		
+	    PhotonCausticsSearchRadius.gad;		
+	    PhotonUsePerPhotonIrradiance.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+RS_group_rroulette.gad = 
+GROUP simple "Rusian Roulette"
+{ 
+    VALUE(RS_group_rroulette.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RussianRouletteImportanceThreshold.gad;		
+	    RussianRouletteFalloff.gad;		
+} 
+
+RS_group_cutoffthreshold.gad = 
+GROUP simple "Cut-off Thresholds"
+{ 
+    VALUE(RS_group_cutoffthreshold.gad.val) LAYOUT(vertical) HSTRETCH 
+	    DiffuseSamplingCutOffThreshold.gad;		
+	    ReflectionSamplingCutOffThreshold.gad;		
+	    RefractionSamplingCutOffThreshold.gad;		
+	    DirectLightingShadowCutOffThreshold.gad;		
+	    DirectLightingCutOffThreshold.gad;		
+} 
+
+RS_group_hminpixel.gad = 
+GROUP simple "Hair Min Pixel Width"
+{ 
+    VALUE(RS_group_hminpixel.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MPWHairEnabled.gad;		
+	    MPWHairAutoThreshold.gad;		
+	    MPWHairThreshold.gad;		
+	    MPWHairTraceDepth.gad;		
+} 
+
+RS_group_mtrace.gad = 
+GROUP simple "Max Trace Depth"
+{ 
+    VALUE(RS_group_mtrace.gad.val) LAYOUT(vertical) HSTRETCH 
+	    MaxTraceDepthReflection.gad;		
+	    MaxTraceDepthRefraction.gad;		
+	    MaxTraceDepthCombined.gad;		
+} 
+
+RS_optimizationsSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_optimizationsSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Optimization Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_group_mtrace.gad;		
+	    RS_group_hminpixel.gad;		
+	    RS_group_cutoffthreshold.gad;		
+	    RS_group_rroulette.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Texture Sampling"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    TextureSamplingTechnique.gad;		
+	    CopyToTextureCache.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Global Overrides"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    ReflectionsEnable.gad;		
+	    RefractionsEnable.gad;		
+	    SubsurfaceScatteringEnable.gad;		
+	    TessellationDisplacementEnable.gad;		
+	    EmissionEnable.gad;		
+	    EnableMaterialsMaxCombinedOverrides.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+RS_group_singleScattering.gad = 
+GROUP simple "Single Scattering"
+{ 
+    VALUE(RS_group_singleScattering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    SingleScatteringSamplesEnabled.gad;		
+	    SingleScatteringSamplesMode.gad;		
+	    SingleScatteringSamplesCount.gad;		
+	    SingleScatteringSamplesScale.gad;		
+} 
+
+RS_group_volume.gad = 
+GROUP simple "Volume"
+{ 
+    VALUE(RS_group_volume.gad.val) LAYOUT(vertical) HSTRETCH 
+	    VolumeSamplesEnabled.gad;		
+	    VolumeSamplesMode.gad;		
+	    VolumeSamplesCount.gad;		
+	    VolumeSamplesScale.gad;		
+} 
+
+RS_group_light.gad = 
+GROUP simple "Light"
+{ 
+    VALUE(RS_group_light.gad.val) LAYOUT(vertical) HSTRETCH 
+	    LightSamplesEnabled.gad;		
+	    LightSamplesMode.gad;		
+	    LightSamplesCount.gad;		
+	    LightSamplesScale.gad;		
+} 
+
+RS_group_ao.gad = 
+GROUP simple "AO"
+{ 
+    VALUE(RS_group_ao.gad.val) LAYOUT(vertical) HSTRETCH 
+	    AOSamplesEnabled.gad;		
+	    AOSamplesMode.gad;		
+	    AOSamplesCount.gad;		
+	    AOSamplesScale.gad;		
+} 
+
+RS_group_refraction.gad = 
+GROUP simple "Refraction"
+{ 
+    VALUE(RS_group_refraction.gad.val) LAYOUT(vertical) HSTRETCH 
+	    RefractSamplesEnabled.gad;		
+	    RefractSamplesMode.gad;		
+	    RefractSamplesCount.gad;		
+	    RefractSamplesScale.gad;		
+} 
+
+RS_group_reflection.gad = 
+GROUP simple "Reflection"
+{ 
+    VALUE(RS_group_reflection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ReflectSamplesEnabled.gad;		
+	    ReflectSamplesMode.gad;		
+	    ReflectSamplesCount.gad;		
+	    ReflectSamplesScale.gad;		
+} 
+
+RS_group_sfiltering.gad = 
+GROUP simple "Sample Filtering"
+{ 
+    VALUE(RS_group_sfiltering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    UnifiedFilterType.gad;		
+	    UnifiedFilterSize.gad;		
+	    GlossyRayMaxOverbright.gad;		
+	    UnifiedMaxOverbright.gad;		
+} 
+
+RS_group_usampling.gad = 
+GROUP simple "Unified Sampling"
+{ 
+    VALUE(RS_group_usampling.gad.val) LAYOUT(vertical) HSTRETCH 
+	    UnifiedMinSamples.gad;		
+	    UnifiedMaxSamples.gad;		
+	    UnifiedAdaptiveErrorThreshold.gad;		
+	    UnifiedDebugDrawSamples.gad;		
+	    UnifiedDisableDivision.gad;		
+	    UnifiedRandomizePattern.gad;		
+	    RS_UnifiedRandomizePattern_randomFrameID.gad;		
+} 
+
+RS_group_prendering.gad = 
+GROUP simple "Progressive Rendering"
+{ 
+    VALUE(RS_group_prendering.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ProgressiveRenderingEnabled.gad;		
+	    ProgressiveRenderingNumPasses.gad;		
+} 
+
+RS_settingsSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_settingsSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Sampling Options"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_group_prendering.gad;		
+	    RS_group_usampling.gad;		
+	    RS_group_sfiltering.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Sampling Overrides"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_group_reflection.gad;		
+	    RS_group_refraction.gad;		
+	    RS_group_ao.gad;		
+	    RS_group_light.gad;		
+	    RS_group_volume.gad;		
+	    RS_group_singleScattering.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Misc"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    PhotometricUnitsToMeterScale.gad;		
+	    PhotometricCandelaMetersSquaredFactor.gad;		
+	    RS_separator_PhotometricCandelaMetersSquaredFactor.gad;		
+	    Do8BitQuantizationAndDithering.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+RS_redshiftSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_redshiftSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Settings"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_settingsSwitcher.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Motion Blur"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    MotionBlurEnabled.gad;		
+	    MotionBlurDeformationEnabled.gad;		
+	    RS_mbPoints.gad;		
+	    MotionBlurNumTransformationSteps.gad;		
+	    RS_separator_MotionBlurNumTransformationSteps.gad;		
+	    MotionBlurFrameDuration.gad;		
+	    MotionBlurShutterStart.gad;		
+	    MotionBlurShutterEnd.gad;		
+	    MotionBlurShutterEfficiencyForTrapezoidal.gad;		
+	    MotionBlurShutterPosition.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Optimizations"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_optimizationsSwitcher.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Global Illumination"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_giSwitcher.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "SSS"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    SubsurfaceScatteringMode.gad;		
+	    SubsurfaceScatteringFilename.gad;		
+	    SubsurfaceScatteringRate.gad;		
+	    SubsurfaceScatteringInterpolationQuality.gad;		
+	    SubsurfaceScatteringNumGIRays.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Volumetric Scattering"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    VolLightingEnabled.gad;		
+	    RS_separator_VolLightingEnabled.gad;		
+	    VolLightingTint.gad;		
+	    VolLightingScatteringCoefficient.gad;		
+	    VolLightingExtinctionCoefficient.gad;		
+	    VolLightingPhase.gad;		
+	    RS_separator_VolLightingPhase.gad;		
+	    VolLightingFogAmbient.gad;		
+	    VolLightingApplyExposureCompensation.gad;		
+	    VolLightingFogHeight.gad;		
+	    VolLightingFogHorizonBlur.gad;		
+	    VolLightingFogOrigin.gad;		
+	    VolLightingFogNormal.gad;		
+	    RS_separator_VolLightingFogNormal.gad;		
+	    VolLightingRayContributionEnvironment.gad;		
+	    VolLightingRayContributionCamera.gad;		
+	    VolLightingRayContributionReflection.gad;		
+	    VolLightingRayContributionGI.gad;		
+	    RS_separator_VolLightingRayContributionGI.gad;		
+	    VolLightingReplaceAlphaOnEnvironment.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "System"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    AbortOnLicenseFail.gad;		
+	    RS_separator_AbortOnLicenseFail.gad;		
+	    RS_matOverrideEnable.gad;		
+	    RS_matOverrideColor.gad;		
+	    RS_separator_matOverrideColor.gad;		
+	    DoCompleteRTHConstruction.gad;		
+	    RTHMaxNumLeafPrimitives.gad;		
+	    RS_separator_RTHMaxNumLeafPrimitives.gad;		
+	    HairTessellationMode.gad;		
+	    RS_separator_HairTessellationMode.gad;		
+	    RenderInCameraSpace.gad;		
+	    FreezeTessellation.gad;		
+	    DisableBumpSmoothingOnLightingSilhouettes.gad;		
+	    RenderTwoPassesForDenoising.gad;		
+	    DisableShadowRayBiasing.gad;		
+	    EnableSecondaryRayClampingOnFirstBounce.gad;		
+	    RS_separator_FrameIndependentPatternRandomization.gad;		
+	    EnableLegacyVolumeGridEmission.gad;		
+	    EnableLegacyCutOffsRules.gad;		
+	    EnableLegacyNonInverseSquareLightDecay.gad;		
+	    RS_separator_EnableLegacyNonInverseSquareLightDecaySep.gad;		
+	    BlockRenderingOrder.gad;		
+	    BlockSize.gad;		
+	    RS_separator_BlockSize.gad;		
+	    EnableDebugCapture.gad;		
+	    EnableDebugCaptureShaderIntegrityCheck.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Memory"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    AutomaticMemoryManagement.gad;		
+	    PercentageOfGPUMemoryToUse.gad;		
+	    MaxNumGPUMBForIrradiancePointCloudHierarchy.gad;		
+	    MaxNumGPUMBForForICPHierarchy.gad;		
+	    PercentageOfFreeMemoryUsedForTextureCache.gad;		
+	    MaxNumGPUMBForTextureCache.gad;		
+	    MaxNumCPUMBForTextureCache.gad;		
+	    NumGPUMBToReserveForRays.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+RS_outputSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_outputSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Common"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_renderToMPlay.gad;		
+	    RS_renderAOVsToMPlay.gad;		
+	    RS_overwriteMPlayImage.gad;		
+	    RS_MPlay_disabledNonGUI.gad;		
+	    RS_separator_overwriteMPlayImage.gad;		
+	    RS_outputEnable.gad;		
+	    RS_outputFileNamePrefix.gad;		
+	    RS_outputBeautyAOVSuffix.gad;		
+	    RS_outputSkipRendered.gad;		
+	    RS_outputCreateDirs.gad;		
+	    RS_outputFileFormat.gad;		
+	    RS_outputBits.gad;		
+	    RS_outputTiffCompression.gad;		
+	    RS_outputExrCompression.gad;		
+	    RS_outputDwaCompression.gad;		
+	    RS_outputJpgCompression.gad;		
+	    RS_outputStorageFormat.gad;		
+	    RS_outputMultilayerMode.gad;		
+	    RS_aovMultilayerBeauty.gad;		
+	    RS_aovAutocrop.gad;		
+	    RS_aovMultipart.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "AOV"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_aov.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "AOV Processing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    RS_aovDeepEnabled.gad;		
+	    AOVDeepMergeMode.gad;		
+	    AOVDeepMergeZThreshold.gad;		
+	    AOVMaxOverbrightEnable.gad;		
+	    AOVMaxOverbright.gad;		
+	    AOVDisableImportanceOptimizations.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Gamma"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    GammaCorrectColorInputs.gad;		
+	    GammaCorrectColorAttributes.gad;		
+	    RS_separator_GammaCorrectColorAttributes.gad;		
+	    RS_gammaPreview.gad;		
+	    RS_gammaFileMode.gad;		
+	    RS_gammaFile.gad;		
+	    RS_gammaSamplingMode.gad;		
+	    RS_gammaSampling.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+RS_mainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_mainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Main"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_renderCamera.gad;		
+	    RS_separator_renderCamera.gad;		
+	    RS_overrideCameraRes.gad;		
+	    RS_overrideResScale.gad;		
+	    RS_overrideRes.gad;		
+	    RS_separator_overrideRes.gad;		
+	    RS_matOverride_enable.gad;		
+	    RS_matOverride_mat.gad;		
+	    RS_matOverride_exclude.gad;		
+	    RS_separator_overrideMaterials.gad;		
+	    RS_updateMeshDeform.gad;		
+	    RS_updateMeshNoReload.gad;		
+	    RS_updateMeshNoReload_list.gad;		
+	    RS_separator_updateMeshDeform.gad;		
+	    RS_globalEnvironment.gad;		
+	    RS_apply_stylesheets.gad;		
+	    RS_initSimulations.gad;		
+	    RS_multihreadLoader.gad;		
+	    RS_multihreadPacked.gad;		
+	    RS_nonBlockingRendering.gad;		
+	    RS_addDefaultLight.gad;		
+	    RS_reportErrorsToROP.gad;		
+	    RS_arbitraryUVMapNames.gad;		
+	    RS_useAlembicProcedural.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Output"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_outputSwitcher.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Redshift"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_redshiftSwitcher.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Archive"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_archive_enable.gad;		
+	    RS_archive_sopPath.gad;		
+	    RS_archive_file.gad;		
+	    RS_archive_createDirs.gad;		
+	    RS_archive_selected.gad;		
+	    RS_archive_removeAtt.gad;		
+	    RS_archive_exportConn.gad;		
+	    RS_archive_compress.gad;		
+	    RS_archive_skipFiles.gad;		
+	    RS_archive_noXform.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "RenderMaps"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_rendermap_enable.gad;		
+	    RS_rendermap_objects.gad;		
+	    RS_rendermap_uvmap.gad;		
+	    RS_rendermap_res.gad;		
+	    RS_rendermap_ropname.gad;		
+	    RS_rendermap_tilingMode.gad;		
+	    RS_rendermap_tilingU.gad;		
+	    RS_rendermap_tilingV.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Objects"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_objects_candidate.gad;		
+	    RS_objects_force.gad;		
+	    RS_objects_exclude.gad;		
+	    RS_objects_forcePhantom.gad;		
+	    RS_objects_forceMatte.gad;		
+	    RS_objects_forceMatteRef.gad;		
+	    RS_separator_objectCandidates.gad;		
+	    RS_lights_candidate.gad;		
+	    RS_lights_force.gad;		
+	    RS_lights_exclude.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Scripts"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    tprerender.join;		
+	    tpreframe.join;		
+	    tpostframe.join;		
+	    tpostrender.join;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "IPR"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    RS_iprRenderCamera_enabled.gad;		
+	    RS_iprRenderCamera.gad;		
+	    RS_separator_iprRenderCamera.gad;		
+	    RS_iprOverrideCameraRes.gad;		
+	    RS_iprOverrideResScale.gad;		
+	    RS_iprOverrideRes.gad;		
+	    RS_separator_iprOverrideRes.gad;		
+	    RS_iprProgressive.gad;		
+	    RS_iprUndersampling.gad;		
+	    RS_iprRenderAOVsToMPlay.gad;		
+	    RS_iprUpdateMeshDeform.gad;		
+	    RS_iprUseTakes.gad;		
+	    RS_iprAutoReloadScene.gad;		
+	    RS_iprAutoUpdateSOPMesh.gad;		
+	    RS_iprMuteLog.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_IPR.row.join; 
+    trange.gad; 
+    f.gad; 
+    take.gad; 
+    RS_separator_rrs2.gad; 
+    RS_rrs2.gad; 
+    RS_mainSwitcher.gad; 
+    redshidt_plugin_version.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

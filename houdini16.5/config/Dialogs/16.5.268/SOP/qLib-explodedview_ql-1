@@ -1,0 +1,146 @@
+// Magic: d454fce1
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Mar  3 11:59:07 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+group.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    group.label = PARM_LABEL("Group", "group") WIDTH(1.5);
+    PARM_FIELD(string, "group") VALUE(group.val) 
+	LABELREF(group.label) HSTRETCH;
+
+    group.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+    ACTION_ICONBUTTON "BUTTONS_reselect" VALUE(group.script_action)
+	HELP("Select geometry from an available viewport.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+}
+
+jitter.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ jitter.label = PARM_LABEL("Jitter", "jitter") WIDTH(1.5);
+ PARM(float, 1, "jitter", none, none) RANGE(0,1)
+	 LABELREF(jitter.label) HSTRETCH;
+
+}
+
+jitterseed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ jitterseed.label = PARM_LABEL("Jitter Seed", "jitterseed") WIDTH(1.5);
+ PARM(float, 1, "jitterseed", none, none) RANGE(0,9999)
+	 LABELREF(jitterseed.label) HSTRETCH;
+
+}
+overridecenter.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+overridecenter.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+overridecenter.gad = PARM_BUTTON("overridecenter", "") toggle VALUE(overridecenter.val);
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Override Center", "t") WIDTH(1.32);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t.label)
+	HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+piecetype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Piece Type", "piecetype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    piecetype.menu;
+
+    { HSTRETCH }
+
+}
+
+groupmask.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    groupmask.label = PARM_LABEL("Group Mask", "groupmask") WIDTH(1.5);
+    PARM_FIELD(string, "groupmask") VALUE(groupmask.val) 
+	LABELREF(groupmask.label) HSTRETCH;
+
+}
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attribute.label = PARM_LABEL("Piece Attribute", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+}
+
+folder0.gad = 
+GROUP simple "Piece Detection"
+{ 
+    VALUE(folder0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    piecetype.gad;		
+	    groupmask.gad;		
+	    attribute.gad;		
+} 
+
+folder1.gad = 
+GROUP simple "Explode Settings"
+{ 
+    VALUE(folder1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    scale.gad;		
+	    jitter.gad;		
+	    jitterseed.gad;		
+	    overridecenter.row.join;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    group.gad; 
+    folder1.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

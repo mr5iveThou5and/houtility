@@ -1,0 +1,126 @@
+// Magic: 79a53c1a
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Feb 11 19:17:49 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+additive.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additive", "Additive Mode") toggle VALUE(additive.val);
+
+    { HSTRETCH }
+
+    additive.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additive.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+baseInput.gad = NULL { }
+displaceInput0.gad = NULL { }
+
+displaceWeight0.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ displaceWeight0.label = PARM_LABEL("Blend Weight", "displaceWeight0") WIDTH(1.5);
+ PARM(float, 1, "displaceWeight0", none, none) RANGE(0,1)
+	 LABELREF(displaceWeight0.label) HSTRETCH;
+
+    displaceWeight0.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(displaceWeight0.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+displaceInput1.gad = NULL { }
+
+displaceWeight1.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ displaceWeight1.label = PARM_LABEL("Blend Weight", "displaceWeight1") WIDTH(1.5);
+ PARM(float, 1, "displaceWeight1", none, none) RANGE(0,1)
+	 LABELREF(displaceWeight1.label) HSTRETCH;
+
+    displaceWeight1.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(displaceWeight1.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+displaceInput2.gad = NULL { }
+
+displaceWeight2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ displaceWeight2.label = PARM_LABEL("Blend Weight", "displaceWeight2") WIDTH(1.5);
+ PARM(float, 1, "displaceWeight2", none, none) RANGE(0,1)
+	 LABELREF(displaceWeight2.label) HSTRETCH;
+
+    displaceWeight2.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(displaceWeight2.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Layer_2_3.gad = 
+GROUP simple "Layer 2"
+{ 
+    VALUE(Layer_2_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    displaceInput2.gad;		
+	    displaceWeight2.gad;		
+} 
+
+Layer_1_2.gad = 
+GROUP simple "Layer 1"
+{ 
+    VALUE(Layer_1_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    displaceInput1.gad;		
+	    displaceWeight1.gad;		
+} 
+
+Layer_0_1.gad = 
+GROUP simple "Layer 0"
+{ 
+    VALUE(Layer_0_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    displaceInput0.gad;		
+	    displaceWeight0.gad;		
+} 
+
+Base_0.gad = 
+GROUP simple "Base"
+{ 
+    VALUE(Base_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    baseInput.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    additive.gad; 
+    Base_0.gad; 
+    Layer_0_1.gad; 
+    Layer_1_2.gad; 
+    Layer_2_3.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

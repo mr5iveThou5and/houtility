@@ -1,0 +1,322 @@
+// Magic: 39bed14f
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Feb 10 16:14:45 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+on.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("on", "On") toggle VALUE(on.val);
+
+    { HSTRETCH }
+
+    on.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(on.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+temperature.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ temperature.label = PARM_LABEL("Temperature", "temperature") WIDTH(1.5);
+ PARM(float, 1, "temperature", none, none) RANGE(1667,25000)
+	 LABELREF(temperature.label) HSTRETCH;
+
+    temperature.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(temperature.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+colorMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "colorMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    colorMode.menu;
+
+    { HSTRETCH }
+
+    colorMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(colorMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+intensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ intensity.label = PARM_LABEL("Intensity Multiplier", "intensity") WIDTH(1.5);
+ PARM(float, 1, "intensity", none, none) RANGE(0,1)
+	 LABELREF(intensity.label) HSTRETCH;
+
+    intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+unitsType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Unit Type", "unitsType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    unitsType.menu;
+
+    { HSTRETCH }
+
+    unitsType.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(unitsType.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+lumensperwatt.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ lumensperwatt.label = PARM_LABEL("Luminous Efficacy (lm/w)", "lumensperwatt") WIDTH(1.5);
+ PARM(float, 1, "lumensperwatt", none, none) RANGE(0,20)
+	 LABELREF(lumensperwatt.label) HSTRETCH;
+
+    lumensperwatt.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(lumensperwatt.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+decayType.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Type", "decayType") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    decayType.menu;
+
+    { HSTRETCH }
+
+    decayType.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(decayType.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+falloffStart.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ falloffStart.label = PARM_LABEL("Falloff Start", "falloffStart") WIDTH(1.5);
+ PARM(float, 1, "falloffStart", none, none) RANGE(0,100)
+	 LABELREF(falloffStart.label) HSTRETCH;
+
+    falloffStart.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(falloffStart.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+falloffStop.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ falloffStop.label = PARM_LABEL("Falloff Stop", "falloffStop") WIDTH(1.5);
+ PARM(float, 1, "falloffStop", none, none) RANGE(0,100)
+	 LABELREF(falloffStop.label) HSTRETCH;
+
+    falloffStop.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(falloffStop.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+shadow.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("shadow", "Enable") toggle VALUE(shadow.val);
+
+    { HSTRETCH }
+
+    shadow.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(shadow.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+shadowTransparency.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ shadowTransparency.label = PARM_LABEL("Transparency", "shadowTransparency") WIDTH(1.5);
+ PARM(float, 1, "shadowTransparency", none, none) RANGE(0,1)
+	 LABELREF(shadowTransparency.label) HSTRETCH;
+
+    shadowTransparency.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(shadowTransparency.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+SAMPLINGOVERRIDES_shadowSamplesScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ SAMPLINGOVERRIDES_shadowSamplesScale.label = PARM_LABEL("Softness", "SAMPLINGOVERRIDES_shadowSamplesScale") WIDTH(1.5);
+ PARM(float, 1, "SAMPLINGOVERRIDES_shadowSamplesScale", none, none) RANGE(0,2)
+	 LABELREF(SAMPLINGOVERRIDES_shadowSamplesScale.label) HSTRETCH;
+
+    SAMPLINGOVERRIDES_shadowSamplesScale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(SAMPLINGOVERRIDES_shadowSamplesScale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+SAMPLINGOVERRIDES_numShadowSamples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ SAMPLINGOVERRIDES_numShadowSamples.label = PARM_LABEL("Samples", "SAMPLINGOVERRIDES_numShadowSamples") WIDTH(1.5);
+ PARM(integer, 1, "SAMPLINGOVERRIDES_numShadowSamples", none, none) RANGE(1,256)
+	 LABELREF(SAMPLINGOVERRIDES_numShadowSamples.label) HSTRETCH;
+
+    SAMPLINGOVERRIDES_numShadowSamples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(SAMPLINGOVERRIDES_numShadowSamples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+spotConeFalloffAngle.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ spotConeFalloffAngle.label = PARM_LABEL("Fall-off Angle", "spotConeFalloffAngle") WIDTH(1.5);
+ PARM(float, 1, "spotConeFalloffAngle", none, none) RANGE(0,180)
+	 LABELREF(spotConeFalloffAngle.label) HSTRETCH;
+
+    spotConeFalloffAngle.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(spotConeFalloffAngle.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+spotConeFalloffCurve.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ spotConeFalloffCurve.label = PARM_LABEL("Fall-off Curve", "spotConeFalloffCurve") WIDTH(1.5);
+ PARM(float, 1, "spotConeFalloffCurve", none, none) RANGE(0,10)
+	 LABELREF(spotConeFalloffCurve.label) HSTRETCH;
+
+    spotConeFalloffCurve.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(spotConeFalloffCurve.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Attenuation_3.gad = 
+GROUP simple "Attenuation"
+{ 
+    VALUE(Attenuation_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    spotConeFalloffAngle.gad;		
+	    spotConeFalloffCurve.gad;		
+} 
+
+Shadow_2.gad = 
+GROUP simple "Shadow"
+{ 
+    VALUE(Shadow_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    shadow.gad;		
+	    shadowTransparency.gad;		
+	    SAMPLINGOVERRIDES_shadowSamplesScale.gad;		
+	    SAMPLINGOVERRIDES_numShadowSamples.gad;		
+} 
+
+Decay_1.gad = 
+GROUP simple "Decay"
+{ 
+    VALUE(Decay_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    decayType.gad;		
+	    falloffStart.gad;		
+	    falloffStop.gad;		
+} 
+
+General_0.gad = 
+GROUP simple "General"
+{ 
+    VALUE(General_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    on.gad;		
+	    color.gad;		
+	    temperature.gad;		
+	    colorMode.gad;		
+	    intensity.gad;		
+	    unitsType.gad;		
+	    lumensperwatt.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    General_0.gad; 
+    Decay_1.gad; 
+    Shadow_2.gad; 
+    Attenuation_3.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

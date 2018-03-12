@@ -1,0 +1,53 @@
+// Magic: ad09d9d1
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 12:36:12 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+showenforced.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+showenforced.gad = ROW
+{
+    
+
+    PARM_BUTTON("showenforced", "Visualize Enforced Edges") toggle VALUE(showenforced.val);
+
+    {  }
+
+}
+
+showunenforced.gad = ROW
+{
+    
+
+    PARM_BUTTON("showunenforced", "Visualize Unenforced Segments") toggle VALUE(showunenforced.val);
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    showenforced.row.join; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

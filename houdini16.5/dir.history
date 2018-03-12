@@ -1,0 +1,50 @@
+HIP
+{
+/media/john/Samsung USB/glasses/
+/media/john/wd_2tb_hdd/houdini_prjects/wine_glass_turntable/scenes/
+/media/john/wd_2tb_hdd/wine_glasses/
+/media/john/wd_2tb_hdd/houdini_prjects/wine_glass_shatter/scenes/
+/home/john/Downloads/GameDevelopmentToolset-Development/hip/
+/media/john/wd_2tb_hdd/houdini_prjects/rs_demo_scenes/scenes/
+/tmp/houdini_temp/
+/home/john/
+/home/john/Desktop/dailies/2018.02.16/scenes/
+/home/john/Desktop/
+/home/john/Downloads/
+}
+PIC
+{
+http://incitrio.com/wp-content/uploads/2015/01/
+$HOME/Downloads/
+/media/john/Samsung USB/glasses/ref/
+/media/john/wd_2tb_hdd/houdini_prjects/wine_glass_turntable/tex/
+$HOME/Desktop/dailies/2018.02.16/render/2018.02.16.v14_baketexture1/
+$HIP/../render/2018.02.16.v14_baketexture1/
+}
+GEO
+{
+/media/john/Samsung USB/glasses/geo/sim_single_glass_xform_pts.v90/
+/media/john/Samsung USB/glasses/geo/sim_single_glass_xform_pts.v90/`rint($FF*100)/
+/media/john/wd_2tb_hdd/caustics/single_glass_rest_geo/
+`chs("../rop_geometry1/
+/media/john/Samsung USB/glasses/geo/sim_single_glass_xform_pts.v90/.`rint($FF*100)/
+http://mrkunz.com/useful/geo/
+$HIP/../geo/
+}
+OTL
+{
+/opt/hfs16.5.268/houdini/otls/
+/opt/hfs15.5.717/houdini/otls/
+/home/john/Downloads/GameDevelopmentToolset-Development/otls/
+/home/john/Downloads/
+/home/john/houdini16.5/otls/
+}
+MISC
+{
+/media/john/wd_2tb_hdd/caustics/single_glass_rest_geo/
+/media/john/wd_2tb_hdd/caustics/edge_faces_pointcloud/
+/media/john/Samsung USB/glasses/geo/sim_single_glass_xform_pts.v90/.`rint($FF*100)/
+$HIP/../render/
+$HIP/../render/${HIPNAME}_${OS}/
+$HIP/../geo/
+}

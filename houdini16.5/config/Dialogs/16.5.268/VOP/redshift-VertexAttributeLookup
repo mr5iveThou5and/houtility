@@ -1,0 +1,71 @@
+// Magic: 79f44e1c
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Feb 11 19:16:21 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attribute.label = PARM_LABEL("Attribute Name", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+    attribute.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(attribute.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+defaultColor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    defaultColor.label = PARM_LABEL("Default Color", "defaultColor") WIDTH(1.5);
+    PARM(float, 4, "defaultColor", none, COLOR, "R,G,B,A") 
+	LABELREF(defaultColor.label) HSTRETCH;
+
+    defaultColor.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(defaultColor.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+defaultScalar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ defaultScalar.label = PARM_LABEL("Default Scalar", "defaultScalar") WIDTH(1.5);
+ PARM(float, 1, "defaultScalar", none, none) RANGE(0,1)
+	 LABELREF(defaultScalar.label) HSTRETCH;
+
+    defaultScalar.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(defaultScalar.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    attribute.gad; 
+    defaultColor.gad; 
+    defaultScalar.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

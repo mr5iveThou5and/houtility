@@ -1,0 +1,144 @@
+// Magic: 85ef7941
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Mar 11 16:15:31 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+relative_to_entire_bbox.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("relative_to_entire_bbox", "relative_to_entire_bbox") toggle VALUE(relative_to_entire_bbox.val);
+
+    { HSTRETCH }
+
+}
+
+voxelsize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ voxelsize.label = PARM_LABEL("Voxel Size", "voxelsize") WIDTH(1.5);
+ PARM(float, 1, "voxelsize", none, none) RANGE(0,0.10000000000000001)
+	LOCK_RANGE_MIN LABELREF(voxelsize.label) HSTRETCH;
+
+}
+
+iso_value.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ iso_value.label = PARM_LABEL("iso_value", "iso_value") WIDTH(1.5);
+ PARM(float, 1, "iso_value", none, none) RANGE(-0.10000000000000001,0.10000000000000001)
+	 LABELREF(iso_value.label) HSTRETCH;
+
+}
+
+minradiusworld.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minradiusworld.label = PARM_LABEL("Min Sphere Radius", "minradiusworld") WIDTH(1.5);
+ PARM(float, 1, "minradiusworld", none, none) RANGE(1.0000000000000001e-05,0.050000000000000003)
+	LOCK_RANGE_MIN LABELREF(minradiusworld.label) HSTRETCH;
+
+}
+
+maxradiusworld.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxradiusworld.label = PARM_LABEL("Max Sphere Radius", "maxradiusworld") WIDTH(1.5);
+ PARM(float, 1, "maxradiusworld", none, none) RANGE(1.0000000000000001e-05,1)
+	LOCK_RANGE_MIN LABELREF(maxradiusworld.label) HSTRETCH;
+
+}
+
+spheres.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ spheres.label = PARM_LABEL("Max Spheres", "spheres") WIDTH(1.5);
+ PARM(integer, 1, "spheres", none, none) RANGE(1,50000)
+	LOCK_RANGE_MIN LABELREF(spheres.label) HSTRETCH;
+
+}
+
+scatter.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scatter.label = PARM_LABEL("Scatter Points", "scatter") WIDTH(1.5);
+ PARM(integer, 1, "scatter", none, none) RANGE(1000,100000)
+	LOCK_RANGE_MIN LABELREF(scatter.label) HSTRETCH;
+
+}
+
+overlapping.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("overlapping", "Overlapping") toggle VALUE(overlapping.val);
+
+    { HSTRETCH }
+
+}
+
+dopscale.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dopscale", "Add PScale Attribute") toggle VALUE(dopscale.val);
+
+    { HSTRETCH }
+
+}
+
+attrs_from_input_geo.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrs_from_input_geo.label = PARM_LABEL("attrs_from_input_geo", "attrs_from_input_geo") WIDTH(1.5);
+    PARM_FIELD(string, "attrs_from_input_geo") VALUE(attrs_from_input_geo.val) 
+	LABELREF(attrs_from_input_geo.label) HSTRETCH;
+
+    attrs_from_input_geo.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    relative_to_entire_bbox.gad; 
+    voxelsize.gad; 
+    iso_value.gad; 
+    minradiusworld.gad; 
+    maxradiusworld.gad; 
+    spheres.gad; 
+    scatter.gad; 
+    overlapping.gad; 
+    dopscale.gad; 
+    attrs_from_input_geo.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

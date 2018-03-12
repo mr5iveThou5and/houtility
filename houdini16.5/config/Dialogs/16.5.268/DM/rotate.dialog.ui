@@ -1,0 +1,79 @@
+// Magic: ee358221
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Jan 21 13:23:46 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+handlefollow.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("handlefollow", "Handle Follows Group") toggle VALUE(handlefollow.val);
+
+    { HSTRETCH }
+
+}
+
+handlealign.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Handle Alignment", "handlealign") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    handlealign.menu;
+
+    { HSTRETCH }
+
+}
+
+handlepivot.gad = ROW
+{
+   HSTRETCH
+
+   handlepivot.label = PARM_LABEL("Handle Pivot", "handlepivot") WIDTH(1.5);
+   PARM(float, 3, "handlepivot", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(handlepivot.label)
+	HSTRETCH;
+
+}
+
+handlerot.gad = ROW
+{
+   HSTRETCH
+
+   handlerot.label = PARM_LABEL("Handle Rotation", "handlerot") WIDTH(1.5);
+   PARM(float, 3, "handlerot", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(handlerot.label)
+	HSTRETCH;
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    handlefollow.gad; 
+    handlealign.gad; 
+    handlepivot.gad; 
+    handlerot.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

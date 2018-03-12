@@ -1,0 +1,59 @@
+// Magic: b54325d7
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 12:38:29 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+selmode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Select", "selmode") WIDTH(1.5);
+    { WIDTH(0.1) }
+
+    selmode.buttonstrip;
+
+    { HSTRETCH }
+
+}
+
+pinmarkersize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pinmarkersize.label = PARM_LABEL("Pin Marker Size", "pinmarkersize") WIDTH(1.5);
+ PARM(integer, 1, "pinmarkersize", none, none) RANGE(3,12)
+	LOCK_RANGE_MIN LABELREF(pinmarkersize.label) HSTRETCH;
+
+}
+
+initialpinmarkersize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ initialpinmarkersize.label = PARM_LABEL("Initial Pin Marker Size", "initialpinmarkersize") WIDTH(1.5);
+ PARM(integer, 1, "initialpinmarkersize", none, none) RANGE(3,12)
+	LOCK_RANGE_MIN LABELREF(initialpinmarkersize.label) HSTRETCH;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    selmode.gad; 
+    pinmarkersize.gad; 
+    initialpinmarkersize.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

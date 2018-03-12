@@ -1,0 +1,417 @@
+// Magic: 2571e8f9
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 05:38:47 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+colortype.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+colortype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Color Type", "colortype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    colortype.menu;
+
+    {  }
+
+}
+
+class.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Class", "class") ;
+    { WIDTH(0.09) }
+
+    class.menu;
+
+    {  }
+
+}
+}	
+
+attrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attrib.label = PARM_LABEL("Attribute", "attrib") WIDTH(1.5);
+    PARM_FIELD(string, "attrib") VALUE(attrib.val) 
+	LABELREF(attrib.label) HSTRETCH;
+
+    attrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+uvattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    uvattrib.label = PARM_LABEL("Texture Attribute", "uvattrib") WIDTH(1.5);
+    PARM_FIELD(string, "uvattrib") VALUE(uvattrib.val) 
+	LABELREF(uvattrib.label) HSTRETCH;
+
+    uvattrib.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+distortiontype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Measure Distortion", "distortiontype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    distortiontype.menu;
+
+    { HSTRETCH }
+
+}
+
+rangespec.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Set Using", "rangespec") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    rangespec.menu;
+
+    { HSTRETCH }
+
+}
+
+minscalar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minscalar.label = PARM_LABEL("Min", "minscalar") WIDTH(1.5);
+ PARM(float, 1, "minscalar", none, none) RANGE(0,1)
+	 LABELREF(minscalar.label) HSTRETCH;
+
+}
+
+maxscalar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxscalar.label = PARM_LABEL("Max", "maxscalar") WIDTH(1.5);
+ PARM(float, 1, "maxscalar", none, none) RANGE(0,1)
+	 LABELREF(maxscalar.label) HSTRETCH;
+
+}
+
+centerscalar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ centerscalar.label = PARM_LABEL("Center", "centerscalar") WIDTH(1.5);
+ PARM(float, 1, "centerscalar", none, none) RANGE(0,1)
+	 LABELREF(centerscalar.label) HSTRETCH;
+
+}
+
+widthscalar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ widthscalar.label = PARM_LABEL("Width", "widthscalar") WIDTH(1.5);
+ PARM(float, 1, "widthscalar", none, none) RANGE(0,1)
+	 LABELREF(widthscalar.label) HSTRETCH;
+
+}
+
+clamptype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Out Of Range Values", "clamptype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    clamptype.menu;
+
+    { HSTRETCH }
+
+}
+
+constcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    constcolor.label = PARM_LABEL("Color", "constcolor") WIDTH(1.5);
+    PARM(float, 4, "constcolor", none, COLOR, "R,G,B,A") 
+	LABELREF(constcolor.label) HSTRETCH;
+
+}
+usethreevtxcolor.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+usethreevtxcolor.gad = PARM_BUTTON("usethreevtxcolor", "") toggle VALUE(usethreevtxcolor.val);
+
+colorthreevtx.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    colorthreevtx.label = PARM_LABEL("Color Triangles", "colorthreevtx") WIDTH(1.32);
+    PARM(float, 3, "colorthreevtx", none, COLOR, "R,G,B") 
+	LABELREF(colorthreevtx.label) HSTRETCH;
+
+}
+}	
+usefourvtxcolor.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+usefourvtxcolor.gad = PARM_BUTTON("usefourvtxcolor", "") toggle VALUE(usefourvtxcolor.val);
+
+colorfourvtx.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    colorfourvtx.label = PARM_LABEL("Color Quads", "colorfourvtx") WIDTH(1.32);
+    PARM(float, 3, "colorfourvtx", none, COLOR, "R,G,B") 
+	LABELREF(colorfourvtx.label) HSTRETCH;
+
+}
+}	
+usenvtxcolor.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+usenvtxcolor.gad = PARM_BUTTON("usenvtxcolor", "") toggle VALUE(usenvtxcolor.val);
+
+colornvtx.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    colornvtx.label = PARM_LABEL("Color N-Gons", "colornvtx") WIDTH(1.32);
+    PARM(float, 3, "colornvtx", none, COLOR, "R,G,B") 
+	LABELREF(colornvtx.label) HSTRETCH;
+
+}
+}	
+
+treatasscalar.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("treatasscalar", "Treat As Scalar") toggle VALUE(treatasscalar.val);
+
+    { HSTRETCH }
+
+}
+using.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+using.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Using", "using") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    using.menu;
+
+    {  }
+
+}
+
+component.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ component.label = PARM_LABEL("", "component") ;
+ PARM(integer, 1, "component", none, none) RANGE(0,10)
+	 LABELREF(component.label) HSTRETCH;
+
+}
+}	
+
+refvec.gad = ROW
+{
+   HSTRETCH
+
+   refvec.label = PARM_LABEL("Reference Vector", "refvec") WIDTH(1.5);
+   PARM(float, 3, "refvec", none, none, "#1,#2,#3")
+	RANGE(0,1)  LABELREF(refvec.label)
+	HSTRETCH;
+
+}
+
+randseed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ randseed.label = PARM_LABEL("Random Seed", "randseed") WIDTH(1.5);
+ PARM(integer, 1, "randseed", none, none) RANGE(0,10)
+	 LABELREF(randseed.label) HSTRETCH;
+
+}
+
+valsep.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ valsep.label = PARM_LABEL("Value Separation", "valsep") WIDTH(1.5);
+ PARM(float, 1, "valsep", none, none) RANGE(0,1)
+	 LABELREF(valsep.label) HSTRETCH;
+
+}
+
+colorramppreset.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    colorramppreset.menu;
+
+    { HSTRETCH }
+
+}
+
+colorramp.si_rampedit = COLOR_RAMP VALUE(colorramp.ramp_val)
+			LAYOUT(horizontal)  HSTRETCH;
+
+colorramp.multiramp = 
+{
+    LAYOUT(vertical) STRETCH
+
+    ROW
+    {
+	LOOK(plain) JUSTIFY(left,center) SPACING(0.1) VMARGIN(0.02) HSTRETCH
+
+	COL
+	{
+	    JUSTIFY(right,center) WIDTH(1.5)
+	    LABEL "Point No.";
+	}
+
+	colorramp.pointno.gad
+	    = INT_SLIDER_FIELD VALUE(colorramp.pointno.val) HSTRETCH;
+    }
+}
+
+colorramp.buttons.gad = COL
+{
+    VSTRETCH
+
+    ICON_BUTTON_STRIP
+    {
+	LAYOUT(horizontal) INITSIZE(20p, 20p) 
+
+	ACTION_ICONBUTTON "BUTTONS_delete"
+		HELP("Remove Point") VALUE(colorramp.delpoint.val);
+	ACTION_ICONBUTTON "BUTTONS_add"
+		HELP("Add Point") VALUE(colorramp.addpoint.val);
+    }
+
+    { VSTRETCH }
+
+    colorramp.toggleparms.gad
+      = ACTION_ICONBUTTON "BUTTONS_show_controls"
+	HELP("Hide Controls")
+	VALUE(colorramp.toggle.val)
+	SENDSKEY("h.pane.parms.toggle_ramp_parms")
+	LOOKFLAT UI_FLAT_ICON_BTN_SIZE_TINY;
+}
+
+colorramp.parm =
+{
+    LAYOUT(vertical) HSTRETCH JUSTIFY(left, center)
+
+    colorramp.ramp.gad = ROW
+    {
+	MARGIN(0.02) SPACING(0.02) JUSTIFY(left, top) HSTRETCH
+
+	colorramp.buttons.gad VSTRETCH;
+
+	colorramp.si_rampedit HSTRETCH;
+    }
+}
+
+colorramp.gad =
+{
+    LAYOUT(vertical) MARGIN(2p) HSTRETCH
+
+    {
+	LAYOUT(horizontal) HSTRETCH
+
+	PARM_LABEL_SIMPLE("", "colorramp");
+
+	{ HSTRETCH }
+
+    }
+
+    {
+	LAYOUT(vertical) MARGIN(2p) SPACING(0.02) LOOK(lightline) HSTRETCH
+
+	colorramp.parm;
+
+	SWITCHER tight
+	{
+	    LAYOUT(overlap) VALUE(colorramp.hideparms.val) HSTRETCH
+	    colorramp.multiramp;
+	    {}
+	}
+    }
+}
+
+rampsection.gad = 
+GROUP simple "Color Ramp"
+{ 
+    VALUE(rampsection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    colorramppreset.gad;		
+	    colorramp.gad;		
+} 
+
+rangesection.gad = 
+GROUP simple "Ramp Range"
+{ 
+    VALUE(rangesection.gad.val) LAYOUT(vertical) HSTRETCH 
+	    rangespec.gad;		
+	    minscalar.gad;		
+	    maxscalar.gad;		
+	    centerscalar.gad;		
+	    widthscalar.gad;		
+	    clamptype.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    colortype.join; 
+    attrib.gad; 
+    uvattrib.gad; 
+    distortiontype.gad; 
+    rangesection.gad; 
+    constcolor.gad; 
+    usethreevtxcolor.join; 
+    usefourvtxcolor.join; 
+    usenvtxcolor.join; 
+    treatasscalar.gad; 
+    using.join; 
+    refvec.gad; 
+    randseed.gad; 
+    valsep.gad; 
+    rampsection.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

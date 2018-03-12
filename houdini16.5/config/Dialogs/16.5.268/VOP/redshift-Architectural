@@ -1,0 +1,1596 @@
+// Magic: b7a01f77
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Jan 21 15:34:11 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+diffuse.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    diffuse.label = PARM_LABEL("Color", "diffuse") WIDTH(1.5);
+    PARM(float, 3, "diffuse", none, COLOR, "R,G,B") 
+	LABELREF(diffuse.label) HSTRETCH;
+
+    diffuse.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+diffuse_weight.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ diffuse_weight.label = PARM_LABEL("Weight", "diffuse_weight") WIDTH(1.5);
+ PARM(float, 1, "diffuse_weight", none, none) RANGE(0,1)
+	 LABELREF(diffuse_weight.label) HSTRETCH;
+
+    diffuse_weight.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse_weight.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+diffuse_roughness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ diffuse_roughness.label = PARM_LABEL("Roughness", "diffuse_roughness") WIDTH(1.5);
+ PARM(float, 1, "diffuse_roughness", none, none) RANGE(0,1)
+	 LABELREF(diffuse_roughness.label) HSTRETCH;
+
+    diffuse_roughness.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(diffuse_roughness.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+no_diffuse_bump.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("no_diffuse_bump", "Disable Diffuse Bump Mapping") toggle VALUE(no_diffuse_bump.val);
+
+    { HSTRETCH }
+
+    no_diffuse_bump.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(no_diffuse_bump.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_translucency.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refr_translucency", "Enable") toggle VALUE(refr_translucency.val);
+
+    { HSTRETCH }
+
+    refr_translucency.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_translucency.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_trans_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refr_trans_color.label = PARM_LABEL("Color", "refr_trans_color") WIDTH(1.5);
+    PARM(float, 3, "refr_trans_color", none, COLOR, "R,G,B") 
+	LABELREF(refr_trans_color.label) HSTRETCH;
+
+    refr_trans_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_trans_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_trans_weight.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_trans_weight.label = PARM_LABEL("Weight", "refr_trans_weight") WIDTH(1.5);
+ PARM(float, 1, "refr_trans_weight", none, none) RANGE(0,1)
+	 LABELREF(refr_trans_weight.label) HSTRETCH;
+
+    refr_trans_weight.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_trans_weight.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+reflectivity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ reflectivity.label = PARM_LABEL("Weight", "reflectivity") WIDTH(1.5);
+ PARM(float, 1, "reflectivity", none, none) RANGE(0,1)
+	 LABELREF(reflectivity.label) HSTRETCH;
+
+    reflectivity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(reflectivity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refl_color.label = PARM_LABEL("Color", "refl_color") WIDTH(1.5);
+    PARM(float, 3, "refl_color", none, COLOR, "R,G,B") 
+	LABELREF(refl_color.label) HSTRETCH;
+
+    refl_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_brdf.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("BRDF", "refl_brdf") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    refl_brdf.menu;
+
+    { HSTRETCH }
+
+    refl_brdf.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_brdf.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_gloss.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_gloss.label = PARM_LABEL("Glossiness", "refl_gloss") WIDTH(1.5);
+ PARM(float, 1, "refl_gloss", none, none) RANGE(0,1)
+	 LABELREF(refl_gloss.label) HSTRETCH;
+
+    refl_gloss.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_gloss.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_gloss_samples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_gloss_samples.label = PARM_LABEL("Samples", "refl_gloss_samples") WIDTH(1.5);
+ PARM(integer, 1, "refl_gloss_samples", none, none) RANGE(0,512)
+	 LABELREF(refl_gloss_samples.label) HSTRETCH;
+
+    refl_gloss_samples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_gloss_samples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+no_refl0_bump.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("no_refl0_bump", "Disable Bump Mapping") toggle VALUE(no_refl0_bump.val);
+
+    { HSTRETCH }
+
+    no_refl0_bump.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(no_refl0_bump.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_fresnel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("brdf_fresnel", "Use Index of Refraction") toggle VALUE(brdf_fresnel.val);
+
+    { HSTRETCH }
+
+    brdf_fresnel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_fresnel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_fresnel_lockIOR.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("brdf_fresnel_lockIOR", "Lock to Refraction IOR") toggle VALUE(brdf_fresnel_lockIOR.val);
+
+    { HSTRETCH }
+
+    brdf_fresnel_lockIOR.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_fresnel_lockIOR.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_fresnel_ior.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_fresnel_ior.label = PARM_LABEL("IOR", "brdf_fresnel_ior") WIDTH(1.5);
+ PARM(float, 1, "brdf_fresnel_ior", none, none) RANGE(0,20)
+	 LABELREF(brdf_fresnel_ior.label) HSTRETCH;
+
+    brdf_fresnel_ior.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_fresnel_ior.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_fresnel_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Medium Type", "brdf_fresnel_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    brdf_fresnel_type.menu;
+
+    { HSTRETCH }
+
+    brdf_fresnel_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_fresnel_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_extinction_coeff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_extinction_coeff.label = PARM_LABEL("Extinction Coefficient (k)", "brdf_extinction_coeff") WIDTH(1.5);
+ PARM(float, 1, "brdf_extinction_coeff", none, none) RANGE(0,16)
+	 LABELREF(brdf_extinction_coeff.label) HSTRETCH;
+
+    brdf_extinction_coeff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_extinction_coeff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_0_degree_refl.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_0_degree_refl.label = PARM_LABEL("Facing Reflectivity", "brdf_0_degree_refl") WIDTH(1.5);
+ PARM(float, 1, "brdf_0_degree_refl", none, none) RANGE(0,1)
+	 LABELREF(brdf_0_degree_refl.label) HSTRETCH;
+
+    brdf_0_degree_refl.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_0_degree_refl.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_90_degree_refl.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_90_degree_refl.label = PARM_LABEL("Perpendicular Reflectivity", "brdf_90_degree_refl") WIDTH(1.5);
+ PARM(float, 1, "brdf_90_degree_refl", none, none) RANGE(0,1)
+	 LABELREF(brdf_90_degree_refl.label) HSTRETCH;
+
+    brdf_90_degree_refl.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_90_degree_refl.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_curve.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_curve.label = PARM_LABEL("Curve Falloff", "brdf_curve") WIDTH(1.5);
+ PARM(float, 1, "brdf_curve", none, none) RANGE(0.10000000149011612,10)
+	 LABELREF(brdf_curve.label) HSTRETCH;
+
+    brdf_curve.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_curve.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_is_metal.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refl_is_metal", "Metal Material") toggle VALUE(refl_is_metal.val);
+
+    { HSTRETCH }
+
+    refl_is_metal.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_is_metal.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+hl_vs_refl_balance.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ hl_vs_refl_balance.label = PARM_LABEL("Highlight vs Reflection Balance", "hl_vs_refl_balance") WIDTH(1.5);
+ PARM(float, 1, "hl_vs_refl_balance", none, none) RANGE(0,1)
+	 LABELREF(hl_vs_refl_balance.label) HSTRETCH;
+
+    hl_vs_refl_balance.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(hl_vs_refl_balance.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+anisotropy.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ anisotropy.label = PARM_LABEL("Amount", "anisotropy") WIDTH(1.5);
+ PARM(float, 1, "anisotropy", none, none) RANGE(-1,1)
+	 LABELREF(anisotropy.label) HSTRETCH;
+
+    anisotropy.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(anisotropy.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+anisotropy_rotation.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ anisotropy_rotation.label = PARM_LABEL("Rotation", "anisotropy_rotation") WIDTH(1.5);
+ PARM(float, 1, "anisotropy_rotation", none, none) RANGE(0,1)
+	 LABELREF(anisotropy_rotation.label) HSTRETCH;
+
+    anisotropy_rotation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(anisotropy_rotation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+anisotropy_orientation.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Surface Orientation", "anisotropy_orientation") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    anisotropy_orientation.menu;
+
+    { HSTRETCH }
+
+    anisotropy_orientation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(anisotropy_orientation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+anisotropy_uvChannel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    anisotropy_uvChannel.label = PARM_LABEL("UV Channel", "anisotropy_uvChannel") WIDTH(1.5);
+    PARM_FIELD(string, "anisotropy_uvChannel") VALUE(anisotropy_uvChannel.val) 
+	LABELREF(anisotropy_uvChannel.label) HSTRETCH;
+
+    anisotropy_uvChannel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(anisotropy_uvChannel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+anisotropy_tangentChannel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    anisotropy_tangentChannel.label = PARM_LABEL("Tangent Channel", "anisotropy_tangentChannel") WIDTH(1.5);
+    PARM_FIELD(string, "anisotropy_tangentChannel") VALUE(anisotropy_tangentChannel.val) 
+	LABELREF(anisotropy_tangentChannel.label) HSTRETCH;
+
+    anisotropy_tangentChannel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(anisotropy_tangentChannel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_base.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_base.label = PARM_LABEL("Weight", "refl_base") WIDTH(1.5);
+ PARM(float, 1, "refl_base", none, none) RANGE(0,1)
+	 LABELREF(refl_base.label) HSTRETCH;
+
+    refl_base.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_base.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_base_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refl_base_color.label = PARM_LABEL("Color", "refl_base_color") WIDTH(1.5);
+    PARM(float, 3, "refl_base_color", none, COLOR, "R,G,B") 
+	LABELREF(refl_base_color.label) HSTRETCH;
+
+    refl_base_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_base_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_base_brdf.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("BRDF", "refl_base_brdf") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    refl_base_brdf.menu;
+
+    { HSTRETCH }
+
+    refl_base_brdf.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_base_brdf.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_base_gloss.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_base_gloss.label = PARM_LABEL("Glossiness", "refl_base_gloss") WIDTH(1.5);
+ PARM(float, 1, "refl_base_gloss", none, none) RANGE(0,1)
+	 LABELREF(refl_base_gloss.label) HSTRETCH;
+
+    refl_base_gloss.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_base_gloss.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_base_gloss_samples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_base_gloss_samples.label = PARM_LABEL("Samples", "refl_base_gloss_samples") WIDTH(1.5);
+ PARM(integer, 1, "refl_base_gloss_samples", none, none) RANGE(0,512)
+	 LABELREF(refl_base_gloss_samples.label) HSTRETCH;
+
+    refl_base_gloss_samples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_base_gloss_samples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+no_refl1_bump.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("no_refl1_bump", "Disable Bump Mapping") toggle VALUE(no_refl1_bump.val);
+
+    { HSTRETCH }
+
+    no_refl1_bump.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(no_refl1_bump.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_fresnel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("brdf_base_fresnel", "Use Index of Refraction") toggle VALUE(brdf_base_fresnel.val);
+
+    { HSTRETCH }
+
+    brdf_base_fresnel.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_fresnel.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_fresnel_lockIOR.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("brdf_base_fresnel_lockIOR", "Lock to Refraction IOR") toggle VALUE(brdf_base_fresnel_lockIOR.val);
+
+    { HSTRETCH }
+
+    brdf_base_fresnel_lockIOR.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_fresnel_lockIOR.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_fresnel_ior.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_base_fresnel_ior.label = PARM_LABEL("IOR", "brdf_base_fresnel_ior") WIDTH(1.5);
+ PARM(float, 1, "brdf_base_fresnel_ior", none, none) RANGE(1,20)
+	 LABELREF(brdf_base_fresnel_ior.label) HSTRETCH;
+
+    brdf_base_fresnel_ior.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_fresnel_ior.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_fresnel_type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Medium Type", "brdf_base_fresnel_type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    brdf_base_fresnel_type.menu;
+
+    { HSTRETCH }
+
+    brdf_base_fresnel_type.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_fresnel_type.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_extinction_coeff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_base_extinction_coeff.label = PARM_LABEL("Extinction Coefficient (k)", "brdf_base_extinction_coeff") WIDTH(1.5);
+ PARM(float, 1, "brdf_base_extinction_coeff", none, none) RANGE(0,16)
+	 LABELREF(brdf_base_extinction_coeff.label) HSTRETCH;
+
+    brdf_base_extinction_coeff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_extinction_coeff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_0_degree_refl.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_base_0_degree_refl.label = PARM_LABEL("Facing Reflectivity", "brdf_base_0_degree_refl") WIDTH(1.5);
+ PARM(float, 1, "brdf_base_0_degree_refl", none, none) RANGE(0,1)
+	 LABELREF(brdf_base_0_degree_refl.label) HSTRETCH;
+
+    brdf_base_0_degree_refl.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_0_degree_refl.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_90_degree_refl.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_base_90_degree_refl.label = PARM_LABEL("Perpendicular Reflectivity", "brdf_base_90_degree_refl") WIDTH(1.5);
+ PARM(float, 1, "brdf_base_90_degree_refl", none, none) RANGE(0,1)
+	 LABELREF(brdf_base_90_degree_refl.label) HSTRETCH;
+
+    brdf_base_90_degree_refl.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_90_degree_refl.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+brdf_base_curve.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ brdf_base_curve.label = PARM_LABEL("Curve Falloff", "brdf_base_curve") WIDTH(1.5);
+ PARM(float, 1, "brdf_base_curve", none, none) RANGE(0.10000000149011612,10)
+	 LABELREF(brdf_base_curve.label) HSTRETCH;
+
+    brdf_base_curve.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(brdf_base_curve.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+transparency.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ transparency.label = PARM_LABEL("Weight", "transparency") WIDTH(1.5);
+ PARM(float, 1, "transparency", none, none) RANGE(0,1)
+	 LABELREF(transparency.label) HSTRETCH;
+
+    transparency.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(transparency.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refr_color.label = PARM_LABEL("Color", "refr_color") WIDTH(1.5);
+    PARM(float, 3, "refr_color", none, COLOR, "R,G,B") 
+	LABELREF(refr_color.label) HSTRETCH;
+
+    refr_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_gloss.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_gloss.label = PARM_LABEL("Glossiness", "refr_gloss") WIDTH(1.5);
+ PARM(float, 1, "refr_gloss", none, none) RANGE(0,1)
+	 LABELREF(refr_gloss.label) HSTRETCH;
+
+    refr_gloss.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_gloss.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_gloss_samples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_gloss_samples.label = PARM_LABEL("Samples", "refr_gloss_samples") WIDTH(1.5);
+ PARM(integer, 1, "refr_gloss_samples", none, none) RANGE(0,512)
+	 LABELREF(refr_gloss_samples.label) HSTRETCH;
+
+    refr_gloss_samples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_gloss_samples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_ior.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_ior.label = PARM_LABEL("Index of Refraction", "refr_ior") WIDTH(1.5);
+ PARM(float, 1, "refr_ior", none, none) RANGE(0,5)
+	 LABELREF(refr_ior.label) HSTRETCH;
+
+    refr_ior.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_ior.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+no_refr_bump.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("no_refr_bump", "Disable Bump Mapping") toggle VALUE(no_refr_bump.val);
+
+    { HSTRETCH }
+
+    no_refr_bump.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(no_refr_bump.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+thin_walled.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("thin_walled", "Thin Walled") toggle VALUE(thin_walled.val);
+
+    { HSTRETCH }
+
+    thin_walled.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(thin_walled.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+do_refractive_caustics.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("do_refractive_caustics", "Enable Refractive Caustics") toggle VALUE(do_refractive_caustics.val);
+
+    { HSTRETCH }
+
+    do_refractive_caustics.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(do_refractive_caustics.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+global_vol_scatter.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("global_vol_scatter", "Allow Global Volume Scattering") toggle VALUE(global_vol_scatter.val);
+
+    { HSTRETCH }
+
+    global_vol_scatter.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(global_vol_scatter.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_falloff_on.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refr_falloff_on", "Enable") toggle VALUE(refr_falloff_on.val);
+
+    { HSTRETCH }
+
+    refr_falloff_on.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_falloff_on.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_falloff_dist.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_falloff_dist.label = PARM_LABEL("Distance", "refr_falloff_dist") WIDTH(1.5);
+ PARM(float, 1, "refr_falloff_dist", none, none) RANGE(0,100)
+	 LABELREF(refr_falloff_dist.label) HSTRETCH;
+
+    refr_falloff_dist.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_falloff_dist.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_falloff_color_on.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refr_falloff_color_on", "Use End Color") toggle VALUE(refr_falloff_color_on.val);
+
+    { HSTRETCH }
+
+    refr_falloff_color_on.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_falloff_color_on.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_falloff_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    refr_falloff_color.label = PARM_LABEL("End Color", "refr_falloff_color") WIDTH(1.5);
+    PARM(float, 3, "refr_falloff_color", none, COLOR, "R,G,B") 
+	LABELREF(refr_falloff_color.label) HSTRETCH;
+
+    refr_falloff_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_falloff_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_on.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ao_on", "Enable") toggle VALUE(ao_on.val);
+
+    { HSTRETCH }
+
+    ao_on.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_on.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_combineMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Combine Mode", "ao_combineMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    ao_combineMode.menu;
+
+    { HSTRETCH }
+
+    ao_combineMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_combineMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_applyToIncandescence.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ao_applyToIncandescence", "Apply To Incandescence") toggle VALUE(ao_applyToIncandescence.val);
+
+    { HSTRETCH }
+
+    ao_applyToIncandescence.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_applyToIncandescence.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_compensateForExposure.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ao_compensateForExposure", "Apply Camera Exposure Compensation") toggle VALUE(ao_compensateForExposure.val);
+
+    { HSTRETCH }
+
+    ao_compensateForExposure.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_compensateForExposure.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_samples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ao_samples.label = PARM_LABEL("Samples", "ao_samples") WIDTH(1.5);
+ PARM(integer, 1, "ao_samples", none, none) RANGE(0,512)
+	 LABELREF(ao_samples.label) HSTRETCH;
+
+    ao_samples.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_samples.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_distance.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ao_distance.label = PARM_LABEL("Max Distance", "ao_distance") WIDTH(1.5);
+ PARM(float, 1, "ao_distance", none, none) RANGE(0,10)
+	 LABELREF(ao_distance.label) HSTRETCH;
+
+    ao_distance.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_distance.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_spread.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ao_spread.label = PARM_LABEL("Spread", "ao_spread") WIDTH(1.5);
+ PARM(float, 1, "ao_spread", none, none) RANGE(0,1)
+	 LABELREF(ao_spread.label) HSTRETCH;
+
+    ao_spread.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_spread.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_falloff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ao_falloff.label = PARM_LABEL("Falloff", "ao_falloff") WIDTH(1.5);
+ PARM(float, 1, "ao_falloff", none, none) RANGE(0,16)
+	 LABELREF(ao_falloff.label) HSTRETCH;
+
+    ao_falloff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_falloff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_invert.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("ao_invert", "Invert Normal") toggle VALUE(ao_invert.val);
+
+    { HSTRETCH }
+
+    ao_invert.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_invert.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_dark.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ao_dark.label = PARM_LABEL("Shadow Color", "ao_dark") WIDTH(1.5);
+    PARM(float, 3, "ao_dark", none, COLOR, "R,G,B") 
+	LABELREF(ao_dark.label) HSTRETCH;
+
+    ao_dark.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_dark.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+ao_ambient.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    ao_ambient.label = PARM_LABEL("Ambient Color", "ao_ambient") WIDTH(1.5);
+    PARM(float, 3, "ao_ambient", none, COLOR, "R,G,B") 
+	LABELREF(ao_ambient.label) HSTRETCH;
+
+    ao_ambient.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ao_ambient.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+depth_override.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("depth_override", "Enable Trace Depth Overrides") toggle VALUE(depth_override.val);
+
+    { HSTRETCH }
+
+    depth_override.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(depth_override.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_depth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_depth.label = PARM_LABEL("Max Trace Depth", "refl_depth") WIDTH(1.5);
+ PARM(integer, 1, "refl_depth", none, none) RANGE(0,16)
+	 LABELREF(refl_depth.label) HSTRETCH;
+
+    refl_depth.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_depth.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_hl_only.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refl_hl_only", "Specular Highlights Only") toggle VALUE(refl_hl_only.val);
+
+    { HSTRETCH }
+
+    refl_hl_only.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_hl_only.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+skip_inside_refl.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("skip_inside_refl", "Turn off Weak Internal Reflections") toggle VALUE(skip_inside_refl.val);
+
+    { HSTRETCH }
+
+    skip_inside_refl.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(skip_inside_refl.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_enablecutoff.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refl_enablecutoff", "Enable") toggle VALUE(refl_enablecutoff.val);
+
+    { HSTRETCH }
+
+    refl_enablecutoff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_enablecutoff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refl_cutoff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refl_cutoff.label = PARM_LABEL("Threshold", "refl_cutoff") WIDTH(1.5);
+ PARM(float, 1, "refl_cutoff", none, none) RANGE(0,1)
+	 LABELREF(refl_cutoff.label) HSTRETCH;
+
+    refl_cutoff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refl_cutoff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_depth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_depth.label = PARM_LABEL("Max Trace Depth", "refr_depth") WIDTH(1.5);
+ PARM(integer, 1, "refr_depth", none, none) RANGE(0,16)
+	 LABELREF(refr_depth.label) HSTRETCH;
+
+    refr_depth.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_depth.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+combined_depth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ combined_depth.label = PARM_LABEL("Max Combined Trace Depth", "combined_depth") WIDTH(1.5);
+ PARM(integer, 1, "combined_depth", none, none) RANGE(0,16)
+	 LABELREF(combined_depth.label) HSTRETCH;
+
+    combined_depth.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(combined_depth.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_enablecutoff.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("refr_enablecutoff", "Enable") toggle VALUE(refr_enablecutoff.val);
+
+    { HSTRETCH }
+
+    refr_enablecutoff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_enablecutoff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refr_cutoff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refr_cutoff.label = PARM_LABEL("Threshold", "refr_cutoff") WIDTH(1.5);
+ PARM(float, 1, "refr_cutoff", none, none) RANGE(0,1)
+	 LABELREF(refr_cutoff.label) HSTRETCH;
+
+    refr_cutoff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refr_cutoff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+cutout_opacity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ cutout_opacity.label = PARM_LABEL("Cutout Opacity", "cutout_opacity") WIDTH(1.5);
+ PARM(float, 1, "cutout_opacity", none, none) RANGE(0,1)
+	 LABELREF(cutout_opacity.label) HSTRETCH;
+
+    cutout_opacity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(cutout_opacity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+propagate_alpha.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("propagate_alpha", "Propagate Background Alpha Channel") toggle VALUE(propagate_alpha.val);
+
+    { HSTRETCH }
+
+    propagate_alpha.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(propagate_alpha.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additional_bump_mode.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additional_bump_mode", "Add Bump Input To Material Bump") toggle VALUE(additional_bump_mode.val);
+
+    { HSTRETCH }
+
+    additional_bump_mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additional_bump_mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+bump_input.gad = NULL { }
+
+additional_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    additional_color.label = PARM_LABEL("Color", "additional_color") WIDTH(1.5);
+    PARM(float, 3, "additional_color", none, COLOR, "R,G,B") 
+	LABELREF(additional_color.label) HSTRETCH;
+
+    additional_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additional_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+incandescent_scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ incandescent_scale.label = PARM_LABEL("Scale", "incandescent_scale") WIDTH(1.5);
+ PARM(float, 1, "incandescent_scale", none, none) RANGE(0,1000000)
+	 LABELREF(incandescent_scale.label) HSTRETCH;
+
+    incandescent_scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(incandescent_scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Incandescence_14.gad = 
+GROUP simple "Incandescence"
+{ 
+    VALUE(Incandescence_14.gad.val) LAYOUT(vertical) HSTRETCH 
+	    additional_color.gad;		
+	    incandescent_scale.gad;		
+} 
+
+Cut_off_Override_13.gad = 
+GROUP simple "Cut-off Override"
+{ 
+    VALUE(Cut_off_Override_13.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refr_enablecutoff.gad;		
+	    refr_cutoff.gad;		
+} 
+
+Refraction_12.gad = 
+GROUP simple "Refraction"
+{ 
+    VALUE(Refraction_12.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refr_depth.gad;		
+	    combined_depth.gad;		
+	    Cut_off_Override_13.gad;		
+} 
+
+Cut_off_Override_11.gad = 
+GROUP simple "Cut-off Override"
+{ 
+    VALUE(Cut_off_Override_11.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refl_enablecutoff.gad;		
+	    refl_cutoff.gad;		
+} 
+
+Reflection_10.gad = 
+GROUP simple "Reflection"
+{ 
+    VALUE(Reflection_10.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refl_depth.gad;		
+	    refl_hl_only.gad;		
+	    skip_inside_refl.gad;		
+	    Cut_off_Override_11.gad;		
+} 
+
+Fog_9.gad = 
+GROUP simple "Fog"
+{ 
+    VALUE(Fog_9.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refr_falloff_on.gad;		
+	    refr_falloff_dist.gad;		
+	    refr_falloff_color_on.gad;		
+	    refr_falloff_color.gad;		
+} 
+
+Refraction_8.gad = 
+GROUP simple "Refraction"
+{ 
+    VALUE(Refraction_8.gad.val) LAYOUT(vertical) HSTRETCH 
+	    transparency.gad;		
+	    refr_color.gad;		
+	    refr_gloss.gad;		
+	    refr_gloss_samples.gad;		
+	    refr_ior.gad;		
+	    no_refr_bump.gad;		
+	    thin_walled.gad;		
+	    do_refractive_caustics.gad;		
+	    global_vol_scatter.gad;		
+} 
+
+Fresnel_7.gad = 
+GROUP simple "Fresnel"
+{ 
+    VALUE(Fresnel_7.gad.val) LAYOUT(vertical) HSTRETCH 
+	    brdf_base_fresnel.gad;		
+	    brdf_base_fresnel_lockIOR.gad;		
+	    brdf_base_fresnel_ior.gad;		
+	    brdf_base_fresnel_type.gad;		
+	    brdf_base_extinction_coeff.gad;		
+	    brdf_base_0_degree_refl.gad;		
+	    brdf_base_90_degree_refl.gad;		
+	    brdf_base_curve.gad;		
+} 
+
+Secondary_Reflection_6.gad = 
+GROUP simple "Secondary Reflection"
+{ 
+    VALUE(Secondary_Reflection_6.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refl_base.gad;		
+	    refl_base_color.gad;		
+	    refl_base_brdf.gad;		
+	    refl_base_gloss.gad;		
+	    refl_base_gloss_samples.gad;		
+	    no_refl1_bump.gad;		
+	    Fresnel_7.gad;		
+} 
+
+Anisotropy_5.gad = 
+GROUP simple "Anisotropy"
+{ 
+    VALUE(Anisotropy_5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    anisotropy.gad;		
+	    anisotropy_rotation.gad;		
+	    anisotropy_orientation.gad;		
+	    anisotropy_uvChannel.gad;		
+	    anisotropy_tangentChannel.gad;		
+} 
+
+Common_Parameters_4.gad = 
+GROUP simple "Common Parameters"
+{ 
+    VALUE(Common_Parameters_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refl_is_metal.gad;		
+	    hl_vs_refl_balance.gad;		
+	    Anisotropy_5.gad;		
+} 
+
+Fresnel_3.gad = 
+GROUP simple "Fresnel"
+{ 
+    VALUE(Fresnel_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    brdf_fresnel.gad;		
+	    brdf_fresnel_lockIOR.gad;		
+	    brdf_fresnel_ior.gad;		
+	    brdf_fresnel_type.gad;		
+	    brdf_extinction_coeff.gad;		
+	    brdf_0_degree_refl.gad;		
+	    brdf_90_degree_refl.gad;		
+	    brdf_curve.gad;		
+} 
+
+Primary_Reflection_2.gad = 
+GROUP simple "Primary Reflection"
+{ 
+    VALUE(Primary_Reflection_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    reflectivity.gad;		
+	    refl_color.gad;		
+	    refl_brdf.gad;		
+	    refl_gloss.gad;		
+	    refl_gloss_samples.gad;		
+	    no_refl0_bump.gad;		
+	    Fresnel_3.gad;		
+} 
+
+Translucency_1.gad = 
+GROUP simple "Translucency"
+{ 
+    VALUE(Translucency_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    refr_translucency.gad;		
+	    refr_trans_color.gad;		
+	    refr_trans_weight.gad;		
+} 
+
+Diffuse_0.gad = 
+GROUP simple "Diffuse"
+{ 
+    VALUE(Diffuse_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    diffuse.gad;		
+	    diffuse_weight.gad;		
+	    diffuse_roughness.gad;		
+	    no_diffuse_bump.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Illumination"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Diffuse_0.gad;		
+	    Translucency_1.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Reflection"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Primary_Reflection_2.gad;		
+	    Common_Parameters_4.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Secondary Reflection"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Secondary_Reflection_6.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Refraction"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Refraction_8.gad;		
+	    Fog_9.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Ambient Occlusion"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    ao_on.gad;		
+	    ao_combineMode.gad;		
+	    ao_applyToIncandescence.gad;		
+	    ao_compensateForExposure.gad;		
+	    ao_samples.gad;		
+	    ao_distance.gad;		
+	    ao_spread.gad;		
+	    ao_falloff.gad;		
+	    ao_invert.gad;		
+	    ao_dark.gad;		
+	    ao_ambient.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Optimizations"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    depth_override.gad;		
+	    Reflection_10.gad;		
+	    Refraction_12.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Miscellaneous"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    cutout_opacity.gad;		
+	    propagate_alpha.gad;		
+	    additional_bump_mode.gad;		
+	    bump_input.gad;		
+	    Incandescence_14.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,60 @@
+// Magic: 30ecb9fd
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Tue Feb 20 19:30:02 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attribute.label = PARM_LABEL("Attribute name", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+    attribute.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(attribute.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+default.gad = ROW
+{
+   HSTRETCH
+
+   default.label = PARM_LABEL("Default", "default") WIDTH(1.5);
+   PARM(float, 3, "default", none, none, "#1,#2,#3")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(default.label)
+	HSTRETCH;
+
+    default.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(default.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+# warning cpp warning: "GenV3/subdialog.top.ui":5 Macro "PARMSPACING" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":6 Macro "LAYOUTDIR" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":7 Macro "LOOK_PLAIN" redefined.  Using later definition
+# warning cpp warning: "GenV3/subdialog.top.ui":8 Macro "DO_JUSTIFY" redefined.  Using later definition
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    attribute.gad; 
+    default.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,55 @@
+// Magic: c3ce22a4
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Mar  3 08:17:33 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+output_driver.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ output_driver.label = PARM_LABEL("output_driver", "output_driver") WIDTH(1.5);
+ PARM_FIELD(pathstring, "output_driver") VALUE(output_driver.val) 
+	LABELREF(output_driver.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(output_driver.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(output_driver.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reload", "Reload Geometry")
+	push VALUE(reload.val);
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    output_driver.gad; 
+    reload.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

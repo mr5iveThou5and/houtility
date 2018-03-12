@@ -1,0 +1,9 @@
+8
+"def c(t,h,s,v): return (t,h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('5 Tints', 1.0, 0.0, 1.0), c(1,h,s-(.8*f),v), c(1,h,s-(.6*f),v), c(1,h,s-(.4*f),v), c(1,h,s-(.2*f),v), c(1,h,s,v))
+"def c(t,h,s,v): return (t,h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('5 Shades', 1.0, 0.0, 1.0), c(1,h,s,v*f*0.2), c(1,h,s,v*f*.4), c(1,h,s,v*f*.6), c(1,h,s,v*f*.8), c(1,h,s,v*f*1))
+"def c(t,h,s,v): return ( t, h, s ,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('Tetradic', 45, -90.0, 90.0), c(1,h+(f),s,v), c(1,h,s,v), c(1,h+180,s,v), c(1,(h+180)+(f),s,v) )
+"def c(t,h,s,v): return ( t, h, s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('Triadic', 120, 0.0, 180.0), c(1,h+f,s,v), c(1,h,s,v), c(1,h-f,s,v) )
+"def c(t,h,s,v): return (t,h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('Complementary', -1, -1, -1), c(1,h-180,s,v), c(1,h,s,v))
+"def c(t,h,s,v): return (t,h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('4 Analogous', 30, 0.0, 180), c(1,h+(f),s,v), c(1,h+(f*0.5),s,v), c(1,h,s,v), c(1,h+(f*-0.5),s,v), c(1,h+(f*-1.0),s,v))
+"def c(t,h,s,v): return (t,h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('2 Analogous', 30, 0.0, 180), c(1,h+(f),s,v), c(1,h,s,v), c(1,h+(f*-1),s,v))
+"def c(t,h,s,v): return ( t, h,s,v)\ndef compute(f, r,g,b, h,s,v, t,m,i): return ( ('None', -1, -1, -1), c(1,h,s,v))

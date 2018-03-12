@@ -1,0 +1,74 @@
+BackgroundColor:	0.3  0.3  0.3	# viewer background
+BackgroundBottomColor:	0.3  0.3  0.3   # background at the bottom of viewport
+WireframeColor:		0.15  0.15  0.15	# non-selected primitives
+GhostFillColor:		0.4  0.4  0.4	# hidden-line ghost fill
+SelectedPrimColor:	0.00 0.60 0.80	# selected primitives
+AuxSelectedPrimColor1:	0.02 0.60 0.80	# selected primitives in first tmp. sel
+AuxSelectedPrimColor2:	0.02 0.80 1.00	# selected primitives in second tmp. sel
+PrimClosureColor:	0.00 0.60 0.00	# primitives when in closure (not sel'd)
+AuxGeoColor:		0.60 0.40 0.25	# spline and quadric hulls
+SelectedAuxGeoColor:	0.90 0.50 0.10	# selected spline and quadric hulls
+ProfileWireColor:	0.50 0.45 0.40  # profiles
+TemplateColor:		0.50 0.50 0.50	# template geometry or handles
+TargetWireColor:	0.30 0.40 0.70	# templated display SOP colour
+AxesColor:		1.00 0.20 0.20	# coordinate  or c-plane axes
+XaxesColor:		1.00 0.00 0.00	# sticky x axis
+YaxesColor:		0.00 1.00 0.00	# sticky y axis
+ZaxesColor:		0.00 0.00 1.00	# sticky z axis
+SelectedAxesColor:	1.00 0.50 0.50	# selected coordinate axes
+PrimInfoColor:		0.50 0.05 0.30	# prim-vtx, prim-num, prim-normal
+SelectedPrimInfoColor:	0.90 0.60 0.30	# sel'd prim-vtx, prim-num, prim-normal
+PointColor:		0.00 0.00 1.00	# non-selected points and point info
+SelectedPointColor:	0.90 0.90 0.00	# selected points and point info
+AuxSelectedPtColor1:	0.90 0.90 0.00	# selected points in first temp sel
+AuxSelectedPtColor2:	0.00 1.00 1.00	# selected points in second temp sel
+PointClosureColor:	0.00 0.45 1.00	# points when in closure (not sel'd)
+Guide1Color:		0.40 0.40 1.00	# 1st guide geometry
+Guide2Color:		0.20 0.50 0.80	# 2nd guide geometry
+CplaneColor:		0.33 0.48 0.48	# non-selected construction plane
+SelectedCplaneColor:	0.20 0.60 0.80	# selected construction plane
+CplaneAlpha:		ALPHA 0.3 	# amount of shading between grid lines
+GridColor:		0.25 0.25 0.25	# reference plane
+HeightVectorColor:	1.00 0.10 0.00	# height motion indicator
+HandleColor:		1.00 0.10 0.00	# handle for direct manip.
+InactiveHandleColor:	0.50 0.50 0.50	# dimmed handle when not active
+SelectedHandleColor:	0.20 0.60 0.80	# selected handle for direct manip.
+PeanutColor:		0.60 0.40 0.25	# peanut color for orientation picking
+LabelColor:		0.40 0.40 0.40	# labels in viewports
+SelectedLabelColor:	0.50 0.50 0.50	# labels in the selected viewport
+SnapshotColor:		0.4  0.4  0.4   # viewport snapshot color		
+OverlayLabelColor:	1.00 0.00 1.00	# overlay labels in view
+AuxOverlayLabelColor:	1.00 1.00 1.00	# auxiliary overlay labels in view
+HandlePivotColor:	0.45 0.00 0.90	# the pivot of handles
+HandleAxisColor:	1.00 1.00 1.00	# axis lines for the handle
+CPlaneHandleXlateColor: 0.45 0.00 0.90  # translate axes of c-plane handle
+CPlaneHandleRotateColor: 0.65 0.15 0.25 # rotate portion on c-plane handle
+CPlaneHandleBorderColor: 0.45 0.00 0.90 # scale border on c-plane handle
+OrthoGridColor:		0.25 0.25 0.25	# ortho viewport grid lines
+OrthoGridOriginColor:	0.20 0.20 0.20	# ortho viewport origin lines
+UVGridColor:		0.25 0.25 0.25	# uv viewport grid lines
+UVGridOriginColor:	0.20 0.20 0.20	# uv viewport origin lines
+UVGridBoundaryColor:	0.35 0.35 0.35	# uv viewport boundary lines
+ObjectSelectColor:	0.20 0.60 0.80	# object selection highlight color
+ObjectCurrentColor:	0.00 0.60 0.80	# current object highlight color
+ObjectSelectHintColor:	0.20 0.60 0.80	# object selection hint highlight color
+ObjectGhostColor:	0.50 0.50 0.50  # color blended into object when ghosted
+ObjectGhostAlpha:	ALPHA 0.75	# alpha for color/ghost mixing
+UVBackFaceFillColor:	0.90 0.50 0.90	# fill color for back facing polys
+SelectedUVBackFaceFillColor:	0.90 0.65 0.90	# the selected version
+IKCriticalZoneColor:	0.98 0.35 0.20	# inv. kin. danger zone cone
+ViewMaskOverlayColor:	0.10 0.10 0.10	# view mask overlay
+TextColor:		0.95 0.95 0.95  # viewport text 
+TextShadowColor:	0.4  0.4  0.4   # viewport text dropshadow
+WarningColor:		1.0  0.7  0.1   # indicates a potential problem
+LocateColor:		0.0  0.5  0.8	# mouse locate overlay color 
+LocateAlpha:		ALPHA 	  0.1   # mouse locate overlay alpha
+HandleLocateColor:	0.9  0.9  0.65  # glow around mouse located handle part
+HandleLocatePassiveColor: 0.3  0.3  0.65# passive glow around mouse located handle part
+HandleLocateAlpha:	ALPHA     0.75 	# opacity of handle locate glow
+SelectBoxOutline: 	0.9 0.9 0.9	# selection box outer outline
+SelectBoxInnerLine: 	0.7 0.7 0.7	# selection box inner outline
+SelectBoxFill:		0.5 0.5 0.5	# selection box shaded fill
+SelectBoxAlpha:		ALPHA	  0.25  # selection box fill alpha
+SliderKnobMaxColor:	1.0 1.0 0.0	# slider handle max value warning 
+ObjectNameColor:	0.8 0.0 0.0	# color for object name guides

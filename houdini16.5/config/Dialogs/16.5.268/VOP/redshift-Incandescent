@@ -1,0 +1,294 @@
+// Magic: 6b2498cf
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Feb 11 15:18:04 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    color.label = PARM_LABEL("Color", "color") WIDTH(1.5);
+    PARM(float, 3, "color", none, COLOR, "R,G,B") 
+	LABELREF(color.label) HSTRETCH;
+
+    color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+temperature.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ temperature.label = PARM_LABEL("Temperature", "temperature") WIDTH(1.5);
+ PARM(float, 1, "temperature", none, none) RANGE(1667,25000)
+	 LABELREF(temperature.label) HSTRETCH;
+
+    temperature.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(temperature.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+colorMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mode", "colorMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    colorMode.menu;
+
+    { HSTRETCH }
+
+    colorMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(colorMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+intensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ intensity.label = PARM_LABEL("Intensity Multiplier", "intensity") WIDTH(1.5);
+ PARM(float, 1, "intensity", none, none) RANGE(1.1754943508222875e-38,3.4028234663852886e+38)
+	 LABELREF(intensity.label) HSTRETCH;
+
+    intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+doublesided.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doublesided", "Double-Sided") toggle VALUE(doublesided.val);
+
+    { HSTRETCH }
+
+    doublesided.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(doublesided.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+applyExposureCompensation.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("applyExposureCompensation", "Apply Camera Exposure Compensation") toggle VALUE(applyExposureCompensation.val);
+
+    { HSTRETCH }
+
+    applyExposureCompensation.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(applyExposureCompensation.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alphaMode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Alpha Mode", "alphaMode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    alphaMode.menu;
+
+    { HSTRETCH }
+
+    alphaMode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alphaMode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alpha.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ alpha.label = PARM_LABEL("Alpha", "alpha") WIDTH(1.5);
+ PARM(float, 1, "alpha", none, none) RANGE(0,1)
+	 LABELREF(alpha.label) HSTRETCH;
+
+    alpha.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+transparentShadows.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("transparentShadows", "Transparent Shadows") toggle VALUE(transparentShadows.val);
+
+    { HSTRETCH }
+
+    transparentShadows.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(transparentShadows.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+reflectScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ reflectScale.label = PARM_LABEL("Reflection", "reflectScale") WIDTH(1.5);
+ PARM(float, 1, "reflectScale", none, none) RANGE(0,1)
+	 LABELREF(reflectScale.label) HSTRETCH;
+
+    reflectScale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(reflectScale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refractScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refractScale.label = PARM_LABEL("Refraction", "refractScale") WIDTH(1.5);
+ PARM(float, 1, "refractScale", none, none) RANGE(0,1)
+	 LABELREF(refractScale.label) HSTRETCH;
+
+    refractScale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(refractScale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+GIScale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ GIScale.label = PARM_LABEL("GI", "GIScale") WIDTH(1.5);
+ PARM(float, 1, "GIScale", none, none) RANGE(0,1)
+	 LABELREF(GIScale.label) HSTRETCH;
+
+    GIScale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(GIScale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+affectEmissionAOV.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("affectEmissionAOV", "Affect Emission AOV") toggle VALUE(affectEmissionAOV.val);
+
+    { HSTRETCH }
+
+    affectEmissionAOV.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(affectEmissionAOV.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Alpha_0.gad = 
+GROUP simple "Alpha"
+{ 
+    VALUE(Alpha_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    alphaMode.gad;		
+	    alpha.gad;		
+	    transparentShadows.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "Illumination"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    color.gad;		
+	    temperature.gad;		
+	    colorMode.gad;		
+	    intensity.gad;		
+	    doublesided.gad;		
+	    applyExposureCompensation.gad;		
+	    Alpha_0.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Ray Type Intensity Multipliers"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    reflectScale.gad;		
+	    refractScale.gad;		
+	    GIScale.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "AOVs"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    affectEmissionAOV.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

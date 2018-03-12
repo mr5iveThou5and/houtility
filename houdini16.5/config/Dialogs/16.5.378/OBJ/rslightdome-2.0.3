@@ -1,0 +1,21 @@
+// Magic: f88b125b
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Sat Feb 17 20:02:56 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+dimmer.gad = NULL { }
+
+dialog_norm.gad = 
+{
+    LAYOUT(horizontal) SPACING(0.05) HSTRETCH  JUSTIFY(left, center)
+    dimmer.gad; 
+} 
+// dialog.bot.ui
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) VALUE(open.val) HSTRETCH
+
+    dialog_norm.gad;
+}

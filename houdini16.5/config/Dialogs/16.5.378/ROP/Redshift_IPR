@@ -1,0 +1,69 @@
+// Magic: ddc137ba
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 15 21:23:38 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+execute.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+execute.gad = NULL { }
+renderpreview.gad = NULL { }
+executebackground.gad = NULL { }
+}	// Template join.bot
+
+renderdialog.gad = NULL { }
+trange.gad = NULL { }
+f.gad = NULL { }
+take.gad = NULL { }
+soho_program.gad = NULL { }
+soho_viewport_menu.gad = NULL { }
+soho_output_mode.gad = NULL { }
+soho_ipr_support.gad = NULL { }
+vm_image_mplay_socketport.gad = NULL { }
+
+linked_rop.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ linked_rop.label = PARM_LABEL("Linked ROP", "linked_rop") WIDTH(1.5);
+ PARM_FIELD(pathstring, "linked_rop") VALUE(linked_rop.val) 
+	LABELREF(linked_rop.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(linked_rop.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(linked_rop.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    execute.row.join; 
+    renderdialog.gad; 
+    trange.gad; 
+    f.gad; 
+    take.gad; 
+    soho_program.gad; 
+    soho_viewport_menu.gad; 
+    soho_output_mode.gad; 
+    soho_ipr_support.gad; 
+    vm_image_mplay_socketport.gad; 
+    linked_rop.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

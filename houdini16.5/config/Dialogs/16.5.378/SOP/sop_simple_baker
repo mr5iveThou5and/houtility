@@ -1,0 +1,591 @@
+// Magic: 66169234
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 05:45:47 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+render.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("render", "Render")
+	push VALUE(render.val);
+
+}
+vm_uvunwrapres.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+vm_uvunwrapres.gad = ROW
+{
+   HSTRETCH
+
+   vm_uvunwrapres.label = PARM_LABEL("Resolution", "vm_uvunwrapres") WIDTH(1.5);
+   PARM(integer, 2, "vm_uvunwrapres", none, none, "X,Y")
+	RANGE(-1,1)  LABELREF(vm_uvunwrapres.label)
+	HSTRETCH;
+
+}
+
+uvresmenu.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center)
+
+    uvresmenu.menu LOOK(menuiconbutton) SIZE(0.26, 0.26);
+
+}
+}	// Template join.bot
+
+
+base_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ base_path.label = PARM_LABEL("Base Path", "base_path") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "base_path") LABELREF(base_path.label)
+	VALUE(base_path.val) HSTRETCH;
+
+    base_path.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(base_path.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+export_fbx.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+export_fbx.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+export_fbx.gad = PARM_BUTTON("export_fbx", "") toggle VALUE(export_fbx.val);
+
+fbx_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ fbx_path.label = PARM_LABEL("Export FBX", "fbx_path") WIDTH(1.32);
+
+ PARM_FIELD (pathstring, "fbx_path") LABELREF(fbx_path.label)
+	VALUE(fbx_path.val) HSTRETCH;
+
+    fbx_path.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(fbx_path.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+}	
+}	// Template join.bot
+
+bake_basecolor.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_basecolor.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_basecolor.gad = PARM_BUTTON("bake_basecolor", "") toggle VALUE(bake_basecolor.val);
+
+basecolor_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    basecolor_suffix.label = PARM_LABEL("Vertex Color", "basecolor_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "basecolor_suffix") VALUE(basecolor_suffix.val) 
+	LABELREF(basecolor_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_Nt.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_Nt.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_Nt.gad = PARM_BUTTON("bake_Nt", "") toggle VALUE(bake_Nt.val);
+
+Nt_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    Nt_suffix.label = PARM_LABEL("Normal Map", "Nt_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "Nt_suffix") VALUE(Nt_suffix.val) 
+	LABELREF(Nt_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_specrough.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_specrough.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_specrough.gad = PARM_BUTTON("bake_specrough", "") toggle VALUE(bake_specrough.val);
+
+specrough_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    specrough_suffix.label = PARM_LABEL("Roughness Map", "specrough_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "specrough_suffix") VALUE(specrough_suffix.val) 
+	LABELREF(specrough_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_metallic.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_metallic.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_metallic.gad = PARM_BUTTON("bake_metallic", "") toggle VALUE(bake_metallic.val);
+
+metallic_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    metallic_suffix.label = PARM_LABEL("Metallic Map", "metallic_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "metallic_suffix") VALUE(metallic_suffix.val) 
+	LABELREF(metallic_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_N.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_N.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_N.gad = PARM_BUTTON("bake_N", "") toggle VALUE(bake_N.val);
+
+N_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    N_suffix.label = PARM_LABEL("World Normal", "N_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "N_suffix") VALUE(N_suffix.val) 
+	LABELREF(N_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_Oc.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_Oc.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_Oc.gad = PARM_BUTTON("bake_Oc", "") toggle VALUE(bake_Oc.val);
+
+Oc_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    Oc_suffix.label = PARM_LABEL("Ambient Occlusion", "Oc_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "Oc_suffix") VALUE(Oc_suffix.val) 
+	LABELREF(Oc_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_Cu.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_Cu.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_Cu.gad = PARM_BUTTON("bake_Cu", "") toggle VALUE(bake_Cu.val);
+
+Cu_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    Cu_suffix.label = PARM_LABEL("Curvature", "Cu_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "Cu_suffix") VALUE(Cu_suffix.val) 
+	LABELREF(Cu_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_Th.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_Th.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_Th.gad = PARM_BUTTON("bake_Th", "") toggle VALUE(bake_Th.val);
+
+Th_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    Th_suffix.label = PARM_LABEL("Thickness", "Th_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "Th_suffix") VALUE(Th_suffix.val) 
+	LABELREF(Th_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_P.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_P.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_P.gad = PARM_BUTTON("bake_P", "") toggle VALUE(bake_P.val);
+
+P_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    P_suffix.label = PARM_LABEL("Position", "P_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "P_suffix") VALUE(P_suffix.val) 
+	LABELREF(P_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+bake_Ds.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+bake_Ds.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+bake_Ds.gad = PARM_BUTTON("bake_Ds", "") toggle VALUE(bake_Ds.val);
+
+Ds_suffix.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    Ds_suffix.label = PARM_LABEL("Height", "Ds_suffix") WIDTH(1.32);
+    PARM_FIELD(string, "Ds_suffix") VALUE(Ds_suffix.val) 
+	LABELREF(Ds_suffix.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+custom_channels.parm =
+{
+    LAYOUT(horizontal) SPACING(0.02) HSTRETCH JUSTIFY(left, center)
+
+    PARM_LABEL_SIMPLE("Custom Channels", "custom_channels") WIDTH(1.5);
+    { WIDTH(0.08) }
+
+    ROW
+    {
+	HSTRETCH(0.5) JUSTIFY(left, center)  VALUE(custom_channels.val)
+
+        custom_channels.field = PARM_FIELD (integer, "custom_channels")
+				VALUE(custom_channels.val) HSTRETCH(0.5)
+				 PREF_WIDTH(0.5);
+
+        ROW
+        {
+	     LOOK(lightline) VMARGIN(1p)
+
+   	     INCREMENT_ICONBUTTON VALUE(custom_channels.more.val)	
+	    	HELP("Add Another Instance") SIZE(0.2, 0.24);
+	     DECREMENT_ICONBUTTON VALUE(custom_channels.less.val)	
+	        HELP("Remove Last Instance") SIZE(0.2, 0.24);
+
+	}
+
+	ACTION_BUTTON "Clear" VALUE(custom_channels.clear.val);
+    }
+
+    { HSTRETCH }
+}
+
+custom_channels.multilist = 
+{
+    LAYOUT(vertical) STRETCH MARGIN(0.05)
+}
+
+custom_channels.gad =
+{
+    LAYOUT(vertical) STRETCH SPACING(0.02)
+
+    custom_channels.parm;
+    custom_channels.multilist;
+}
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    { HSTRETCH }
+
+}
+
+f.gad = ROW
+{
+   HSTRETCH
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(f.label)
+	HSTRETCH;
+
+}
+
+vm_bake_usemikkt.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_bake_usemikkt", "Use MikkT Tangent Space") toggle VALUE(vm_bake_usemikkt.val);
+
+    { HSTRETCH }
+
+}
+
+vm_bake_tangentnormalflipy.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_bake_tangentnormalflipy", "Tangent Normal Flip Y") toggle VALUE(vm_bake_tangentnormalflipy.val);
+
+    { HSTRETCH }
+
+}
+
+vm_uvcageobject1.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ vm_uvcageobject1.label = PARM_LABEL("Cage Mesh", "vm_uvcageobject1") WIDTH(1.5);
+ PARM_FIELD(pathstring, "vm_uvcageobject1") VALUE(vm_uvcageobject1.val) 
+	LABELREF(vm_uvcageobject1.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(vm_uvcageobject1.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(vm_uvcageobject1.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+border_padding.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ border_padding.label = PARM_LABEL("Border Padding", "border_padding") WIDTH(1.5);
+ PARM(integer, 1, "border_padding", none, none) RANGE(0,10)
+	 LABELREF(border_padding.label) HSTRETCH;
+
+}
+
+baking_samples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ baking_samples.label = PARM_LABEL("Baking Samples", "baking_samples") WIDTH(1.5);
+ PARM(integer, 1, "baking_samples", none, none) RANGE(0,10)
+	 LABELREF(baking_samples.label) HSTRETCH;
+
+}
+
+ray_bias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ray_bias.label = PARM_LABEL("Ray Bias", "ray_bias") WIDTH(1.5);
+ PARM(float, 1, "ray_bias", none, none) RANGE(0,10)
+	 LABELREF(ray_bias.label) HSTRETCH;
+
+}
+
+ray_distance.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ray_distance.label = PARM_LABEL("Ray Distance", "ray_distance") WIDTH(1.5);
+ PARM(float, 1, "ray_distance", none, none) RANGE(0,10)
+	 LABELREF(ray_distance.label) HSTRETCH;
+
+}
+
+basecolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    basecolor.label = PARM_LABEL("Base Color", "basecolor") WIDTH(1.5);
+    PARM(float, 3, "basecolor", none, COLOR, "R,G,B") 
+	LABELREF(basecolor.label) HSTRETCH;
+
+}
+
+ior.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ior.label = PARM_LABEL("IOR", "ior") WIDTH(1.5);
+ PARM(float, 1, "ior", none, none) RANGE(1,3)
+	 LABELREF(ior.label) HSTRETCH;
+
+}
+
+rough.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+}
+
+visualize_channel.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    visualize_channel.label = PARM_LABEL("Diffuse Map", "visualize_channel") WIDTH(1.5);
+    PARM_FIELD(string, "visualize_channel") VALUE(visualize_channel.val) 
+	LABELREF(visualize_channel.label) HSTRETCH;
+
+}
+
+channels.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(channels.gad.val) STRETCH(1,0)
+
+	TAB "Channels"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    bake_basecolor.row.join;		
+	    bake_Nt.row.join;		
+	    bake_specrough.row.join;		
+	    bake_metallic.row.join;		
+	    bake_N.row.join;		
+	    bake_Oc.row.join;		
+	    bake_Cu.row.join;		
+	    bake_Th.row.join;		
+	    bake_P.row.join;		
+	    bake_Ds.row.join;		
+	    custom_channels.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Advanced"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    trange.gad;		
+	    f.gad;		
+	    vm_bake_usemikkt.gad;		
+	    vm_bake_tangentnormalflipy.gad;		
+	    vm_uvcageobject1.gad;		
+	    border_padding.gad;		
+	    baking_samples.gad;		
+	    ray_bias.gad;		
+	    ray_distance.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Baker"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    vm_uvunwrapres.row.join;		
+	    base_path.gad;		
+	    export_fbx.row.join;		
+	    channels.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Material"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    basecolor.gad;		
+	    ior.gad;		
+	    rough.gad;		
+	    visualize_channel.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    render.gad; 
+    folder0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

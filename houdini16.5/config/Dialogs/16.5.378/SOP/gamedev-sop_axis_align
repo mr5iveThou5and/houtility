@@ -1,0 +1,65 @@
+// Magic: 4b9d23c5
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 05:42:16 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+x.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("X Axis", "x") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    x.menu;
+
+    { HSTRETCH }
+
+}
+
+y.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Y Axis", "y") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    y.menu;
+
+    { HSTRETCH }
+
+}
+
+z.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Z Axis", "z") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    z.menu;
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    x.gad; 
+    y.gad; 
+    z.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

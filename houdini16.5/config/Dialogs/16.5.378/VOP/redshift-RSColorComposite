@@ -1,0 +1,93 @@
+// Magic: 7d56f70b
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Mon Feb 19 15:42:03 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+base_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    base_color.label = PARM_LABEL("Base Color", "base_color") WIDTH(1.5);
+    PARM(float, 4, "base_color", none, COLOR, "R,G,B,A") 
+	LABELREF(base_color.label) HSTRETCH;
+
+    base_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(base_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+blend_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blend_color.label = PARM_LABEL("Blend Color", "blend_color") WIDTH(1.5);
+    PARM(float, 4, "blend_color", none, COLOR, "R,G,B,A") 
+	LABELREF(blend_color.label) HSTRETCH;
+
+    blend_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blend_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+comp_mode.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Composite Mode", "comp_mode") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    comp_mode.menu;
+
+    { HSTRETCH }
+
+    comp_mode.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(comp_mode.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alpha_source.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Alpha Source", "alpha_source") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    alpha_source.menu;
+
+    { HSTRETCH }
+
+    alpha_source.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alpha_source.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    base_color.gad; 
+    blend_color.gad; 
+    comp_mode.gad; 
+    alpha_source.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

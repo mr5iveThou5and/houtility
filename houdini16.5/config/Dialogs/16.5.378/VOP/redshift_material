@@ -1,0 +1,39 @@
+// Magic: 229264e
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 15 21:14:41 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+RS_matprop_ID.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ RS_matprop_ID.label = PARM_LABEL("Material ID", "RS_matprop_ID") WIDTH(1.5);
+ PARM(integer, 1, "RS_matprop_ID", none, none) RANGE(0,100)
+	LOCK_RANGE_MIN LABELREF(RS_matprop_ID.label) HSTRETCH;
+
+    RS_matprop_ID.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(RS_matprop_ID.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_matprop_ID.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

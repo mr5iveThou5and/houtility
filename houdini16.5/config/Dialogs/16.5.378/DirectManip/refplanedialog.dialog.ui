@@ -1,0 +1,117 @@
+// Magic: 99f9ea8a
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Wed Feb 14 22:37:02 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+gspace.gad = ROW
+{
+   HSTRETCH
+
+   gspace.label = PARM_LABEL("Grid Spacing", "gspace") WIDTH(1.5);
+   PARM(float, 2, "gspace", none, none, "X,Y")
+	RANGE(0,1)  LABELREF(gspace.label)
+	HSTRETCH;
+
+}
+gcount.gad = NULL { }
+
+gruler.gad = ROW
+{
+   HSTRETCH
+
+   gruler.label = PARM_LABEL("Grid Ruler", "gruler") WIDTH(1.5);
+   PARM(integer, 2, "gruler", none, none, "X,Y")
+	RANGE(0,10) LOCK_RANGE_MIN LABELREF(gruler.label)
+	HSTRETCH;
+
+}
+gorig.gad = NULL { }
+
+origin.gad = ROW
+{
+   HSTRETCH
+
+   origin.label = PARM_LABEL("Origin", "origin") WIDTH(1.5);
+   PARM(float, 3, "origin", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(origin.label)
+	HSTRETCH;
+
+}
+
+normal.gad = ROW
+{
+   HSTRETCH
+
+   normal.label = PARM_LABEL("Normal", "normal") WIDTH(1.5);
+   PARM(float, 3, "normal", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(normal.label)
+	HSTRETCH;
+
+}
+
+upvector.gad = ROW
+{
+   HSTRETCH
+
+   upvector.label = PARM_LABEL("Up-Vector", "upvector") WIDTH(1.5);
+   PARM(float, 3, "upvector", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(upvector.label)
+	HSTRETCH;
+
+}
+
+lockup.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Lock Up-Vector to:", "lockup") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lockup.menu;
+
+    { HSTRETCH }
+
+}
+default_xaxis.gad = NULL { }
+
+rulertype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Ruler Type", "rulertype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    rulertype.menu;
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    gspace.gad; 
+    gcount.gad; 
+    gruler.gad; 
+    gorig.gad; 
+    origin.gad; 
+    normal.gad; 
+    upvector.gad; 
+    lockup.gad; 
+    default_xaxis.gad; 
+    rulertype.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,449 @@
+// Magic: eec6150
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Mon Feb 12 19:35:29 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+keeppos.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    { HSTRETCH }
+
+}
+
+childcomp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("childcomp", "Child Compensation") toggle VALUE(childcomp.val);
+
+    { HSTRETCH }
+
+}
+
+pre_xform.gad = ROW
+{
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    pre_xform.menu;
+}
+xOrd.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    rOrd.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_scale" VALUE(s.script_action)
+	HELP("Select an object to match the scale with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+
+   p.label = PARM_LABEL("Pivot", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_pivot" VALUE(p.script_action)
+	HELP("Select an object to match the pivot with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+}
+
+lookatpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ lookatpath.label = PARM_LABEL("Look At", "lookatpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "lookatpath") VALUE(lookatpath.val) 
+	LABELREF(lookatpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(lookatpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lookatpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+lookupobjpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ lookupobjpath.label = PARM_LABEL("Look Up Object", "lookupobjpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "lookupobjpath") VALUE(lookupobjpath.val) 
+	LABELREF(lookupobjpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(lookupobjpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lookupobjpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+lookup.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Look At Up Vector", "lookup") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lookup.menu;
+
+    { HSTRETCH }
+
+}
+
+pathobjpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ pathobjpath.label = PARM_LABEL("Path Object", "pathobjpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "pathobjpath") VALUE(pathobjpath.val) 
+	LABELREF(pathobjpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(pathobjpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(pathobjpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+roll.gad = ROW
+{
+   HSTRETCH
+
+   roll.label = PARM_LABEL( "Roll", "roll" ) WIDTH(1.5);
+   PARM(float, 1, "roll", none, none) RANGE(-360, 360)
+	LABELREF( roll.label ) HSTRETCH;
+
+}
+
+pos.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pos.label = PARM_LABEL("Position", "pos") WIDTH(1.5);
+ PARM(float, 1, "pos", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(pos.label) HSTRETCH;
+
+}
+
+uparmtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Parameterization", "uparmtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    uparmtype.menu;
+
+    { HSTRETCH }
+
+}
+
+pathorient.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pathorient.label = PARM_LABEL("Orient Along Path", "pathorient") WIDTH(1.5);
+ PARM(integer, 1, "pathorient", none, none) RANGE(0,1)
+	 LABELREF(pathorient.label) HSTRETCH;
+
+}
+
+up.gad = ROW 
+{
+    HSTRETCH
+
+    up.label = PARM_LABEL("Orient Up Vector", "up") WIDTH(1.5);
+    PARM(float, 3, "up", none, none) LABELREF(up.label)
+	HSTRETCH;
+
+}
+
+bank.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bank.label = PARM_LABEL("Auto-Bank factor", "bank") WIDTH(1.5);
+ PARM(float, 1, "bank", none, none) RANGE(-1,1)
+	 LABELREF(bank.label) HSTRETCH;
+
+}
+label1.gad = NULL { }
+label2.gad = NULL { }
+label3.gad = NULL { }
+label4.gad = NULL { }
+tdisplay.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val);
+
+display.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ display.label = PARM_LABEL("Display", "display") WIDTH(1.32);
+ PARM(integer, 1, "display", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+outputobj.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Output Transform", "outputobj") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    outputobj.menu;
+
+    { HSTRETCH }
+
+}
+
+visibleobjects.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ visibleobjects.label = PARM_LABEL("Visible Children", "visibleobjects") WIDTH(1.5);
+ PARM_FIELD (pathstring, "visibleobjects") LABELREF(visibleobjects.label) 
+	VALUE(visibleobjects.val) HSTRETCH;
+
+    visibleobjects.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(visibleobjects.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+picking.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("picking", "Viewport Selecting Enabled") toggle VALUE(picking.val);
+
+    { HSTRETCH }
+
+}
+
+pickscript.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ pickscript.label = PARM_LABEL("Select Script", "pickscript") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "pickscript") LABELREF(pickscript.label)
+	VALUE(pickscript.val) HSTRETCH;
+
+    pickscript.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(pickscript.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+caching.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caching", "Cache Object Transform") toggle VALUE(caching.val);
+
+    { HSTRETCH }
+
+}
+use_dcolor.gad = NULL { }
+dcolor.gad = NULL { }
+pr.gad = NULL { }
+constraints_on.gad = NULL { }
+constraints_path.gad = NULL { }
+
+stdswitcher3.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(stdswitcher3.gad.val) STRETCH(1,0)
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    keeppos.gad;		
+	    childcomp.gad;		
+	    pre_xform.gad;		
+	    xOrd.row.join;		
+	    t.gad;		
+	    r.gad;		
+	    s.gad;		
+	    p.gad;		
+	    scale.gad;		
+	    lookatpath.gad;		
+	    lookupobjpath.gad;		
+	    lookup.gad;		
+	    pathobjpath.gad;		
+	    roll.gad;		
+	    pos.gad;		
+	    uparmtype.gad;		
+	    pathorient.gad;		
+	    up.gad;		
+	    bank.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Subnet"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    label1.gad;		
+	    label2.gad;		
+	    label3.gad;		
+	    label4.gad;		
+	    tdisplay.row.join;		
+	    outputobj.gad;		
+	    visibleobjects.gad;		
+	    picking.gad;		
+	    pickscript.gad;		
+	    caching.gad;		
+	    use_dcolor.gad;		
+	    dcolor.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    stdswitcher3.gad; 
+    pr.gad; 
+    constraints_on.gad; 
+    constraints_path.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

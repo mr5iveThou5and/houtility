@@ -1,0 +1,39 @@
+// Magic: 244f4145
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Jan 21 15:34:31 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+attribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    attribute.label = PARM_LABEL("Attribute Name", "attribute") WIDTH(1.5);
+    PARM_FIELD(string, "attribute") VALUE(attribute.val) 
+	LABELREF(attribute.label) HSTRETCH;
+
+    attribute.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(attribute.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    attribute.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,122 @@
+// Magic: a92379b
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sun Feb 11 15:10:08 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+input.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ input.label = PARM_LABEL("Input", "input") WIDTH(1.5);
+ PARM(float, 1, "input", none, none) RANGE(-2,2)
+	 LABELREF(input.label) HSTRETCH;
+
+    input.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(input.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+old_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ old_min.label = PARM_LABEL("Old Range Min", "old_min") WIDTH(1.5);
+ PARM(float, 1, "old_min", none, none) RANGE(-2,2)
+	 LABELREF(old_min.label) HSTRETCH;
+
+    old_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(old_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+old_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ old_max.label = PARM_LABEL("Old Range Max", "old_max") WIDTH(1.5);
+ PARM(float, 1, "old_max", none, none) RANGE(-2,2)
+	 LABELREF(old_max.label) HSTRETCH;
+
+    old_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(old_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+new_min.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ new_min.label = PARM_LABEL("New Range Min", "new_min") WIDTH(1.5);
+ PARM(float, 1, "new_min", none, none) RANGE(-2,2)
+	 LABELREF(new_min.label) HSTRETCH;
+
+    new_min.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(new_min.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+new_max.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ new_max.label = PARM_LABEL("New Range Max", "new_max") WIDTH(1.5);
+ PARM(float, 1, "new_max", none, none) RANGE(-2,2)
+	 LABELREF(new_max.label) HSTRETCH;
+
+    new_max.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(new_max.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+clamp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("clamp", "Clamp To New Range") toggle VALUE(clamp.val);
+
+    { HSTRETCH }
+
+    clamp.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(clamp.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    input.gad; 
+    old_min.gad; 
+    old_max.gad; 
+    new_min.gad; 
+    new_max.gad; 
+    clamp.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

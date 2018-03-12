@@ -1,0 +1,159 @@
+// Magic: 7f29167d
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 22 21:55:35 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+fresnel_useior.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("fresnel_useior", "Use Index of Refraction") toggle VALUE(fresnel_useior.val);
+
+    { HSTRETCH }
+
+    fresnel_useior.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(fresnel_useior.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+user_curve.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ user_curve.label = PARM_LABEL("Curve Falloff", "user_curve") WIDTH(1.5);
+ PARM(float, 1, "user_curve", none, none) RANGE(0,100)
+	 LABELREF(user_curve.label) HSTRETCH;
+
+    user_curve.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(user_curve.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+facing_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    facing_color.label = PARM_LABEL("Facing Color", "facing_color") WIDTH(1.5);
+    PARM(float, 3, "facing_color", none, COLOR, "R,G,B") 
+	LABELREF(facing_color.label) HSTRETCH;
+
+    facing_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(facing_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+perp_color.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    perp_color.label = PARM_LABEL("Perpendicular Color", "perp_color") WIDTH(1.5);
+    PARM(float, 3, "perp_color", none, COLOR, "R,G,B") 
+	LABELREF(perp_color.label) HSTRETCH;
+
+    perp_color.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(perp_color.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+bump_input.gad = NULL { }
+
+ior.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ ior.label = PARM_LABEL("Index of Refraction", "ior") WIDTH(1.5);
+ PARM(float, 1, "ior", none, none) RANGE(0,5)
+	 LABELREF(ior.label) HSTRETCH;
+
+    ior.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(ior.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+fresnel_type.gad = NULL { }
+
+extinction_coeff.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ extinction_coeff.label = PARM_LABEL("Extinction Coefficient (k)", "extinction_coeff") WIDTH(1.5);
+ PARM(float, 1, "extinction_coeff", none, none) RANGE(0,16)
+	 LABELREF(extinction_coeff.label) HSTRETCH;
+
+    extinction_coeff.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(extinction_coeff.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+correct_intensity.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("correct_intensity", "Correct Facing Color Intensity") toggle VALUE(correct_intensity.val);
+
+    { HSTRETCH }
+
+    correct_intensity.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(correct_intensity.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+IOR_1.gad = 
+GROUP simple "IOR"
+{ 
+    VALUE(IOR_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    ior.gad;		
+	    fresnel_type.gad;		
+	    extinction_coeff.gad;		
+	    correct_intensity.gad;		
+} 
+
+Falloff_Color_0.gad = 
+GROUP simple "Falloff Color"
+{ 
+    VALUE(Falloff_Color_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    fresnel_useior.gad;		
+	    user_curve.gad;		
+	    facing_color.gad;		
+	    perp_color.gad;		
+	    bump_input.gad;		
+	    IOR_1.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    Falloff_Color_0.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

@@ -1,0 +1,345 @@
+// Magic: ffb6b5c6
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Tue Feb 13 20:37:59 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+tex0.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ tex0.label = PARM_LABEL("Map", "tex0") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "tex0") LABELREF(tex0.label)
+	VALUE(tex0.val) HSTRETCH;
+
+    tex0.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(tex0.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+    tex0.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tex0.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tspace_id.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    tspace_id.label = PARM_LABEL("Texture Space", "tspace_id") WIDTH(1.5);
+    PARM_FIELD(string, "tspace_id") VALUE(tspace_id.val) 
+	LABELREF(tspace_id.label) HSTRETCH;
+
+    tspace_id.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tspace_id.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+unbiasedNormalMap.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("unbiasedNormalMap", "Unbiased Normals") toggle VALUE(unbiasedNormalMap.val);
+
+    { HSTRETCH }
+
+    unbiasedNormalMap.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(unbiasedNormalMap.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+flipY.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("flipY", "Flip Normal Y") toggle VALUE(flipY.val);
+
+    { HSTRETCH }
+
+    flipY.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(flipY.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Scale Normal", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(-2,2)
+	 LABELREF(scale.label) HSTRETCH;
+
+    scale.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(scale.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+tangents.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    tangents.label = PARM_LABEL("Tangents", "tangents") WIDTH(1.5);
+    PARM_FIELD(string, "tangents") VALUE(tangents.val) 
+	LABELREF(tangents.label) HSTRETCH;
+
+    tangents.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(tangents.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+eccmax.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ eccmax.label = PARM_LABEL("Maximum Eccentricity", "eccmax") WIDTH(1.5);
+ PARM(float, 1, "eccmax", none, none) RANGE(1,32)
+	 LABELREF(eccmax.label) HSTRETCH;
+
+    eccmax.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(eccmax.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alt_x.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alt_x", "U") toggle VALUE(alt_x.val);
+
+    { HSTRETCH }
+
+    alt_x.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alt_x.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+alt_y.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("alt_y", "V") toggle VALUE(alt_y.val);
+
+    { HSTRETCH }
+
+    alt_y.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(alt_y.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+repeats.gad = ROW
+{
+   HSTRETCH
+
+   repeats.label = PARM_LABEL("Texture Repeats", "repeats") WIDTH(1.5);
+   PARM(float, 2, "repeats", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(repeats.label)
+	HSTRETCH;
+
+    repeats.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(repeats.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+wrapU.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wrapU", "Wrap U") toggle VALUE(wrapU.val);
+
+    { HSTRETCH }
+
+    wrapU.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrapU.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+wrapV.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("wrapV", "Wrap V") toggle VALUE(wrapV.val);
+
+    { HSTRETCH }
+
+    wrapV.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(wrapV.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+min_uv.gad = ROW
+{
+   HSTRETCH
+
+   min_uv.label = PARM_LABEL("Minimum", "min_uv") WIDTH(1.5);
+   PARM(float, 2, "min_uv", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(min_uv.label)
+	HSTRETCH;
+
+    min_uv.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(min_uv.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+max_uv.gad = ROW
+{
+   HSTRETCH
+
+   max_uv.label = PARM_LABEL("Maximum", "max_uv") WIDTH(1.5);
+   PARM(float, 2, "max_uv", none, none, "#1,#2")
+	RANGE(1.1754943508222875e-38,3.4028234663852886e+38)  LABELREF(max_uv.label)
+	HSTRETCH;
+
+    max_uv.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(max_uv.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+UV_Remap_5.gad = 
+GROUP simple "UV Remap"
+{ 
+    VALUE(UV_Remap_5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    min_uv.gad;		
+	    max_uv.gad;		
+} 
+
+Repeats_4.gad = 
+GROUP simple "Repeats"
+{ 
+    VALUE(Repeats_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    repeats.gad;		
+	    wrapU.gad;		
+	    wrapV.gad;		
+} 
+
+Alternate_3.gad = 
+GROUP simple "Alternate"
+{ 
+    VALUE(Alternate_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    alt_x.gad;		
+	    alt_y.gad;		
+} 
+
+Elliptical_Filtering_2.gad = 
+GROUP simple "Elliptical Filtering"
+{ 
+    VALUE(Elliptical_Filtering_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    eccmax.gad;		
+} 
+
+Tangents_1.gad = 
+GROUP simple "Tangents"
+{ 
+    VALUE(Tangents_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tangents.gad;		
+} 
+
+Texture_0.gad = 
+GROUP simple "Texture"
+{ 
+    VALUE(Texture_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    tex0.gad;		
+	    tspace_id.gad;		
+	    unbiasedNormalMap.gad;		
+	    flipY.gad;		
+	    scale.gad;		
+} 
+
+RS_shaderNodeMainSwitcher.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG
+    { 
+	VALUE(RS_shaderNodeMainSwitcher.gad.val) STRETCH(1,0)
+
+	TAB "General"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Texture_0.gad;		
+	    Tangents_1.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Advanced"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    Elliptical_Filtering_2.gad;		
+	    Alternate_3.gad;		
+	    Repeats_4.gad;		
+	    UV_Remap_5.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    RS_shaderNodeMainSwitcher.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

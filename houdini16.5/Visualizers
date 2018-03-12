@@ -1,0 +1,62 @@
+VISUALIZER
+{
+	"flags":{
+		"type":"int",
+		"value":27
+	},
+	"icon":{
+		"type":"string",
+		"value":"SOP_color"
+	},
+	"label":{
+		"type":"string",
+		"value":"UV Distortion"
+	},
+	"name":{
+		"type":"string",
+		"value":"vis_uv_distortion"
+	},
+	"parameters":{
+		"type":"string",
+		"value":"{\nversion 0.8\ncolortype\t[ 0\tlocks=0 ]\t(\t\"uvdistortion\"\t)\nclass\t[ 0\tlocks=0 ]\t(\t\"vertex\"\t)\nattrib\t[ 0\tlocks=0 ]\t(\t\"\"\t)\nuvattrib\t[ 0\tlocks=0 ]\t(\tuv\t)\ndistortiontype\t[ 0\tlocks=0 ]\t(\t\"global\"\t)\nrangesection\t[ 0\tlocks=0 ]\t(\t0\t)\nrangespec\t[ 0\tlocks=0 ]\t(\t\"min-max\"\t)\nminscalar\t[ 0\tlocks=0 ]\t(\t0\t)\nmaxscalar\t[ 0\tlocks=0 ]\t(\t1\t)\ncenterscalar\t[ 0\tlocks=0 ]\t(\t0\t)\nwidthscalar\t[ 0\tlocks=0 ]\t(\t1\t)\nclamptype\t[ 0\tlocks=0 ]\t(\t\"edge\"\t)\nconstcolor\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t1\t)\nusethreevtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolorthreevtx\t[ 0\tlocks=0 ]\t(\t1\t1\t0\t)\nusefourvtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolorfourvtx\t[ 0\tlocks=0 ]\t(\t0.5\t0.69999999999999996\t1\t)\nusenvtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolornvtx\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t)\ntreatasscalar\t[ 0\tlocks=0 ]\t(\t\"off\"\t)\nusing\t[ 0\tlocks=0 ]\t(\t\"comp\"\t)\ncomponent\t[ 0\tlocks=0 ]\t(\t0\t)\nrefvec\t[ 0\tlocks=0 ]\t(\t0\t1\t0\t)\nrandseed\t[ 0\tlocks=0 ]\t(\t0\t)\nvalsep\t[ 0\tlocks=0 ]\t(\t1\t)\nrampsection\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramppreset\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramp\t[ 0\tlocks=0 ]\t(\t3\t)\ncolorramp1pos\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramp1c\t[ 0\tlocks=0 ]\t(\t0\t0\t1\t)\ncolorramp1interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\ncolorramp2pos\t[ 0\tlocks=0 ]\t(\t0.5\t)\ncolorramp2c\t[ 0\tlocks=0 ]\t(\t1\t0.97194021940231323\t0.88776081800460815\t)\ncolorramp2interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\ncolorramp3pos\t[ 0\tlocks=0 ]\t(\t1\t)\ncolorramp3c\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t)\ncolorramp3interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\n}\n"},
+	
+	"scope":{
+		"type":"int",
+		"value":3
+	},
+	"type":{
+		"type":"string",
+		"value":"vis_color"
+	}
+}
+VISUALIZER
+{
+	"flags":{
+		"type":"int",
+		"value":27
+	},
+	"icon":{
+		"type":"string",
+		"value":"SOP_color"
+	},
+	"label":{
+		"type":"string",
+		"value":"Soft Falloff"
+	},
+	"name":{
+		"type":"string",
+		"value":"vis_soft_falloff"
+	},
+	"parameters":{
+		"type":"string",
+		"value":"{\nversion 0.8\ncolortype\t[ 0\tlocks=0 ]\t(\t\"attribramped\"\t)\nclass\t[ 0\tlocks=0 ]\t(\t\"auto\"\t)\nattrib\t[ 0\tlocks=0 ]\t(\tvis_falloff\t)\nuvattrib\t[ 0\tlocks=0 ]\t(\tuv\t)\ndistortiontype\t[ 0\tlocks=0 ]\t(\t\"global\"\t)\nrangesection\t[ 0\tlocks=0 ]\t(\t0\t)\nrangespec\t[ 0\tlocks=0 ]\t(\t\"min-max\"\t)\nminscalar\t[ 0\tlocks=0 ]\t(\t0\t)\nmaxscalar\t[ 0\tlocks=0 ]\t(\t1\t)\ncenterscalar\t[ 0\tlocks=0 ]\t(\t0\t)\nwidthscalar\t[ 0\tlocks=0 ]\t(\t1\t)\nclamptype\t[ 0\tlocks=0 ]\t(\t\"edge\"\t)\nconstcolor\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t1\t)\nusethreevtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolorthreevtx\t[ 0\tlocks=0 ]\t(\t1\t1\t0\t)\nusefourvtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolorfourvtx\t[ 0\tlocks=0 ]\t(\t0.5\t0.69999999999999996\t1\t)\nusenvtxcolor\t[ 0\tlocks=0 ]\t(\t\"on\"\t)\ncolornvtx\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t)\ntreatasscalar\t[ 0\tlocks=0 ]\t(\t\"off\"\t)\nusing\t[ 0\tlocks=0 ]\t(\t\"comp\"\t)\ncomponent\t[ 0\tlocks=0 ]\t(\t0\t)\nrefvec\t[ 0\tlocks=0 ]\t(\t0\t1\t0\t)\nrandseed\t[ 0\tlocks=0 ]\t(\t0\t)\nvalsep\t[ 0\tlocks=0 ]\t(\t1\t)\nrampsection\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramppreset\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramp\t[ 0\tlocks=0 ]\t(\t4\t)\ncolorramp1pos\t[ 0\tlocks=0 ]\t(\t0\t)\ncolorramp1c\t[ 0\tlocks=0 ]\t(\t1\t1\t1\t)\ncolorramp1interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\ncolorramp2pos\t[ 0\tlocks=0 ]\t(\t0.48399999737739563\t)\ncolorramp2c\t[ 0\tlocks=0 ]\t(\t0.89999997615814209\t0.66992402076721191\t0.0036000071559101343\t)\ncolorramp2interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\ncolorramp3pos\t[ 0\tlocks=0 ]\t(\t0.86682808399200439\t)\ncolorramp3c\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t)\ncolorramp3interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\ncolorramp4pos\t[ 0\tlocks=0 ]\t(\t1\t)\ncolorramp4c\t[ 0\tlocks=0 ]\t(\t1\t0\t0\t)\ncolorramp4interp\t[ 0\tlocks=0 ]\t(\t\"linear\"\t)\n}\n"},
+	
+	"scope":{
+		"type":"int",
+		"value":3
+	},
+	"type":{
+		"type":"string",
+		"value":"vis_color"
+	}
+}

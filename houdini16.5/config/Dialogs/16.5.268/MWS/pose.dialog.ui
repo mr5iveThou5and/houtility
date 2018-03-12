@@ -1,0 +1,118 @@
+// Magic: e0a8d432
+// Automatically generated PSI dialog (PSI version 16.5.268)
+// Sat Feb 10 16:31:34 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Handle Mode", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Handle Mode", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+}
+
+stealthpick.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("stealthpick", "Use Surface Regions Controllers") toggle VALUE(stealthpick.val);
+
+    { HSTRETCH }
+
+}
+
+stealthattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    stealthattrib.label = PARM_LABEL("Surface Attribute", "stealthattrib") WIDTH(1.5);
+    PARM_FIELD(string, "stealthattrib") VALUE(stealthattrib.val) 
+	LABELREF(stealthattrib.label) HSTRETCH;
+
+}
+
+motionpath.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("motionpath", "Motion Path") toggle VALUE(motionpath.val);
+
+    { HSTRETCH }
+
+}
+
+keeppos.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    { HSTRETCH }
+
+}
+
+childcomp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("childcomp", "Child Compensation") toggle VALUE(childcomp.val);
+
+    { HSTRETCH }
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    type.gad; 
+    xformtype.gad; 
+    stealthpick.gad; 
+    stealthattrib.gad; 
+    motionpath.gad; 
+    keeppos.gad; 
+    childcomp.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

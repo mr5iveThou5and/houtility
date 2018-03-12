@@ -1,0 +1,296 @@
+// Magic: f1764898
+// Automatically generated PSI dialog (PSI version 16.5.378)
+// Thu Feb 22 21:24:28 2018
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+baseColor.gad = NULL { }
+layerColor1.gad = NULL { }
+
+blendColor1.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor1.label = PARM_LABEL("Blend Color", "blendColor1") WIDTH(1.5);
+    PARM(float, 3, "blendColor1", none, COLOR, "R,G,B") 
+	LABELREF(blendColor1.label) HSTRETCH;
+
+    blendColor1.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor1.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode1.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode1", "Additive") toggle VALUE(additiveMode1.val);
+
+    { HSTRETCH }
+
+    additiveMode1.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode1.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+layerColor2.gad = NULL { }
+
+blendColor2.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor2.label = PARM_LABEL("Blend Color", "blendColor2") WIDTH(1.5);
+    PARM(float, 3, "blendColor2", none, COLOR, "R,G,B") 
+	LABELREF(blendColor2.label) HSTRETCH;
+
+    blendColor2.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor2.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode2.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode2", "Additive") toggle VALUE(additiveMode2.val);
+
+    { HSTRETCH }
+
+    additiveMode2.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode2.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+layerColor3.gad = NULL { }
+
+blendColor3.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor3.label = PARM_LABEL("Blend Color", "blendColor3") WIDTH(1.5);
+    PARM(float, 3, "blendColor3", none, COLOR, "R,G,B") 
+	LABELREF(blendColor3.label) HSTRETCH;
+
+    blendColor3.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor3.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode3.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode3", "Additive") toggle VALUE(additiveMode3.val);
+
+    { HSTRETCH }
+
+    additiveMode3.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode3.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+layerColor4.gad = NULL { }
+
+blendColor4.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor4.label = PARM_LABEL("Blend Color", "blendColor4") WIDTH(1.5);
+    PARM(float, 3, "blendColor4", none, COLOR, "R,G,B") 
+	LABELREF(blendColor4.label) HSTRETCH;
+
+    blendColor4.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor4.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode4.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode4", "Additive") toggle VALUE(additiveMode4.val);
+
+    { HSTRETCH }
+
+    additiveMode4.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode4.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+layerColor5.gad = NULL { }
+
+blendColor5.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor5.label = PARM_LABEL("Blend Color", "blendColor5") WIDTH(1.5);
+    PARM(float, 3, "blendColor5", none, COLOR, "R,G,B") 
+	LABELREF(blendColor5.label) HSTRETCH;
+
+    blendColor5.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor5.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode5.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode5", "Additive") toggle VALUE(additiveMode5.val);
+
+    { HSTRETCH }
+
+    additiveMode5.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode5.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+layerColor6.gad = NULL { }
+
+blendColor6.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    blendColor6.label = PARM_LABEL("Blend Color", "blendColor6") WIDTH(1.5);
+    PARM(float, 3, "blendColor6", none, COLOR, "R,G,B") 
+	LABELREF(blendColor6.label) HSTRETCH;
+
+    blendColor6.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(blendColor6.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+additiveMode6.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("additiveMode6", "Additive") toggle VALUE(additiveMode6.val);
+
+    { HSTRETCH }
+
+    additiveMode6.exportbtn = PARM_EXPORTBUTTON "SOP_sphere"
+	VALUE(additiveMode6.export) LOOKFLAT
+	HELP("Open Shader Effects menu (Ctrl+LMB to promote this parameter)")
+	UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+Layer_6_6.gad = 
+GROUP simple "Layer 6"
+{ 
+    VALUE(Layer_6_6.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor6.gad;		
+	    blendColor6.gad;		
+	    additiveMode6.gad;		
+} 
+
+Layer_5_5.gad = 
+GROUP simple "Layer 5"
+{ 
+    VALUE(Layer_5_5.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor5.gad;		
+	    blendColor5.gad;		
+	    additiveMode5.gad;		
+} 
+
+Layer_4_4.gad = 
+GROUP simple "Layer 4"
+{ 
+    VALUE(Layer_4_4.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor4.gad;		
+	    blendColor4.gad;		
+	    additiveMode4.gad;		
+} 
+
+Layer_3_3.gad = 
+GROUP simple "Layer 3"
+{ 
+    VALUE(Layer_3_3.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor3.gad;		
+	    blendColor3.gad;		
+	    additiveMode3.gad;		
+} 
+
+Layer_2_2.gad = 
+GROUP simple "Layer 2"
+{ 
+    VALUE(Layer_2_2.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor2.gad;		
+	    blendColor2.gad;		
+	    additiveMode2.gad;		
+} 
+
+Layer_1_1.gad = 
+GROUP simple "Layer 1"
+{ 
+    VALUE(Layer_1_1.gad.val) LAYOUT(vertical) HSTRETCH 
+	    layerColor1.gad;		
+	    blendColor1.gad;		
+	    additiveMode1.gad;		
+} 
+
+Base_Material_0.gad = 
+GROUP simple "Base Material"
+{ 
+    VALUE(Base_Material_0.gad.val) LAYOUT(vertical) HSTRETCH 
+	    baseColor.gad;		
+} 
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    Base_Material_0.gad; 
+    Layer_1_1.gad; 
+    Layer_2_2.gad; 
+    Layer_3_3.gad; 
+    Layer_4_4.gad; 
+    Layer_5_5.gad; 
+    Layer_6_6.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}
